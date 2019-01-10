@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    "no-console": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "console": true,
+    "document": true,
+    "module": true,
+    "process": true,
+    "window": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "brandnpatterson",
+  "version": "1.0.0",
+  "description": "brandnpatterson",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "author": "Brandon Patterson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  }
+}
