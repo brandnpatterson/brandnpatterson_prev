@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server",
     "start": "node server",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm install && npm run build"
   },
   "author": "Brandon Patterson",
   "license": "ISC",
