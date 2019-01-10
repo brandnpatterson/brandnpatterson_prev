@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-var __root = path.dirname(require.main.filename);
+const __root = path.dirname(require.main.filename);
 
 router.get('/api/v1/users', (req, res) => {
   const users = [
