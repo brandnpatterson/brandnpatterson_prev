@@ -2,10 +2,10 @@
   "name": "brandnpatterson",
   "version": "1.0.0",
   "description": "brandnpatterson",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "node server",
+    "dev": "nodemon app & npm start --prefix client",
+    "start": "node app",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client"
   },
   "author": "Brandon Patterson",

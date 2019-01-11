@@ -1,5 +1,6 @@
 .DS_Store
 *.css.map
 *.js.map
+.env
 /node_modules
 /client/node_modules

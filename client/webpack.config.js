@@ -5,6 +5,7 @@ module.exports = {
   devtool: isDev && 'inline-source-map',
   devServer: {
     contentBase: 'public',
+    overlay: true,
     proxy: {
       '/api': 'http://localhost:5000'
     },
