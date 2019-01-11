@@ -2,19 +2,23 @@
   "name": "brandnpatterson",
   "version": "1.0.0",
   "description": "brandnpatterson",
-  "main": "app.js",
+  "main": "start.js",
   "scripts": {
-    "dev": "nodemon app & npm start --prefix client",
-    "start": "node app",
+    "dev": "nodemon start",
+    "start": "node start",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client"
   },
   "author": "Brandon Patterson",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "nodemon": "^1.18.9"
   },
   "eslintIgnore": [
     "client"
-  ]
+  ],
+  "devDependencies": {
+    "dotenv": "^6.2.0"
+  }
 }
