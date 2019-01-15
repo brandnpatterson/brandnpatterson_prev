@@ -4,6 +4,6 @@ const path = require('path');
 const routes = require('./routes');
 
 app.use(express.static(path.join(__dirname, 'client/public')));
-app.use('/', routes);
+app.use('/api/v1', routes);
 
 module.exports = app;
