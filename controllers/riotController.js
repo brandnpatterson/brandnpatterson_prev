@@ -78,6 +78,4 @@ exports.getSummonerInfo = async (req, res) => {
       mostPlayed: filterByTags
     }
   });
-
-  res.json();
 };
