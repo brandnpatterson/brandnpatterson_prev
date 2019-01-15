@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const ddragon = ddragon =>
-  'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US' + ddragon;
+  'http://ddragon.leagueoflegends.com/cdn/8.24.1/data/en_US' + ddragon;
 
 const riotGames = riotGames =>
   `https://${
