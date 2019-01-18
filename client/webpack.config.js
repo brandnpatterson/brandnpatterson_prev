@@ -1,15 +1,15 @@
 const path = require('path');
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = module.exports.mode === 'development';
 
 module.exports = {
   devtool: isDev && 'inline-source-map',
   devServer: {
     contentBase: 'public',
+    historyApiFallback: true,
     overlay: true,
     proxy: {
       '/api': 'http://localhost:5000'
-    },
-    stats: 'minimal'
+    }
   },
   entry: './src/index.js',
   output: {
@@ -23,7 +23,12 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'babel-loader',
-          'eslint-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              failOnError: true
+            }
+          },
           'stylelint-custom-processor-loader'
         ]
       }
