@@ -1,99 +1,104 @@
 const axios = require('axios');
 
-const ddragon = ddragon =>
-  'http://ddragon.leagueoflegends.com/cdn/8.24.1/data/en_US' + ddragon;
-
-const riotGames = riotGames =>
-  `https://${
-    process.env.RIOT_REIGON
-  }.api.riotgames.com/lol${riotGames}?api_key=${process.env.RIOT_API_KEY}`;
-
-const catchErrors = err => {
-  console.error(`${err.response.status} ${err.response.statusText}`);
-};
+/**
+ *  URLs
+ */
+const ddragon = url => 'http://ddragon.leagueoflegends.com/cdn/8.24.1' + url;
+const riotGames = url =>
+  `https://${process.env.RIOT_REIGON}.api.riotgames.com/lol${url}?api_key=${
+    process.env.RIOT_API_KEY
+  }`;
 
 /**
- *  API - GET
+ *  GET
  */
-const getChampions = () => {
+const getReq = url => {
   return axios
-    .get(ddragon(`/champion.json`))
-    .then(res => res.data.data)
-    .catch(err => displayError(err));
+    .get(url)
+    .then(res => res.data)
+    .catch(err => ({
+      error: `${err.response.status} ${err.response.statusText}`
+    }));
+};
+
+const getChampions = () => {
+  return getReq(ddragon('/data/en_US/champion.json'));
 };
 
 const getSummoner = name => {
-  return axios
-    .get(riotGames(`/summoner/v4/summoners/by-name/${name}`))
-    .then(res => res.data)
-    .catch(err => catchErrors(err));
+  return getReq(riotGames(`/summoner/v4/summoners/by-name/${name}`));
 };
 
 const getSummonerRank = summonerId => {
-  return axios
-    .get(riotGames(`/league/v4/positions/by-summoner/${summonerId}`))
-    .then(res => res.data)
-    .catch(err => catchErrors(err));
+  return getReq(riotGames(`/league/v4/positions/by-summoner/${summonerId}`));
 };
 
 const getChampionMastery = summonerId => {
-  return axios
-    .get(
-      riotGames(
-        `/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}`
-      )
-    )
-    .then(res => res.data)
-    .catch(err => catchErrors(err));
+  const url = `/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}`;
+
+  return getReq(riotGames(url));
 };
 
 /**
  *  Filter
  */
-const filterChampionById = (champions, championMastery) => {
-  return championMastery.slice(0, 10).map(mastery => {
-    const champion = Object.values(champions).filter(
-      champ => mastery.championId.toString() === champ.key
-    )[0];
+const filterChampionById = (champions, championIds) => {
+  const champVals = Object.values(champions);
 
-    return champion.name;
+  const mostPlayedByName = championIds.slice(0, 10).map(id => {
+    return champVals.filter(champ => champ.key === id)[0].name;
   });
+
+  const champData = mostPlayedByName.map(name => {
+    return {
+      name,
+      icon: ddragon(`/img/champion/${name}.png`)
+    };
+  });
+
+  return champData;
 };
 
-const filterChampionsByTags = champions => {
-  const tags = {};
-
-  champions.forEach(champ => {
-    champ.roles.forEach(role => {
-      tags[role] = [];
-    });
-  });
-
-  champions.forEach(champ => {
-    champ.roles.forEach(role => {
-      tags[role].push(champ.name);
-    });
-  });
-
-  return tags;
-};
-
+/**
+ *  Exports
+ */
 exports.getSummonerInfo = async (req, res) => {
-  const champions = await getChampions();
   const summoner = await getSummoner(req.params.summonerName);
   const summonerRank = await getSummonerRank(summoner.id);
+
+  const ranked = summonerRank.map(rank => {
+    const totalGames = rank.wins + rank.losses;
+    const percentage = (rank.wins / totalGames) * 100;
+
+    return {
+      leagueName: rank.leagueName,
+      tier: `${rank.tier} ${rank.rank}`,
+      leaguePoints: rank.leaguePoints.toString(),
+      wins: rank.wins.toString(),
+      losses: rank.losses.toString(),
+      winPercentage: percentage.toFixed(2)
+    };
+  });
+
+  const rankedData = {
+    summoner: summoner.name,
+    level: summoner.summonerLevel.toString(),
+    flex: ranked[0],
+    solo: ranked[1]
+  };
+
+  res.json(rankedData);
+};
+
+exports.getChampionMastery = async (req, res) => {
+  const champions = await getChampions();
+  const summoner = await getSummoner(req.params.summonerName);
   const championMastery = await getChampionMastery(summoner.id);
-  const mostPlayed = filterChampionById(champions, championMastery);
+  const championIds = championMastery.map(champ => champ.championId.toString());
+  const mostPlayed = filterChampionById(champions.data, championIds);
 
   res.json({
-    summoner: {
-      level: summoner.summonerLevel,
-      name: summoner.name,
-      mostPlayed: mostPlayed,
-      ranked: {
-        flex: summonerRank[0],
-        solo: summonerRank[1]
-      }
-    }
+    summoner: summoner.name,
+    mostPlayed
   });
 };

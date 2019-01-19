@@ -4,6 +4,7 @@
   "description": "brandnpatterson",
   "main": "start.js",
   "scripts": {
+    "client": "npm start --prefix client",
     "dev": "nodemon start",
     "start": "node start",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client"
