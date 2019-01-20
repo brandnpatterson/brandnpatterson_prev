@@ -17,6 +17,8 @@ export default (state = initialState, action) => {
         champions: action.payload
       };
     case FETCH_ERROR:
+      // @todo handle fetch error
+
       return {
         ...state,
         error: 'No summoner found with that name. Please try again.'

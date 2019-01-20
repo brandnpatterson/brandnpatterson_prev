@@ -14,6 +14,8 @@ class Summoner extends React.Component {
     return (
       <div className="champions">
         {champions.map(champ => {
+          // @todo title case for image
+
           return (
             <div key={champ.id}>
               <p>{champ.name}</p>
