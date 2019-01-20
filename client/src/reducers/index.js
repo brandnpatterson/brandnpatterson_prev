@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import reducer from './defaultReducer';
+import summonerReducer from './summonerReducer';
 
 export default combineReducers({
-  reducer
+  summoner: summonerReducer
 });

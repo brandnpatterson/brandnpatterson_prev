@@ -46,13 +46,14 @@ const filterChampionById = (champions, championIds) => {
   const champVals = Object.values(champions);
 
   const mostPlayedByName = championIds.slice(0, 10).map(id => {
-    return champVals.filter(champ => champ.key === id)[0].name;
+    return champVals.filter(champ => champ.key === id)[0];
   });
 
-  const champData = mostPlayedByName.map(name => {
+  const champData = mostPlayedByName.map(champ => {
     return {
-      name,
-      icon: ddragon(`/img/champion/${name}.png`)
+      id: champ.key,
+      image: ddragon(`/img/champion/${champ.name}.png`),
+      name: champ.name
     };
   });
 
@@ -81,7 +82,7 @@ exports.getSummonerInfo = async (req, res) => {
   });
 
   const rankedData = {
-    summoner: summoner.name,
+    name: summoner.name,
     level: summoner.summonerLevel.toString(),
     flex: ranked[0],
     solo: ranked[1]
@@ -97,8 +98,5 @@ exports.getChampionMastery = async (req, res) => {
   const championIds = championMastery.map(champ => champ.championId.toString());
   const mostPlayed = filterChampionById(champions.data, championIds);
 
-  res.json({
-    summoner: summoner.name,
-    mostPlayed
-  });
+  res.json(mostPlayed);
 };
