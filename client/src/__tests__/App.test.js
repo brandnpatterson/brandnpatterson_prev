@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import store from '../store';
 import App from '../App';
@@ -9,7 +10,9 @@ it('renders without crashing', () => {
 
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     </Provider>,
     div
   );

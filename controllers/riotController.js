@@ -16,9 +16,12 @@ const getReq = url => {
   return axios
     .get(url)
     .then(res => res.data)
-    .catch(err => ({
-      error: `${err.response.status} ${err.response.statusText}`
-    }));
+    .catch(err => {
+      return {
+        error: err.response.statusText,
+        status: err.response.status
+      };
+    });
 };
 
 const getChampions = () => {
@@ -67,6 +70,11 @@ exports.getSummonerInfo = async (req, res) => {
   const summoner = await getSummoner(req.params.summonerName);
   const summonerRank = await getSummonerRank(summoner.id);
 
+  if (summoner.error) {
+    res.status(summoner.status);
+    return res.json(summoner);
+  }
+
   const ranked = summonerRank.map(rank => {
     const totalGames = rank.wins + rank.losses;
     const percentage = (rank.wins / totalGames) * 100;
@@ -92,9 +100,15 @@ exports.getSummonerInfo = async (req, res) => {
 };
 
 exports.getChampionMastery = async (req, res) => {
-  const champions = await getChampions();
   const summoner = await getSummoner(req.params.summonerName);
+  const champions = await getChampions();
   const championMastery = await getChampionMastery(summoner.id);
+
+  if (summoner.error) {
+    res.status(summoner.status);
+    return res.json(summoner);
+  }
+
   const championIds = championMastery.map(champ => champ.championId.toString());
   const mostPlayed = filterChampionById(champions.data, championIds);
 
