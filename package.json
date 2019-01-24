@@ -2,24 +2,29 @@
   "name": "brandnpatterson",
   "version": "1.0.0",
   "description": "brandnpatterson",
-  "main": "start.js",
+  "main": "index.js",
   "scripts": {
     "client": "npm start --prefix client",
-    "dev": "nodemon start",
-    "start": "node start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client"
+    "dev": "nodemon",
+    "start": "node",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client",
+    "test": "mocha -R spec test/*.test.js --watch"
   },
   "author": "Brandon Patterson",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "nodemon": "^1.18.9"
   },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^6.2.0",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.6",
+    "supertest": "^3.4.2"
+  },
   "eslintIgnore": [
     "client"
-  ],
-  "devDependencies": {
-    "dotenv": "^6.2.0"
-  }
+  ]
 }

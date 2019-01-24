@@ -12,16 +12,16 @@ const sanitized = str => DOMPurify.sanitize(str);
 export const fetchChampMastery = summonerName => dispatch => {
   axios
     .get(`/api/v1/riot/summoner/${sanitized(summonerName)}/mastery`)
-    .then(res => {
+    .then(response => {
       dispatch({
         type: FETCH_CHAMPION_MASTERY,
-        payload: res.data
+        payload: response.data
       });
     })
     .catch(err => {
       dispatch({
         type: FETCH_ERROR,
-        payload: err.data
+        payload: err.response.data
       });
     });
 };
@@ -29,16 +29,16 @@ export const fetchChampMastery = summonerName => dispatch => {
 export const fetchSummonerInfo = summonerName => dispatch => {
   axios
     .get(`/api/v1/riot/summoner/${sanitized(summonerName)}`)
-    .then(res => {
+    .then(response => {
       dispatch({
         type: FETCH_SUMMONER_INFO,
-        payload: res.data
+        payload: response.data
       });
     })
     .catch(err => {
       dispatch({
         type: FETCH_ERROR,
-        payload: err.data
+        payload: err.response.data
       });
     });
 };

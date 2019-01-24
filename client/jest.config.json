@@ -1,5 +1,5 @@
 {
   "name": "react-env",
-  "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/setup/setupTests.js",
-  "testPathIgnorePatterns": ["<rootDir>/src/__tests__/setup", "/cypress/"]
+  "setupTestFrameworkScriptFile": "<rootDir>/test/jest/setup/setupTests.js",
+  "testPathIgnorePatterns": ["<rootDir>/test/jest/setup", "/cypress/"]
 }

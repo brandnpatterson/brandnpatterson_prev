@@ -4,49 +4,48 @@ const axios = require('axios');
  *  URLs
  */
 const ddragon = url => 'http://ddragon.leagueoflegends.com/cdn/8.24.1' + url;
-const riotGames = url =>
-  `https://${process.env.RIOT_REIGON}.api.riotgames.com/lol${url}?api_key=${
+const riotGames = (url, reigon = 'na1') =>
+  `https://${reigon}.api.riotgames.com/lol${url}?api_key=${
     process.env.RIOT_API_KEY
   }`;
 
 /**
  *  GET
  */
-const getReq = url => {
+exports.getReq = url => {
   return axios
     .get(url)
-    .then(res => res.data)
-    .catch(err => {
-      return {
-        error: err.response.statusText,
-        status: err.response.status
-      };
-    });
+    .then(response => response.data)
+    .catch(err => err.response.data);
 };
 
 const getChampions = () => {
-  return getReq(ddragon('/data/en_US/champion.json'));
+  return exports.getReq(ddragon('/data/en_US/champion.json'));
 };
 
 const getSummoner = name => {
-  return getReq(riotGames(`/summoner/v4/summoners/by-name/${name}`));
+  return exports.getReq(riotGames(`/summoner/v4/summoners/by-name/${name}`));
 };
 
-const getSummonerRank = summonerId => {
-  return getReq(riotGames(`/league/v4/positions/by-summoner/${summonerId}`));
+const getSummonerRank = summoner => {
+  return exports.getReq(
+    riotGames(`/league/v4/positions/by-summoner/${summoner.id}`)
+  );
 };
 
-const getChampionMastery = summonerId => {
-  const url = `/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}`;
-
-  return getReq(riotGames(url));
+const getChampionMastery = summoner => {
+  return exports.getReq(
+    riotGames(
+      `/champion-mastery/v4/champion-masteries/by-summoner/${summoner.id}`
+    )
+  );
 };
 
 /**
  *  Filter
  */
 const filterChampionById = (champions, championIds) => {
-  const champVals = Object.values(champions);
+  const champVals = Object.values(champions.data);
 
   const mostPlayedByName = championIds.slice(0, 10).map(id => {
     return champVals.filter(champ => champ.key === id)[0];
@@ -55,8 +54,8 @@ const filterChampionById = (champions, championIds) => {
   const champData = mostPlayedByName.map(champ => {
     return {
       id: champ.key,
-      image: ddragon(`/img/champion/${champ.name}.png`),
-      name: champ.name
+      name: champ.name,
+      src: ddragon(`/img/champion/${champ.name}.png`)
     };
   });
 
@@ -68,49 +67,52 @@ const filterChampionById = (champions, championIds) => {
  */
 exports.getSummonerInfo = async (req, res) => {
   const summoner = await getSummoner(req.params.summonerName);
-  const summonerRank = await getSummonerRank(summoner.id);
+  const summonerRank = await getSummonerRank(summoner);
 
-  if (summoner.error) {
-    res.status(summoner.status);
-    return res.json(summoner);
+  if (Array.isArray(summonerRank)) {
+    const ranked = summonerRank.map(rank => {
+      const totalGames = rank.wins + rank.losses;
+      const percentage = (rank.wins / totalGames) * 100;
+
+      return {
+        leagueName: rank.leagueName,
+        tier: `${rank.tier} ${rank.rank}`,
+        leaguePoints: rank.leaguePoints.toString(),
+        wins: rank.wins.toString(),
+        losses: rank.losses.toString(),
+        winPercentage: percentage.toFixed(2)
+      };
+    });
+
+    const rankedData = {
+      name: summoner.name,
+      level: summoner.summonerLevel.toString(),
+      flex: ranked[0],
+      solo: ranked[1]
+    };
+
+    return res.json(rankedData);
   }
 
-  const ranked = summonerRank.map(rank => {
-    const totalGames = rank.wins + rank.losses;
-    const percentage = (rank.wins / totalGames) * 100;
-
-    return {
-      leagueName: rank.leagueName,
-      tier: `${rank.tier} ${rank.rank}`,
-      leaguePoints: rank.leaguePoints.toString(),
-      wins: rank.wins.toString(),
-      losses: rank.losses.toString(),
-      winPercentage: percentage.toFixed(2)
-    };
-  });
-
-  const rankedData = {
-    name: summoner.name,
-    level: summoner.summonerLevel.toString(),
-    flex: ranked[0],
-    solo: ranked[1]
-  };
-
-  res.json(rankedData);
+  res.json(summoner);
 };
 
 exports.getChampionMastery = async (req, res) => {
   const summoner = await getSummoner(req.params.summonerName);
   const champions = await getChampions();
-  const championMastery = await getChampionMastery(summoner.id);
+  const championMastery = await getChampionMastery(summoner);
 
-  if (summoner.error) {
-    res.status(summoner.status);
-    return res.json(summoner);
+  if (Array.isArray(championMastery)) {
+    const championIds = championMastery.map(champ => {
+      return champ.championId.toString();
+    });
+
+    if (champions) {
+      const mostPlayed = filterChampionById(champions, championIds);
+
+      return res.json(mostPlayed);
+    }
   }
 
-  const championIds = championMastery.map(champ => champ.championId.toString());
-  const mostPlayed = filterChampionById(champions.data, championIds);
-
-  res.json(mostPlayed);
+  res.json(summoner);
 };
