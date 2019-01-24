@@ -7,11 +7,9 @@ import {
   FETCH_SUMMONER_INFO
 } from './types';
 
-const sanitized = str => DOMPurify.sanitize(str);
-
 export const fetchChampMastery = summonerName => dispatch => {
   axios
-    .get(`/api/v1/riot/summoner/${sanitized(summonerName)}/mastery`)
+    .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}/mastery`)
     .then(response => {
       dispatch({
         type: FETCH_CHAMPION_MASTERY,
@@ -28,7 +26,7 @@ export const fetchChampMastery = summonerName => dispatch => {
 
 export const fetchSummonerInfo = summonerName => dispatch => {
   axios
-    .get(`/api/v1/riot/summoner/${sanitized(summonerName)}`)
+    .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}`)
     .then(response => {
       dispatch({
         type: FETCH_SUMMONER_INFO,
