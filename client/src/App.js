@@ -19,8 +19,8 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetchChampMastery('brandy-bot');
-    this.props.fetchSummonerInfo('brandy-bot');
+    this.props.fetchChampMastery('brandybot');
+    this.props.fetchSummonerInfo('brandybot');
   }
 
   render() {

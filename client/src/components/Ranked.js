@@ -7,6 +7,16 @@ const propTypes = {
 };
 
 const Ranked = ({ name, data }) => {
+  if (Object.keys(data).length === 0) {
+    return (
+      <div>
+        <h3>
+          No ranked {name} stats this season. Play more games and try again.
+        </h3>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h3>{name}</h3>

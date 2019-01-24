@@ -55,7 +55,7 @@ const filterChampionById = (champions, championIds) => {
     return {
       id: champ.key,
       name: champ.name,
-      src: ddragon(`/img/champion/${champ.name}.png`)
+      src: ddragon(`/img/champion/${champ.image.full}`)
     };
   });
 
@@ -87,8 +87,10 @@ exports.getSummonerInfo = async (req, res) => {
     const rankedData = {
       name: summoner.name,
       level: summoner.summonerLevel.toString(),
-      flex: ranked[0],
-      solo: ranked[1]
+      ranked: {
+        flex: ranked[0] ? ranked[0] : {},
+        solo: ranked[1] ? ranked[1] : {}
+      }
     };
 
     return res.json(rankedData);
