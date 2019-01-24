@@ -107,11 +107,9 @@ exports.getChampionMastery = async (req, res) => {
       return champ.championId.toString();
     });
 
-    if (champions) {
-      const mostPlayed = filterChampionById(champions, championIds);
+    const mostPlayed = filterChampionById(champions, championIds);
 
-      return res.json(mostPlayed);
-    }
+    return res.json(mostPlayed);
   }
 
   res.json(summoner);
