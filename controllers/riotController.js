@@ -47,9 +47,9 @@ const getChampionMastery = summoner => {
 /**
  *  Filter
  */
-const filterChampionById = (champions, championIds, amount) => {
+const filterChampionById = (champions, championIds, numberOfChamps) => {
   return championIds
-    .slice(0, amount)
+    .slice(0, numberOfChamps)
     .map(id => champions.filter(champ => champ.key === id.toString())[0]);
 };
 
@@ -87,6 +87,7 @@ exports.getSummonerInfo = async (req, res) => {
   const summoner = await getSummoner(req.params.summonerName);
   const summonerRank = await getSummonerRank(summoner);
 
+  // if summoner returns true
   if (Array.isArray(summonerRank)) {
     const ranked = summonerRank.map(rank => {
       const totalGames = rank.wins + rank.losses;
@@ -111,10 +112,11 @@ exports.getSummonerInfo = async (req, res) => {
       }
     };
 
-    return res.json(rankedData);
+    res.json(rankedData);
+  } else {
+    // return err
+    res.json(summoner);
   }
-
-  res.json(summoner);
 };
 
 exports.getChampionMastery = async (req, res) => {
@@ -122,12 +124,14 @@ exports.getChampionMastery = async (req, res) => {
   const champions = await retrieveChampionsFromDB();
   const championMastery = await getChampionMastery(summoner);
 
+  // if summoner returns true
   if (Array.isArray(championMastery)) {
     const championIds = championMastery.map(champ => champ.championId);
     const mostPlayed = filterChampionById(champions, championIds, 10);
 
-    return res.json(mostPlayed);
+    res.json(mostPlayed);
+  } else {
+    // return err
+    res.json(summoner);
   }
-
-  res.json(summoner);
 };
