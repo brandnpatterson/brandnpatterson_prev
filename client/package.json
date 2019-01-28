@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server -d --open --port 3000",
+    "dev": "webpack-dev-server -d --open --port 3000",
+    "start": "npm run build",
     "cypress": "cypress open",
     "jest": "jest --config jest.config.json --no-cache --watch"
   },
