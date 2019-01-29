@@ -5,6 +5,8 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { fetchChampMastery, fetchSummonerInfo } from './actions';
 
+import Blog from './components/Blog';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Github from './components/Github';
 import Header from './components/Header';
@@ -29,6 +31,8 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/contact" component={Contact} />
           <Route path="/github" component={Github} />
           <Route path="/summoner" component={Summoner} />
           <Route component={NotFound} />
