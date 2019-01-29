@@ -1,4 +1,4 @@
-const axios = require('axios');
+const { axiosReq } = require('../handlers');
 const { sequelize } = require('../models');
 const Champion = require('../models/champion');
 
@@ -15,7 +15,9 @@ const riotGames = (url, reigon = 'na1') =>
  *  GET
  */
 const getChampions = () => {
-  return exports.getReq(ddragon('/data/en_US/champion.json'));
+  return axiosReq({
+    url: ddragon('/data/en_US/champion.json')
+  });
 };
 
 const retrieveChampionsFromDB = () => {
@@ -26,22 +28,24 @@ const retrieveChampionsFromDB = () => {
   });
 };
 
-const getSummoner = name => {
-  return exports.getReq(riotGames(`/summoner/v4/summoners/by-name/${name}`));
+const getSummonerAccount = name => {
+  return axiosReq({
+    url: riotGames(`/summoner/v4/summoners/by-name/${name}`)
+  });
 };
 
 const getSummonerRank = summoner => {
-  return exports.getReq(
-    riotGames(`/league/v4/positions/by-summoner/${summoner.id}`)
-  );
+  return axiosReq({
+    url: riotGames(`/league/v4/positions/by-summoner/${summoner.id}`)
+  });
 };
 
 const getChampionMastery = summoner => {
-  return exports.getReq(
-    riotGames(
+  return axiosReq({
+    url: riotGames(
       `/champion-mastery/v4/champion-masteries/by-summoner/${summoner.id}`
     )
-  );
+  });
 };
 
 /**
@@ -56,13 +60,6 @@ const filterChampionById = (champions, championIds, numberOfChamps) => {
 /**
  *  Exports
  */
-exports.getReq = url => {
-  return axios
-    .get(url)
-    .then(response => response.data)
-    .catch(err => err.response.data);
-};
-
 exports.storeChampions = async (req, res) => {
   const champions = await getChampions();
   const champVals = Object.values(champions.data);
@@ -83,8 +80,8 @@ exports.storeChampions = async (req, res) => {
     .then(() => res.json({ message: 'champions saved to database' }));
 };
 
-exports.getSummonerInfo = async (req, res) => {
-  const summoner = await getSummoner(req.params.summonerName);
+exports.summonerInfo = async (req, res) => {
+  const summoner = await getSummonerAccount(req.params.summonerName);
   const summonerRank = await getSummonerRank(summoner);
 
   // if summoner returns true
@@ -119,8 +116,8 @@ exports.getSummonerInfo = async (req, res) => {
   }
 };
 
-exports.getChampionMastery = async (req, res) => {
-  const summoner = await getSummoner(req.params.summonerName);
+exports.championMastery = async (req, res) => {
+  const summoner = await getSummonerAccount(req.params.summonerName);
   const champions = await retrieveChampionsFromDB();
   const championMastery = await getChampionMastery(summoner);
 
