@@ -15,14 +15,18 @@ import NotFound from './components/NotFound';
 import Summoner from './components/Summoner';
 
 class App extends React.Component {
+  state = {
+    summoner: 'brandybot'
+  };
+
   static propTypes = {
     fetchChampMastery: func.isRequired,
     fetchSummonerInfo: func.isRequired
   };
 
   componentDidMount() {
-    this.props.fetchChampMastery('brandybot');
-    this.props.fetchSummonerInfo('brandybot');
+    this.props.fetchChampMastery(this.state.summoner);
+    this.props.fetchSummonerInfo(this.state.summoner);
   }
 
   render() {
