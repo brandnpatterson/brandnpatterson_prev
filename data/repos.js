@@ -1,5 +1,2103 @@
 module.exports = [
   {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/brandnpatterson',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"3d9a831c214d779fdf0960c8cd395723"',
+      'last-modified': 'Tue, 29 Jan 2019 15:30:57 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F313:3117:2876B7:54D473:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '29',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 165007054,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxNjUwMDcwNTQ=',
+      name: 'brandnpatterson',
+      full_name: 'brandnpatterson/brandnpatterson',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/brandnpatterson',
+      description: 'Portfolio built with Node, MySQL, React, and Redux',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/brandnpatterson',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/brandnpatterson/deployments',
+      created_at: '2019-01-10T06:53:37Z',
+      updated_at: '2019-01-29T15:30:57Z',
+      pushed_at: '2019-01-29T15:30:56Z',
+      git_url: 'git://github.com/brandnpatterson/brandnpatterson.git',
+      ssh_url: 'git@github.com:brandnpatterson/brandnpatterson.git',
+      clone_url: 'https://github.com/brandnpatterson/brandnpatterson.git',
+      svn_url: 'https://github.com/brandnpatterson/brandnpatterson',
+      homepage: 'https://brandnpatterson.herokuapp.com/',
+      size: 714,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/runebear',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"a0d1ffceb475c4614ad645422149c14b"',
+      'last-modified': 'Thu, 24 Jan 2019 20:10:01 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F312:22CC:26C49B:5278A0:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '30',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 127609843,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMjc2MDk4NDM=',
+      name: 'runebear',
+      full_name: 'brandnpatterson/runebear',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/runebear',
+      description:
+        'Digital literary magazine built with React, React Router, and Styled Components that uses a headless CMS with the WP REST API',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/runebear',
+      forks_url: 'https://api.github.com/repos/brandnpatterson/runebear/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/collaborators{/collaborator}',
+      teams_url: 'https://api.github.com/repos/brandnpatterson/runebear/teams',
+      hooks_url: 'https://api.github.com/repos/brandnpatterson/runebear/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/branches{/branch}',
+      tags_url: 'https://api.github.com/repos/brandnpatterson/runebear/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/runebear/deployments',
+      created_at: '2018-04-01T08:06:04Z',
+      updated_at: '2019-01-24T20:10:01Z',
+      pushed_at: '2019-01-24T20:09:59Z',
+      git_url: 'git://github.com/brandnpatterson/runebear.git',
+      ssh_url: 'git@github.com:brandnpatterson/runebear.git',
+      clone_url: 'https://github.com/brandnpatterson/runebear.git',
+      svn_url: 'https://github.com/brandnpatterson/runebear',
+      homepage: 'http://runebear.com/',
+      size: 874,
+      stargazers_count: 1,
+      watchers_count: 1,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 1,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/coriander',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"22c423854427ac654835ce18b8bc44ef"',
+      'last-modified': 'Thu, 24 Jan 2019 20:13:36 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F315:0D79:129798:2E3B19:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '32',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 159451879,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxNTk0NTE4Nzk=',
+      name: 'coriander',
+      full_name: 'brandnpatterson/coriander',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/coriander',
+      description: 'Form validation library built with JavaScript',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/coriander',
+      forks_url: 'https://api.github.com/repos/brandnpatterson/coriander/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/collaborators{/collaborator}',
+      teams_url: 'https://api.github.com/repos/brandnpatterson/coriander/teams',
+      hooks_url: 'https://api.github.com/repos/brandnpatterson/coriander/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/branches{/branch}',
+      tags_url: 'https://api.github.com/repos/brandnpatterson/coriander/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/coriander/deployments',
+      created_at: '2018-11-28T06:03:58Z',
+      updated_at: '2019-01-24T20:13:36Z',
+      pushed_at: '2019-01-24T20:13:35Z',
+      git_url: 'git://github.com/brandnpatterson/coriander.git',
+      ssh_url: 'git@github.com:brandnpatterson/coriander.git',
+      clone_url: 'https://github.com/brandnpatterson/coriander.git',
+      svn_url: 'https://github.com/brandnpatterson/coriander',
+      homepage: 'http://coriander.surge.sh/',
+      size: 1019,
+      stargazers_count: 1,
+      watchers_count: 1,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 1,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/form-component',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"0e39784cff8fc76a7e8037bfae8f3638"',
+      'last-modified': 'Thu, 24 Jan 2019 20:15:23 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F314:68D2:20DFE8:476C91:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '33',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 100307289,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMDAzMDcyODk=',
+      name: 'form-component',
+      full_name: 'brandnpatterson/form-component',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/form-component',
+      description:
+        'Form Submission to a REST API built with Ruby on Rails and PostgreSQL',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/form-component',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/form-component/deployments',
+      created_at: '2017-08-14T20:35:19Z',
+      updated_at: '2019-01-24T20:15:23Z',
+      pushed_at: '2019-01-24T20:15:22Z',
+      git_url: 'git://github.com/brandnpatterson/form-component.git',
+      ssh_url: 'git@github.com:brandnpatterson/form-component.git',
+      clone_url: 'https://github.com/brandnpatterson/form-component.git',
+      svn_url: 'https://github.com/brandnpatterson/form-component',
+      homepage: 'http://form-component.herokuapp.com/',
+      size: 1948,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'Ruby',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/contact-bp',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"af4676493e89ef172bdcf1e87e96caad"',
+      'last-modified': 'Thu, 24 Jan 2019 20:16:13 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F316:5115:E90EF:28473C:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '25',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 140797350,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxNDA3OTczNTA=',
+      name: 'contact-bp',
+      full_name: 'brandnpatterson/contact-bp',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/contact-bp',
+      description: 'Contact Form built with PHP and Sendgrid',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/contact-bp',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/branches{/branch}',
+      tags_url: 'https://api.github.com/repos/brandnpatterson/contact-bp/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/contact-bp/deployments',
+      created_at: '2018-07-13T04:35:27Z',
+      updated_at: '2019-01-24T20:16:13Z',
+      pushed_at: '2019-01-24T20:16:12Z',
+      git_url: 'git://github.com/brandnpatterson/contact-bp.git',
+      ssh_url: 'git@github.com:brandnpatterson/contact-bp.git',
+      clone_url: 'https://github.com/brandnpatterson/contact-bp.git',
+      svn_url: 'https://github.com/brandnpatterson/contact-bp',
+      homepage: 'https://contact-bp.herokuapp.com/',
+      size: 54,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'PHP',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/hello-webpack',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"32ce8d43fb20edb3af912b3d6438be67"',
+      'last-modified': 'Thu, 24 Jan 2019 20:18:20 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F317:3953:20FA27:47C6AA:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '26',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 128719995,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMjg3MTk5OTU=',
+      name: 'hello-webpack',
+      full_name: 'brandnpatterson/hello-webpack',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/hello-webpack',
+      description: 'front end dev env using webpack',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/hello-webpack',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/hello-webpack/deployments',
+      created_at: '2018-04-09T05:40:36Z',
+      updated_at: '2019-01-24T20:18:20Z',
+      pushed_at: '2019-01-24T20:18:19Z',
+      git_url: 'git://github.com/brandnpatterson/hello-webpack.git',
+      ssh_url: 'git@github.com:brandnpatterson/hello-webpack.git',
+      clone_url: 'https://github.com/brandnpatterson/hello-webpack.git',
+      svn_url: 'https://github.com/brandnpatterson/hello-webpack',
+      homepage: 'http://hello-webpack.surge.sh',
+      size: 614,
+      stargazers_count: 1,
+      watchers_count: 1,
+      language: 'HTML',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 1,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 2
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/shs-repo-updater',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"4e41dbe8f46696ef2ca6d99153731164"',
+      'last-modified': 'Wed, 19 Dec 2018 21:10:41 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F318:5116:360243:764B61:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '24',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 113091634,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMTMwOTE2MzQ=',
+      name: 'shs-repo-updater',
+      full_name: 'brandnpatterson/shs-repo-updater',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/shs-repo-updater',
+      description: 'automate setting up shs localhost',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/shs-repo-updater',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/shs-repo-updater/deployments',
+      created_at: '2017-12-04T20:30:23Z',
+      updated_at: '2018-12-19T21:10:41Z',
+      pushed_at: '2018-12-19T21:10:17Z',
+      git_url: 'git://github.com/brandnpatterson/shs-repo-updater.git',
+      ssh_url: 'git@github.com:brandnpatterson/shs-repo-updater.git',
+      clone_url: 'https://github.com/brandnpatterson/shs-repo-updater.git',
+      svn_url: 'https://github.com/brandnpatterson/shs-repo-updater',
+      homepage: '',
+      size: 26,
+      stargazers_count: 1,
+      watchers_count: 1,
+      language: 'Shell',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: null,
+      forks: 0,
+      open_issues: 0,
+      watchers: 1,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/filter-js',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"0f49ff3970be3dc0bdeed7a472799ea3"',
+      'last-modified': 'Wed, 03 Oct 2018 21:29:47 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F319:1474:398A29:71C657:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '22',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 146071898,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxNDYwNzE4OTg=',
+      name: 'filter-js',
+      full_name: 'brandnpatterson/filter-js',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/filter-js',
+      description: 'filter with Javascript',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/filter-js',
+      forks_url: 'https://api.github.com/repos/brandnpatterson/filter-js/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/collaborators{/collaborator}',
+      teams_url: 'https://api.github.com/repos/brandnpatterson/filter-js/teams',
+      hooks_url: 'https://api.github.com/repos/brandnpatterson/filter-js/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/branches{/branch}',
+      tags_url: 'https://api.github.com/repos/brandnpatterson/filter-js/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/filter-js/deployments',
+      created_at: '2018-08-25T06:35:15Z',
+      updated_at: '2018-10-03T21:29:47Z',
+      pushed_at: '2018-09-12T00:45:18Z',
+      git_url: 'git://github.com/brandnpatterson/filter-js.git',
+      ssh_url: 'git@github.com:brandnpatterson/filter-js.git',
+      clone_url: 'https://github.com/brandnpatterson/filter-js.git',
+      svn_url: 'https://github.com/brandnpatterson/filter-js',
+      homepage: 'http://filter-js.surge.sh/',
+      size: 148,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/dev-conn-ector',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"561a12409cb13982df0c7272e81b7354"',
+      'last-modified': 'Sun, 08 Jul 2018 04:25:37 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F31A:797C:1FC430:490CC5:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '23',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 138944999,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMzg5NDQ5OTk=',
+      name: 'dev-conn-ector',
+      full_name: 'brandnpatterson/dev-conn-ector',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/dev-conn-ector',
+      description: 'Social network for developers',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/dev-conn-ector',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/dev-conn-ector/deployments',
+      created_at: '2018-06-27T23:57:59Z',
+      updated_at: '2018-07-08T04:25:37Z',
+      pushed_at: '2018-07-08T04:25:36Z',
+      git_url: 'git://github.com/brandnpatterson/dev-conn-ector.git',
+      ssh_url: 'git@github.com:brandnpatterson/dev-conn-ector.git',
+      clone_url: 'https://github.com/brandnpatterson/dev-conn-ector.git',
+      svn_url: 'https://github.com/brandnpatterson/dev-conn-ector',
+      homepage: 'http://dev-conn-ector.herokuapp.com',
+      size: 725,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/emoji-tac-toe',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"b30f7b9f735be90ca6f3e558864e2936"',
+      'last-modified': 'Tue, 29 May 2018 17:45:44 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F31B:0592:6165C9:C1183B:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '28',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 95049582,
+      node_id: 'MDEwOlJlcG9zaXRvcnk5NTA0OTU4Mg==',
+      name: 'emoji-tac-toe',
+      full_name: 'brandnpatterson/emoji-tac-toe',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/emoji-tac-toe',
+      description: 'Built with JavaScript ES6',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/emoji-tac-toe',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/emoji-tac-toe/deployments',
+      created_at: '2017-06-21T21:55:52Z',
+      updated_at: '2018-05-29T17:45:44Z',
+      pushed_at: '2018-03-06T02:34:16Z',
+      git_url: 'git://github.com/brandnpatterson/emoji-tac-toe.git',
+      ssh_url: 'git@github.com:brandnpatterson/emoji-tac-toe.git',
+      clone_url: 'https://github.com/brandnpatterson/emoji-tac-toe.git',
+      svn_url: 'https://github.com/brandnpatterson/emoji-tac-toe',
+      homepage: 'https://emoji-tac-toe.surge.sh',
+      size: 360,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/flutter-press',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"2adaa688ccf86315d8d0b8bd56da4838"',
+      'last-modified': 'Wed, 02 Aug 2017 19:48:38 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F31C:5114:1DA70E:49F29E:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '27',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 91203618,
+      node_id: 'MDEwOlJlcG9zaXRvcnk5MTIwMzYxOA==',
+      name: 'flutter-press',
+      full_name: 'brandnpatterson/flutter-press',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/flutter-press',
+      description: 'Built with PHP Slim, MySQL, Illuminate, & JavaScript',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/flutter-press',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/flutter-press/deployments',
+      created_at: '2017-05-13T21:24:28Z',
+      updated_at: '2017-08-02T19:48:38Z',
+      pushed_at: '2017-08-09T20:58:52Z',
+      git_url: 'git://github.com/brandnpatterson/flutter-press.git',
+      ssh_url: 'git@github.com:brandnpatterson/flutter-press.git',
+      clone_url: 'https://github.com/brandnpatterson/flutter-press.git',
+      svn_url: 'https://github.com/brandnpatterson/flutter-press',
+      homepage: 'http://www.flutter.press/',
+      size: 3650,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  },
+  {
+    status: 200,
+    url: 'https://api.github.com/repos/brandnpatterson/crawford-notch',
+    headers: {
+      'access-control-allow-origin': '*',
+      'access-control-expose-headers':
+        'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type',
+      'cache-control': 'public, max-age=60, s-maxage=60',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-security-policy': "default-src 'none'",
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 30 Jan 2019 02:48:47 GMT',
+      etag: 'W/"c21c338cb14cc68907a5b560a5135c8a"',
+      'last-modified': 'Fri, 21 Jul 2017 00:44:34 GMT',
+      'referrer-policy':
+        'origin-when-cross-origin, strict-origin-when-cross-origin',
+      server: 'GitHub.com',
+      status: '200 OK',
+      'strict-transport-security':
+        'max-age=31536000; includeSubdomains; preload',
+      'transfer-encoding': 'chunked',
+      vary: 'Accept',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'deny',
+      'x-github-media-type': 'github.v3; format=json',
+      'x-github-request-id': 'F31D:2EC4:9DB1E:1944DB:5C51108F',
+      'x-ratelimit-limit': '60',
+      'x-ratelimit-remaining': '31',
+      'x-ratelimit-reset': '1548819790',
+      'x-xss-protection': '1; mode=block'
+    },
+    data: {
+      id: 87583825,
+      node_id: 'MDEwOlJlcG9zaXRvcnk4NzU4MzgyNQ==',
+      name: 'crawford-notch',
+      full_name: 'brandnpatterson/crawford-notch',
+      private: false,
+      owner: {
+        login: 'brandnpatterson',
+        id: 19142698,
+        node_id: 'MDQ6VXNlcjE5MTQyNjk4',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/19142698?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/brandnpatterson',
+        html_url: 'https://github.com/brandnpatterson',
+        followers_url: 'https://api.github.com/users/brandnpatterson/followers',
+        following_url:
+          'https://api.github.com/users/brandnpatterson/following{/other_user}',
+        gists_url:
+          'https://api.github.com/users/brandnpatterson/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/brandnpatterson/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/brandnpatterson/subscriptions',
+        organizations_url: 'https://api.github.com/users/brandnpatterson/orgs',
+        repos_url: 'https://api.github.com/users/brandnpatterson/repos',
+        events_url:
+          'https://api.github.com/users/brandnpatterson/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/brandnpatterson/received_events',
+        type: 'User',
+        site_admin: false
+      },
+      html_url: 'https://github.com/brandnpatterson/crawford-notch',
+      description: 'Built with jQuery, Handlebars, & Instafeed',
+      fork: false,
+      url: 'https://api.github.com/repos/brandnpatterson/crawford-notch',
+      forks_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/forks',
+      keys_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/keys{/key_id}',
+      collaborators_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/collaborators{/collaborator}',
+      teams_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/teams',
+      hooks_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/hooks',
+      issue_events_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/issues/events{/number}',
+      events_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/events',
+      assignees_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/assignees{/user}',
+      branches_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/branches{/branch}',
+      tags_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/tags',
+      blobs_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/git/blobs{/sha}',
+      git_tags_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/git/tags{/sha}',
+      git_refs_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/git/refs{/sha}',
+      trees_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/git/trees{/sha}',
+      statuses_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/statuses/{sha}',
+      languages_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/languages',
+      stargazers_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/stargazers',
+      contributors_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/contributors',
+      subscribers_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/subscribers',
+      subscription_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/subscription',
+      commits_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/commits{/sha}',
+      git_commits_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/git/commits{/sha}',
+      comments_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/comments{/number}',
+      issue_comment_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/issues/comments{/number}',
+      contents_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/contents/{+path}',
+      compare_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/compare/{base}...{head}',
+      merges_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/merges',
+      archive_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/{archive_format}{/ref}',
+      downloads_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/downloads',
+      issues_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/issues{/number}',
+      pulls_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/pulls{/number}',
+      milestones_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/milestones{/number}',
+      notifications_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/notifications{?since,all,participating}',
+      labels_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/labels{/name}',
+      releases_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/releases{/id}',
+      deployments_url:
+        'https://api.github.com/repos/brandnpatterson/crawford-notch/deployments',
+      created_at: '2017-04-07T20:20:26Z',
+      updated_at: '2017-07-21T00:44:34Z',
+      pushed_at: '2017-06-25T17:03:04Z',
+      git_url: 'git://github.com/brandnpatterson/crawford-notch.git',
+      ssh_url: 'git@github.com:brandnpatterson/crawford-notch.git',
+      clone_url: 'https://github.com/brandnpatterson/crawford-notch.git',
+      svn_url: 'https://github.com/brandnpatterson/crawford-notch',
+      homepage: 'http://crawford-notch.surge.sh/',
+      size: 41723,
+      stargazers_count: 0,
+      watchers_count: 0,
+      language: 'JavaScript',
+      has_issues: true,
+      has_projects: true,
+      has_downloads: true,
+      has_wiki: true,
+      has_pages: false,
+      forks_count: 0,
+      mirror_url: null,
+      archived: false,
+      open_issues_count: 0,
+      license: {
+        key: 'mit',
+        name: 'MIT License',
+        spdx_id: 'MIT',
+        url: 'https://api.github.com/licenses/mit',
+        node_id: 'MDc6TGljZW5zZTEz'
+      },
+      forks: 0,
+      open_issues: 0,
+      watchers: 0,
+      default_branch: 'master',
+      network_count: 0,
+      subscribers_count: 1
+    }
+  }
+];
+
+exports.old = [
+  {
     id: 86748350,
     node_id: 'MDEwOlJlcG9zaXRvcnk4Njc0ODM1MA==',
     name: 'accounting.js',

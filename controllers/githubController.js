@@ -1,36 +1,65 @@
-const { axiosReq } = require('../handlers');
-const repos = require('../data/repos');
-
-/**
- *  URLs
- */
-const github = user =>
-  `https://api.github.com/users/${user}/repos?per_page=100`;
+const client_id = process.env.GITHUB_CLIENT_ID;
+const client_secret = process.env.GITHUB_CLIENT_SECRET;
+const Octokit = require('@octokit/rest');
+const langResults = require('../data/languages');
 
 /**
  *  GET
  */
-const getUserInfo = user => {
-  return axiosReq({
-    url: github(user)
+const getAllRequests = async () => {
+  const octokit = new Octokit({
+    auth() {
+      return `${client_id} ${client_secret}`;
+    },
+    userAgent: 'octokit/rest.js v1.2.3',
+    baseUrl: 'https://api.github.com'
   });
-};
 
-const getLangUrls = async repos => {
-  const urls = repos.map(repo => axiosReq({ url: repo.languages_url }));
+  const repos = [
+    'brandnpatterson',
+    'runebear',
+    'coriander',
+    'form-component',
+    'contact-bp',
+    'hello-webpack',
+    'shs-repo-updater',
+    'filter-js',
+    'dev-conn-ector',
+    'emoji-tac-toe'
+  ];
 
-  return await Promise.all(urls);
+  const requests = repos.map(repo => {
+    return octokit.repos.get({
+      owner: 'brandnpatterson',
+      repo: repo + '/languages'
+    });
+  });
+
+  return await Promise.all(requests);
 };
 
 /**
  *  Exports
  */
 exports.userInfo = async (req, res) => {
-  const half = Math.ceil(repos.length / 2);
-  const leftside = repos.splice(0, half);
-  const rightside = repos;
+  if (!langResults) {
+    const allRequests = await getAllRequests(repos);
 
-  // const languages = await getLangUrls(leftside);
+    res.json(allRequests);
+  }
 
-  res.json(leftside);
+  const langData = langResults.map(lang => lang.data);
+  const topTenData = {};
+
+  langData.map(group => {
+    Object.keys(group).map(key => {
+      if (!topTenData[key]) {
+        topTenData[key] = group[key];
+      } else {
+        topTenData[key] += group[key];
+      }
+    });
+  });
+
+  res.json(topTenData);
 };
