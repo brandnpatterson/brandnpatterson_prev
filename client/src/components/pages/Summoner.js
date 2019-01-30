@@ -1,16 +1,35 @@
 import React from 'react';
 import { func, object } from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchChampMastery, fetchSummonerInfo } from '../actions';
+import { fetchChampMastery, fetchSummonerInfo } from '../../actions';
 
-import Loading from './Loading';
-import Ranked from './Ranked';
+import Loading from '../Loading';
+import Ranked from '../Ranked';
 
 class Summoner extends React.Component {
+  state = {
+    query: ''
+  };
+
   static propTypes = {
-    summoner: object.isRequired,
     fetchChampMastery: func.isRequired,
-    fetchSummonerInfo: func.isRequired
+    fetchSummonerInfo: func.isRequired,
+    summoner: object.isRequired
+  };
+
+  onChange = e => {
+    this.setState({
+      query: e.target.value
+    });
+  };
+
+  onReset = () => {
+    const summoner = 'Brandy Bot';
+
+    this.props.fetchChampMastery(summoner);
+    this.props.fetchSummonerInfo(summoner);
+
+    this.setState({ query: '' });
   };
 
   onSubmit = event => {
@@ -27,7 +46,7 @@ class Summoner extends React.Component {
 
   renderChampions = champions => {
     return (
-      <div className="champions">
+      <div>
         {champions.map(champ => {
           return (
             <div key={champ.id}>
@@ -50,8 +69,16 @@ class Summoner extends React.Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input name="summoner" type="text" />
-          <button>Search</button>
+          <input
+            value={this.state.query}
+            onChange={this.onChange}
+            name="summoner"
+            type="text"
+          />
+          <button type="submit">Search</button>
+          <button onClick={this.onReset} type="button">
+            Reset
+          </button>
         </form>
         <h1>{data.name}</h1>
         {data.status || champions.status ? (

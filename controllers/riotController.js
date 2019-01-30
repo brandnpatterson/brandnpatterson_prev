@@ -12,19 +12,22 @@ const riotGames = (url, reigon = 'na1') =>
   }`;
 
 /**
- *  GET
+ *  DB
  */
-const getChampions = () => {
-  return axiosReq({
-    url: ddragon('/data/en_US/champion.json')
-  });
-};
-
 const retrieveChampionsFromDB = () => {
   return sequelize.sync().then(() => {
     return Champion(sequelize)
       .findAll()
       .then(champions => champions);
+  });
+};
+
+/**
+ *  GET
+ */
+const getChampions = () => {
+  return axiosReq({
+    url: ddragon('/data/en_US/champion.json')
   });
 };
 

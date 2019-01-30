@@ -1,17 +1,16 @@
 const Sequelize = require('sequelize');
 
 module.exports = sequelize => {
-  const Champion = sequelize.define(
-    'Champion',
+  const Language = sequelize.define(
+    'Language',
     {
-      key: Sequelize.STRING,
       name: Sequelize.STRING,
-      src: Sequelize.STRING
+      points: Sequelize.INTEGER
     },
     {}
   );
-  Champion.associate = function(models) {
+  Language.associate = function(models) {
     // associations can be defined here
   };
-  return Champion;
+  return Language;
 };

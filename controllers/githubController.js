@@ -1,20 +1,36 @@
 const client_id = process.env.GITHUB_CLIENT_ID;
 const client_secret = process.env.GITHUB_CLIENT_SECRET;
 const Octokit = require('@octokit/rest');
-const langResults = require('../data/languages');
+const { sequelize } = require('../models');
+const Language = require('../models/language');
+
+/**
+ *  DB
+ */
+const retrieveUserInfoFromDB = () => {
+  return sequelize.sync().then(() => {
+    return Language(sequelize)
+      .findAll()
+      .then(languages => languages);
+  });
+};
 
 /**
  *  GET
  */
-const getAllRequests = async () => {
-  const octokit = new Octokit({
-    auth() {
-      return `${client_id} ${client_secret}`;
-    },
-    userAgent: 'octokit/rest.js v1.2.3',
-    baseUrl: 'https://api.github.com'
-  });
+const octokit = new Octokit({
+  auth() {
+    return `${client_id} ${client_secret}`;
+  },
+  userAgent: 'octokit/rest.js v1.2.3',
+  baseUrl: 'https://api.github.com'
+});
 
+const getUserProfile = () => {
+  return octokit.search.users({ q: 'brandnpatterson' });
+};
+
+const getUserRepos = async () => {
   const repos = [
     'brandnpatterson',
     'runebear',
@@ -41,17 +57,12 @@ const getAllRequests = async () => {
 /**
  *  Exports
  */
-exports.userInfo = async (req, res) => {
-  if (!langResults) {
-    const allRequests = await getAllRequests(repos);
-
-    res.json(allRequests);
-  }
-
-  const langData = langResults.map(lang => lang.data);
+exports.storeUserInfo = async (req, res) => {
+  const allRequests = await getUserRepos();
+  const allData = allRequests.map(req => req.data);
   const topTenData = {};
 
-  langData.map(group => {
+  allData.map(group => {
     Object.keys(group).map(key => {
       if (!topTenData[key]) {
         topTenData[key] = group[key];
@@ -61,5 +72,24 @@ exports.userInfo = async (req, res) => {
     });
   });
 
-  res.json(topTenData);
+  sequelize
+    .sync()
+    .then(() => {
+      Object.keys(topTenData).map(key => {
+        const newLang = {
+          name: key,
+          points: topTenData[key]
+        };
+
+        Language(sequelize).findOrCreate({ where: newLang, newLang });
+      });
+    })
+    .then(() => res.json({ message: 'languages saved to database' }));
+};
+
+exports.userInfo = async (req, res) => {
+  const github = await getUserProfile();
+  const languages = await retrieveUserInfoFromDB();
+
+  res.json({ ...github.data, languages });
 };

@@ -1,11 +1,12 @@
 import {
   FETCH_CHAMPION_MASTERY,
-  FETCH_ERROR,
+  FETCH_SUMMONER_ERROR,
   FETCH_SUMMONER_INFO
 } from '../actions/types';
 
 const initialState = {
   data: null,
+  error: null,
   champions: null
 };
 
@@ -16,7 +17,7 @@ export default (state = initialState, action) => {
         ...state,
         champions: action.payload
       };
-    case FETCH_ERROR:
+    case FETCH_SUMMONER_ERROR:
       return {
         ...state,
         error: 'No summoner found with that name. Please try again.'
