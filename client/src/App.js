@@ -11,8 +11,6 @@ import Blog from './components/pages/Blog';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Github from './components/pages/Github';
-import Login from './components/pages/Login';
-import Register from './components/pages/Register';
 import Summoner from './components/pages/Summoner';
 
 import Footer from './components/Footer';
@@ -48,8 +46,6 @@ class App extends React.Component {
           <Route path="/contact" component={Contact} />
           <Route path="/github" component={Github} />
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
           <Route path="/summoner" component={Summoner} />
           <Route component={NotFound} />
         </Switch>
