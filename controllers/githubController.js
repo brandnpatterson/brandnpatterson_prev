@@ -87,7 +87,7 @@ exports.storeUserInfo = async (req, res) => {
     .then(() => res.json({ message: 'languages saved to database' }));
 };
 
-exports.userInfo = async (req, res) => {
+exports.getUserInfo = async (req, res) => {
   const github = await getUserProfile();
   const languages = await retrieveUserInfoFromDB();
 

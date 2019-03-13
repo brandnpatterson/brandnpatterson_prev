@@ -2,59 +2,60 @@ import axios from 'axios';
 import DOMPurify from 'dompurify';
 
 import {
-  FETCH_CHAMPION_MASTERY,
-  FETCH_GITHUB_ERROR,
-  FETCH_GITHUB_INFO,
-  FETCH_SUMMONER_ERROR,
-  FETCH_SUMMONER_INFO
+  GET_CHAMPION_MASTERY,
+  GET_ERRORS,
+  GET_SUMMONER_INFO,
+  GET_GITHUB_INFO
 } from './types';
 
-export const fetchChampMastery = summonerName => dispatch => {
+// Riot
+export const getChampMastery = summonerName => dispatch => {
   axios
     .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}/mastery`)
     .then(response => {
       dispatch({
-        type: FETCH_CHAMPION_MASTERY,
+        type: GET_CHAMPION_MASTERY,
         payload: response.data
       });
     })
     .catch(err => {
       dispatch({
-        type: FETCH_SUMMONER_ERROR,
+        type: GET_ERRORS,
         payload: err.response.data
       });
     });
 };
 
-export const fetchSummonerInfo = summonerName => dispatch => {
+export const getSummonerInfo = summonerName => dispatch => {
   axios
     .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}`)
     .then(response => {
       dispatch({
-        type: FETCH_SUMMONER_INFO,
+        type: GET_SUMMONER_INFO,
         payload: response.data
       });
     })
     .catch(err => {
       dispatch({
-        type: FETCH_SUMMONER_ERROR,
+        type: GET_ERRORS,
         payload: err.response.data
       });
     });
 };
 
-export const fetchGithubInfo = () => dispatch => {
+// Github
+export const getGithubInfo = () => dispatch => {
   axios
     .get('/api/v1/github/user/brandnpatterson')
     .then(response => {
       dispatch({
-        type: FETCH_GITHUB_INFO,
+        type: GET_GITHUB_INFO,
         payload: response.data
       });
     })
     .catch(err => {
       dispatch({
-        type: FETCH_GITHUB_ERROR,
+        type: GET_ERRORS,
         payload: err.response.data
       });
     });

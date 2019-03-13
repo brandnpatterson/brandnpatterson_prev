@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div>
-      <h1>Contact</h1>
+      <a href="BrandonPattersonResume.pdf">Here is a copy of my resume</a>
     </div>
   );
 };

@@ -3,7 +3,13 @@ import React from 'react';
 const Blog = () => {
   return (
     <div>
-      <h1>Blog</h1>
+      <a
+        href="https://medium.com/@brandnpatterson"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        You can find me on Medium
+      </a>
     </div>
   );
 };

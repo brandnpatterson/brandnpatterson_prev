@@ -83,7 +83,7 @@ exports.storeChampions = async (req, res) => {
     .then(() => res.json({ message: 'champions saved to database' }));
 };
 
-exports.summonerInfo = async (req, res) => {
+exports.getSummonerInfo = async (req, res) => {
   const summoner = await getSummonerAccount(req.params.summonerName);
   const summonerRank = await getSummonerRank(summoner);
 
@@ -119,7 +119,7 @@ exports.summonerInfo = async (req, res) => {
   }
 };
 
-exports.championMastery = async (req, res) => {
+exports.getChampionMastery = async (req, res) => {
   const summoner = await getSummonerAccount(req.params.summonerName);
   const champions = await retrieveChampionsFromDB();
   const championMastery = await getChampionMastery(summoner);

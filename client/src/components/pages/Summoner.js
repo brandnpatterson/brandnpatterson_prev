@@ -1,50 +1,58 @@
 import React from 'react';
 import { func, object } from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchChampMastery, fetchSummonerInfo } from '../../actions';
+import { getChampMastery, getSummonerInfo } from '../../actions';
 
 import Loading from '../Loading';
 import Ranked from '../Ranked';
 
+const propTypes = {
+  getChampMastery: func.isRequired,
+  getSummonerInfo: func.isRequired,
+  summoner: object.isRequired
+};
+
 class Summoner extends React.Component {
-  state = {
-    query: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ''
+    };
 
-  static propTypes = {
-    fetchChampMastery: func.isRequired,
-    fetchSummonerInfo: func.isRequired,
-    summoner: object.isRequired
-  };
+    this.onChange = this.onChange.bind(this);
+    this.onReset = this.onReset.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.renderChampions = this.renderChampions.bind(this);
+  }
 
-  onChange = e => {
+  onChange(event) {
     this.setState({
-      query: e.target.value
+      search: event.target.value
     });
-  };
+  }
 
-  onReset = () => {
+  onReset() {
     const summoner = 'Brandy Bot';
 
-    this.props.fetchChampMastery(summoner);
-    this.props.fetchSummonerInfo(summoner);
+    this.props.getChampMastery(summoner);
+    this.props.getSummonerInfo(summoner);
 
-    this.setState({ query: '' });
-  };
+    this.setState({ search: '' });
+  }
 
-  onSubmit = event => {
+  onSubmit(event) {
     event.preventDefault();
 
     const data = new FormData(event.target);
     const summoner = data.get('summoner');
 
     if (summoner !== '') {
-      this.props.fetchChampMastery(summoner);
-      this.props.fetchSummonerInfo(summoner);
+      this.props.getChampMastery(summoner);
+      this.props.getSummonerInfo(summoner);
     }
-  };
+  }
 
-  renderChampions = champions => {
+  renderChampions(champions) {
     return (
       <div>
         {champions.map(champ => {
@@ -57,12 +65,12 @@ class Summoner extends React.Component {
         })}
       </div>
     );
-  };
+  }
 
   render() {
-    const { data, champions } = this.props.summoner;
+    const { champions, data } = this.props.summoner;
 
-    if (!data || !champions) {
+    if (!champions || !data) {
       return <Loading />;
     }
 
@@ -70,7 +78,7 @@ class Summoner extends React.Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <input
-            value={this.state.query}
+            value={this.state.search}
             onChange={this.onChange}
             name="summoner"
             type="text"
@@ -82,7 +90,9 @@ class Summoner extends React.Component {
         </form>
         <h1>{data.name}</h1>
         {data.status || champions.status ? (
-          <p>Summoner not found. Please try again.</p>
+          <div>
+            <p>Summoner not found. Please try again.</p>
+          </div>
         ) : (
           <div>
             <h2>Level: {data.level}</h2>
@@ -96,11 +106,13 @@ class Summoner extends React.Component {
   }
 }
 
+Summoner.propTypes = propTypes;
+
 const mapStateToProps = state => ({
   summoner: state.summoner
 });
 
-const mapDispatchToProps = { fetchChampMastery, fetchSummonerInfo };
+const mapDispatchToProps = { getChampMastery, getSummonerInfo };
 
 export default connect(
   mapStateToProps,

@@ -3,37 +3,40 @@ import { func } from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import {
-  fetchGithubInfo,
-  fetchChampMastery,
-  fetchSummonerInfo
-} from './actions';
 
+import { getChampMastery, getSummonerInfo } from './actions';
+import { getGithubInfo } from './actions';
+
+import Blog from './components/pages/Blog';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
-import Blog from './components/pages/Blog';
 import Github from './components/pages/Github';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 import Summoner from './components/pages/Summoner';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 
-class App extends React.Component {
-  state = {
-    summoner: 'brandybot'
-  };
+const propTypes = {
+  getChampMastery: func.isRequired,
+  getGithubInfo: func.isRequired,
+  getSummonerInfo: func.isRequired
+};
 
-  static propTypes = {
-    fetchChampMastery: func.isRequired,
-    fetchGithubInfo: func.isRequired,
-    fetchSummonerInfo: func.isRequired
-  };
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      summoner: 'Brandy Bot'
+    };
+  }
 
   componentDidMount() {
-    this.props.fetchChampMastery(this.state.summoner);
-    this.props.fetchSummonerInfo(this.state.summoner);
-    this.props.fetchGithubInfo();
+    this.props.getChampMastery(this.state.summoner);
+    this.props.getSummonerInfo(this.state.summoner);
+    this.props.getGithubInfo();
   }
 
   render() {
@@ -41,10 +44,12 @@ class App extends React.Component {
       <StyledApp>
         <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
           <Route path="/github" component={Github} />
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/summoner" component={Summoner} />
           <Route component={NotFound} />
         </Switch>
@@ -54,19 +59,23 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = propTypes;
+
 const StyledApp = styled.div`
   display: block;
 `;
 
+const mapStateToProps = () => ({});
+
 const mapDispatchToProps = {
-  fetchGithubInfo,
-  fetchChampMastery,
-  fetchSummonerInfo
+  getChampMastery,
+  getGithubInfo,
+  getSummonerInfo
 };
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(App)
 );

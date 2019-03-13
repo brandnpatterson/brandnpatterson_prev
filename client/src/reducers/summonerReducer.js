@@ -1,8 +1,4 @@
-import {
-  FETCH_CHAMPION_MASTERY,
-  FETCH_SUMMONER_ERROR,
-  FETCH_SUMMONER_INFO
-} from '../actions/types';
+import { GET_CHAMPION_MASTERY, GET_SUMMONER_INFO } from '../actions/types';
 
 const initialState = {
   data: null,
@@ -10,19 +6,14 @@ const initialState = {
   champions: null
 };
 
-export default (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
-    case FETCH_CHAMPION_MASTERY:
+    case GET_CHAMPION_MASTERY:
       return {
         ...state,
         champions: action.payload
       };
-    case FETCH_SUMMONER_ERROR:
-      return {
-        ...state,
-        error: 'No summoner found with that name. Please try again.'
-      };
-    case FETCH_SUMMONER_INFO:
+    case GET_SUMMONER_INFO:
       return {
         ...state,
         data: action.payload
@@ -30,4 +21,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-};
+}
