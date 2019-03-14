@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer style={{ maxWidth: '750px', margin: '0 auto' }}>
       <a
         href="https://github.com/brandnpatterson"
         target="_blank"

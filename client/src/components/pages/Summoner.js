@@ -3,6 +3,7 @@ import { func, object } from 'prop-types';
 import { connect } from 'react-redux';
 import { getChampMastery, getSummonerInfo } from '../../actions';
 
+import Heading from '../Heading';
 import Loading from '../Loading';
 import Ranked from '../Ranked';
 
@@ -88,7 +89,7 @@ class Summoner extends React.Component {
             Reset
           </button>
         </form>
-        <h1>{data.name}</h1>
+        <Heading>{data.name}</Heading>
         {data.status || champions.status ? (
           <div>
             <p>Summoner not found. Please try again.</p>

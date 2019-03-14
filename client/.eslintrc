@@ -1,20 +1,31 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "globals": {
+    "React": true
+  },
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks"],
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "react/no-unescaped-entities": 0,
+    "react-hooks/rules-of-hooks": "error"
   },
   "settings": {
     "react": {
       "version": "detect"
     }
-  },
-  "globals": {
-    "console": true,
-    "document": true,
-    "module": true,
-    "process": true,
-    "window": true
   }
 }

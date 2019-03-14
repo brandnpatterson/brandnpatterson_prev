@@ -1,26 +1,74 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { boxShadow, navy, surf, textHoverColor } from '../../util/colors';
+import { openSans } from '../../util/fonts';
 
 const Header = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-      <li>
-        <Link to="/summoner">Summoner</Link>
-      </li>
-      <li>
-        <Link to="/github">Github</Link>
-      </li>
-      <li>
-        <Link to="/Blog">Blog</Link>
-      </li>
-    </ul>
+    <StyledHeader>
+      <ul>
+        <li>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/blog">Blog</NavLink>
+        </li>
+        <li>
+          <NavLink to="/summoner">League</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
+      </ul>
+    </StyledHeader>
   );
 };
+
+const StyledHeader = styled.div`
+  box-shadow: ${boxShadow};
+  background: ${navy};
+  margin-bottom: 2rem;
+  width: 100vw;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 6rem;
+  }
+
+  ul {
+    display: flex;
+    margin: 0 auto;
+    max-width: 900px;
+    padding-left: 0;
+    justify-content: space-around;
+  }
+
+  .active {
+    border-bottom: 4px solid ${surf};
+    color: ${surf};
+  }
+
+  li {
+    font-family: ${openSans};
+  }
+
+  a {
+    display: block;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1rem 0 0.75rem;
+    min-width: 3rem;
+    text-align: center;
+
+    &:hover {
+      color: ${textHoverColor};
+    }
+  }
+`;
 
 export default Header;

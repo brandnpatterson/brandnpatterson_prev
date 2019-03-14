@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const isDev = module.exports.mode === 'development';
 
@@ -5,6 +6,7 @@ module.exports = {
   devtool: isDev && 'inline-source-map',
   devServer: {
     contentBase: 'public',
+    hot: true,
     historyApiFallback: true,
     overlay: true,
     proxy: {
@@ -22,16 +24,22 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          'babel-loader',
+          {
+            loader: 'babel-loader'
+          },
           {
             loader: 'eslint-loader',
             options: {
               failOnError: true
             }
-          },
-          'stylelint-custom-processor-loader'
+          }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
