@@ -36,11 +36,16 @@ function Home() {
   return (
     <StyledHome>
       <div className="title-area">
-        <h1 className="title-item title-first">Hi.</h1>
-        <h2 className="title-item">
-          I'm <span style={{ color: surf }}>Brandon,</span>
-        </h2>
-        <h3 className="title-item title-last">{titles[index]}</h3>
+        <div className="title-text-wrap">
+          <h1 className="title-item title-first">Hi.</h1>
+          <h2 className="title-item">
+            I'm <span style={{ color: surf }}>Brandon,</span>
+          </h2>
+          <h3 className="title-item title-last">{titles[index]}</h3>
+        </div>
+        <div className="see-my-work-wrap">
+          <button className="see-my-work">See my work</button>
+        </div>
       </div>
       <div className="icons">
         <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
@@ -58,12 +63,7 @@ function Home() {
 
 const StyledHome = styled.div`
   .title-area {
-    min-height: 180px;
     padding-left: 0;
-
-    @media ${mediumUp} {
-      margin-bottom: 6rem;
-    }
 
     @media ${largeUp} {
       padding-left: 0;
@@ -72,7 +72,6 @@ const StyledHome = styled.div`
     .title-item {
       font-size: 2.2rem;
       margin: 0 auto;
-      max-width: 30rem;
 
       @media ${mediumUp} {
         font-size: 3rem;
@@ -82,6 +81,23 @@ const StyledHome = styled.div`
         font-size: 5rem;
         max-width: 100%;
       }
+    }
+  }
+
+  .title-text-wrap {
+    margin-bottom: 2rem;
+  }
+
+  .see-my-work {
+    background: none;
+    border: 1px solid ${surf};
+    color: ${surf};
+    margin-bottom: 2.5rem;
+    padding: 0.65rem 2.5rem;
+
+    @media ${mediumUp} {
+      margin-bottom: 2rem;
+      padding: 1rem 3rem;
     }
   }
 

@@ -4,4 +4,5 @@ export const navy = '#2e3445';
 export const gray = '#525e65';
 export const textColor = '#E8E8E8';
 export const surf = '#37fdfc';
+export const cardColor = '#444c61';
 export const textHoverColor = surf;

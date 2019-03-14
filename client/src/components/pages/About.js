@@ -14,10 +14,7 @@ const About = () => {
       <div className="about-me-text">
         <h1>About me</h1>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus hic
-          tempora tempore consequuntur deleniti rerum provident quas aliquam
-          velit explicabo fugit cumque numquam, ratione expedita aliquid
-          doloribus, quod ut! Voluptate!
+          I am a <span style={{ color: '#ff8800' }}>Web Developer</span>
         </p>
       </div>
     </StyledAbout>
@@ -28,16 +25,18 @@ const StyledAbout = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${mediumUp} {
+  @media screen and (min-width: 640px) {
     flex-direction: row;
   }
 
   img {
-    max-height: 350px;
+    max-height: 20rem;
+    margin: 0 auto;
+    width: 21rem;
 
     @media ${mediumUp} {
-      max-height: 400px;
-      width: 500px;
+      max-height: 25rem;
+      width: 30rem;
     }
   }
 
