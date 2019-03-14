@@ -75,6 +75,7 @@ const StyledApp = styled.div`
 
   a {
     color: ${textColor};
+    text-decoration: none;
   }
 
   li {

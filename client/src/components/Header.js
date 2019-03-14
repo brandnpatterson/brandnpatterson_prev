@@ -56,7 +56,6 @@ const StyledHeader = styled.div`
   a {
     display: block;
     font-size: 1rem;
-    text-decoration: none;
     padding: 1rem 0 0.75rem;
     min-width: 3rem;
     text-align: center;

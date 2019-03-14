@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { object } from 'prop-types';
 import { connect } from 'react-redux';
@@ -44,7 +45,9 @@ function Home() {
           <h3 className="title-item title-last">{titles[index]}</h3>
         </div>
         <div className="see-my-work-wrap">
-          <button className="see-my-work">See my work</button>
+          <Link className="see-my-work" to="/projects">
+            See my work
+          </Link>
         </div>
       </div>
       <div className="icons">

@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { mediumUp, largeUp } from '../../../util/media';
+import { mediumUp } from '../../../util/media';
 
 import googleMaps from '../../googleMaps';
 
 const Contact = () => {
-  googleMaps.init();
+  useEffect(() => {
+    googleMaps.init({ API_KEY: 'AIzaSyDq9D2VxihS-3kpTKOagpBB4IbJ8q1NI4w' });
+  });
 
   return (
     <StyledContact>
-      <p>I am currently open to new oppertunities.</p>
       <a
         href="BrandonPattersonResume.pdf"
         target="_blank"
@@ -17,12 +18,19 @@ const Contact = () => {
       >
         Here is a copy of my resume
       </a>
+      <p>
+        I am located in the Houston area and I'm currently open to new
+        oppertunities.
+      </p>
       <div id="map" />
     </StyledContact>
   );
 };
 
 const StyledContact = styled.div`
+  display: flex;
+  flex-direction: column;
+
   #map {
     color: black;
     position: relative;
@@ -32,11 +40,7 @@ const StyledContact = styled.div`
 
     @media ${mediumUp} {
       height: 800px;
-      width: 100vw;
-    }
-
-    @media ${largeUp} {
-      height: 100vh;
+      max-width: 100%;
     }
   }
 `;
