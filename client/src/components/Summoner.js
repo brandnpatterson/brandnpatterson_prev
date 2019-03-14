@@ -1,0 +1,195 @@
+import React from 'react';
+import { func, object } from 'prop-types';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { getChampMastery, getSummonerInfo } from '../actions';
+
+import Loading from './Loading';
+import Ranked from './Ranked';
+
+import { surf } from '../../util/colors';
+import { openSans } from '../../util/fonts';
+import { mediumUp } from '../../util/media';
+
+const propTypes = {
+  getChampMastery: func.isRequired,
+  getSummonerInfo: func.isRequired,
+  summoner: object.isRequired
+};
+
+class Summoner extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ''
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onReset = this.onReset.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.renderChampions = this.renderChampions.bind(this);
+  }
+
+  onChange(event) {
+    this.setState({
+      search: event.target.value
+    });
+  }
+
+  onReset() {
+    const summoner = 'Brandy Bot';
+
+    this.props.getChampMastery(summoner);
+    this.props.getSummonerInfo(summoner);
+
+    this.setState({ search: '' });
+  }
+
+  onSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const summoner = data.get('summoner');
+
+    if (summoner !== '') {
+      this.props.getChampMastery(summoner);
+      this.props.getSummonerInfo(summoner);
+    }
+  }
+
+  renderChampions(champions) {
+    return (
+      <div className="champions">
+        {champions.map(champ => {
+          return (
+            <div className="champion" key={champ.id}>
+              <img src={champ.src} alt={champ.name} />
+              <p>{champ.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  render() {
+    const { champions, data } = this.props.summoner;
+
+    if (!champions || !data) {
+      return <Loading />;
+    }
+
+    return (
+      <StyledSummoner>
+        <div className="summoner-header">
+          <div>
+            <h1 className="summoner-name">
+              {data.name}{' '}
+              <span style={{ fontSize: '2rem', color: surf }}>
+                Level: {data.level}
+              </span>
+            </h1>
+          </div>
+          <form className="summoner-form" onSubmit={this.onSubmit}>
+            <h2>Search for your top champion stats</h2>
+            <input
+              value={this.state.search}
+              onChange={this.onChange}
+              name="summoner"
+              type="text"
+            />
+            <button type="submit">Search</button>
+            <button onClick={this.onReset} type="button">
+              Reset
+            </button>
+          </form>
+        </div>
+
+        {data.status || champions.status ? (
+          <div>
+            <p>Summoner not found. Please try again.</p>
+          </div>
+        ) : (
+          <div>
+            {this.renderChampions(champions)}
+            <Ranked name="Flex 5v5" data={data.ranked.flex} />
+            <Ranked name="Solo / Duo" data={data.ranked.solo} />
+          </div>
+        )}
+      </StyledSummoner>
+    );
+  }
+}
+
+Summoner.propTypes = propTypes;
+
+const StyledSummoner = styled.div`
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .summoner-header {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto 1rem;
+  }
+
+  .summoner-form {
+    text-align: right;
+
+    h2 {
+      text-align: right;
+    }
+
+    button {
+      background: none;
+      border: 1px solid ${surf};
+      color: ${surf};
+      margin: 0 0 0 0.5rem;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .summoner-name {
+    font-family: ${openSans};
+    font-weight: 100;
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+  }
+
+  .champions {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 47.5rem;
+
+    @media ${mediumUp} {
+      max-width: 57.5rem;
+    }
+  }
+
+  .champion {
+    margin: 1rem;
+
+    @media ${mediumUp} {
+      margin: 2rem;
+    }
+  }
+`;
+
+const mapStateToProps = state => ({
+  summoner: state.summoner
+});
+
+const mapDispatchToProps = { getChampMastery, getSummonerInfo };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Summoner);

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { boxShadow, navy, surf, textHoverColor } from '../../util/colors';
 import { openSans } from '../../util/fonts';
-import { mediumUp } from '../../util/media';
 
 const Header = () => {
   return (
@@ -20,7 +19,6 @@ const Header = () => {
         <li>
           <NavLink to="/projects">Projects</NavLink>
         </li>
-
         <li>
           <NavLink to="/blog">Blog</NavLink>
         </li>
@@ -38,8 +36,9 @@ const StyledHeader = styled.div`
   margin-bottom: 5rem;
   width: 100vw;
 
-  @media ${mediumUp} {
-    margin-bottom: 6rem;
+  .active {
+    border-bottom: 4px solid ${surf};
+    color: ${surf};
   }
 
   ul {
@@ -48,11 +47,6 @@ const StyledHeader = styled.div`
     max-width: 900px;
     padding-left: 0;
     justify-content: space-around;
-  }
-
-  .active {
-    border-bottom: 4px solid ${surf};
-    color: ${surf};
   }
 
   li {

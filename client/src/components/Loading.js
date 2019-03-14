@@ -11,6 +11,9 @@ const Loading = () => {
 };
 
 const StyledLoading = styled.div`
+  display: flex;
+  justify-content: center;
+
   @keyframes spinner {
     to {
       transform: rotate(360deg);

@@ -12,7 +12,6 @@ import Blog from './components/pages/Blog';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Projects from './components/pages/Projects';
-import Summoner from './components/pages/Summoner';
 
 // import Footer from './components/Footer';
 import Header from './components/Header';
@@ -47,7 +46,6 @@ function App(props) {
           <Route path="/contact" component={Contact} />
           <Route path="/projects" component={Projects} />
           <Route exact path="/" component={Home} />
-          <Route path="/summoner" component={Summoner} />
           <Route component={NotFound} />
         </Switch>
         {/* <Footer /> */}

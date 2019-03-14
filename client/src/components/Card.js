@@ -35,6 +35,10 @@ const StyledCard = styled.div`
     max-width: 100%;
     width: 37rem;
 
+    &:hover {
+      opacity: 0.5;
+    }
+
     @media ${smallOnly} {
       height: 14rem;
     }

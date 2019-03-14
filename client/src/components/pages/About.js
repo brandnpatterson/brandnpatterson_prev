@@ -1,50 +1,74 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
+
+import Summoner from '../Summoner';
+
 import { surf } from '../../../util/colors';
 import { mediumUp } from '../../../util/media';
 
 const About = () => {
   return (
-    <StyledAbout>
-      <img
-        style={{ maxWidth: '400px' }}
-        src="images/about-me.jpg"
-        alt="Brandon Patterson"
-      />
-      <div className="about-me-text">
-        <h1>About me</h1>
-        <p>
-          I am a <span style={{ color: '#ff8800' }}>Web Developer</span>
-        </p>
-      </div>
-    </StyledAbout>
+    <Fragment>
+      <StyledAbout>
+        <div className="about-me">
+          <img
+            style={{ maxWidth: '400px' }}
+            src="images/about-me.jpg"
+            alt="Brandon Patterson"
+          />
+          <div className="about-me-text">
+            <h1>A little bit about me</h1>
+            <p>
+              I'm a <span style={{ color: '#ff8800' }}>Web Developer.</span>{' '}
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam,
+              quidem aliquam consequuntur praesentium perferendis laboriosam
+              veniam ducimus similique. Commodi nostrum quisquam suscipit vero
+              quo asperiores. Exercitationem sint hic porro corporis. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Possimus quod
+              hic tempora officia doloribus! Id, reiciendis iusto eum dicta
+              maxime ipsa ipsam officiis consectetur! Nisi temporibus laborum
+              illo reprehenderit porro.
+            </p>
+          </div>
+        </div>
+        <Summoner />
+      </StyledAbout>
+    </Fragment>
   );
 };
 
 const StyledAbout = styled.div`
-  display: flex;
-  flex-direction: column;
+  .about-me {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
 
-  @media screen and (min-width: 640px) {
-    flex-direction: row;
-  }
-
-  img {
-    max-height: 20rem;
-    margin: 0 auto;
-    width: 21rem;
-
-    @media ${mediumUp} {
-      max-height: 25rem;
-      width: 30rem;
+    @media screen and (min-width: 1140px) {
+      flex-direction: row;
+      justify-content: space-around;
     }
-  }
 
-  .about-me-text {
-    padding: 3rem;
+    img {
+      max-height: 20rem;
+      width: 20rem;
 
-    h1 {
-      color: ${surf};
+      @media ${mediumUp} {
+        max-height: 25rem;
+        width: 30rem;
+      }
+    }
+
+    .about-me-text {
+      padding: 2rem;
+
+      h1 {
+        color: ${surf};
+        font-size: 1.5rem;
+
+        @media ${mediumUp} {
+          font-size: 2rem;
+        }
+      }
     }
   }
 `;
