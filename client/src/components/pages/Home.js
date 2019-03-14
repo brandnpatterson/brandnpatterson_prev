@@ -35,7 +35,7 @@ function Home() {
   return (
     <StyledHome>
       <div className="titles">
-        <h1 className="title title-first">Hi,</h1>
+        <h1 className="title title-first">Hi.</h1>
         <h2 className="title">
           I'm <span style={{ color: surf }}>Brandon,</span>
         </h2>

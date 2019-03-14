@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "client": "npm start --prefix client",
-    "dev": "NODE_ENV=development nodemon & npm run dev --prefix client",
+    "dev": "NODE_ENV=development nodemon",
     "start": "NODE_ENV=production node index",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client",
     "test": "mocha -R spec test/*.test.js --watch"
