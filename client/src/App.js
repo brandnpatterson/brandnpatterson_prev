@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { navy, textColor } from '../util/colors';
-import { openSans } from '../util/fonts';
-
 import { getChampMastery, getSummonerInfo } from './actions';
 import { getGithubInfo } from './actions';
 
@@ -20,6 +17,10 @@ import Summoner from './components/pages/Summoner';
 // import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
+
+import { navy, textColor } from '../util/colors';
+import { openSans } from '../util/fonts';
+import { mediumUp } from '../util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -65,11 +66,12 @@ const StyledApp = styled.div`
   min-height: 100vh;
 
   .content {
-    max-width: 950px;
     margin: 0 2rem;
+    max-width: 950px;
 
-    @media screen and (min-width: 950px) {
+    @media ${mediumUp} {
       margin: 0 auto;
+      max-width: 80%;
     }
   }
 

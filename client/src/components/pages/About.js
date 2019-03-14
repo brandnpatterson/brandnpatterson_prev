@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { surf } from '../../../util/colors';
+import { mediumUp } from '../../../util/media';
 
 const About = () => {
   return (
@@ -27,14 +28,14 @@ const StyledAbout = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 800px) {
+  @media ${mediumUp} {
     flex-direction: row;
   }
 
   img {
     max-height: 350px;
 
-    @media screen and (min-width: 800px) {
+    @media ${mediumUp} {
       max-height: 400px;
       width: 500px;
     }

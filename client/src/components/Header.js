@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { boxShadow, navy, surf, textHoverColor } from '../../util/colors';
 import { openSans } from '../../util/fonts';
+import { mediumUp } from '../../util/media';
 
 const Header = () => {
   return (
@@ -33,10 +34,10 @@ const Header = () => {
 const StyledHeader = styled.div`
   box-shadow: ${boxShadow};
   background: ${navy};
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   width: 100vw;
 
-  @media screen and (min-width: 800px) {
+  @media ${mediumUp} {
     margin-bottom: 6rem;
   }
 

@@ -4,6 +4,7 @@ import { object } from 'prop-types';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { surf } from '../../../util/colors';
+import { mediumUp, largeUp } from '../../../util/media';
 
 const propTypes = {
   github: object.isRequired
@@ -34,74 +35,80 @@ function Home() {
 
   return (
     <StyledHome>
-      <div className="titles">
-        <h1 className="title title-first">Hi.</h1>
-        <h2 className="title">
+      <div className="title-area">
+        <h1 className="title-item title-first">Hi.</h1>
+        <h2 className="title-item">
           I'm <span style={{ color: surf }}>Brandon,</span>
         </h2>
-        <h3 className="title title-last">{titles[index]}</h3>
+        <h3 className="title-item title-last">{titles[index]}</h3>
       </div>
-      <div className="icons-wrap">
-        <div className="icons">
-          <div className="icon-group">
-            <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
-            <FontAwesomeIcon icon={['fab', 'html5']} size="6x" />
-            <FontAwesomeIcon icon={['fab', 'css3-alt']} size="6x" />
-            <FontAwesomeIcon icon={['fab', 'sass']} size="6x" />
-          </div>
-          <div className="icon-group">
-            <FontAwesomeIcon icon={['fab', 'react']} size="6x" />
-            <FontAwesomeIcon icon={['fab', 'node-js']} size="6x" />
-            <FontAwesomeIcon icon={['fab', 'php']} size="6x" />
-            <FontAwesomeIcon icon="database" size="6x" />
-          </div>
-        </div>
+      <div className="icons">
+        <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'html5']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'css3-alt']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'sass']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'react']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'node-js']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'php']} size="6x" />
+        <FontAwesomeIcon icon="database" size="6x" />
       </div>
     </StyledHome>
   );
 }
 
 const StyledHome = styled.div`
-  .titles {
-    min-height: 200px;
-    padding-left: 3rem;
+  .title-area {
+    min-height: 180px;
+    padding-left: 0;
 
-    @media screen and (min-width: 1200px) {
+    @media ${mediumUp} {
+      margin-bottom: 6rem;
+    }
+
+    @media ${largeUp} {
       padding-left: 0;
     }
-  }
 
-  .title {
-    font-size: 4rem;
-    margin-bottom: 0;
-    margin-top: 0;
+    .title-item {
+      font-size: 2.2rem;
+      margin: 0 auto;
+      max-width: 30rem;
 
-    @media screen and (min-width: 1200px) {
-      font-size: 5rem;
+      @media ${mediumUp} {
+        font-size: 3rem;
+      }
+
+      @media ${largeUp} {
+        font-size: 5rem;
+        max-width: 100%;
+      }
     }
   }
 
   .icons {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 5rem;
-
-    svg {
-      margin: 3rem;
-
-      @media screen and (max-width: 800px) {
-        margin: 1rem;
-      }
-    }
-  }
-
-  .icon-group {
-    align-items: center;
-    display: flex;
+    flex-wrap: wrap;
+    height: 20rem;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 20rem;
+    width: 100%;
+
+    @media ${mediumUp} {
+      flex-wrap: none;
+      height: 15rem;
+      max-width: 45rem;
+    }
+
+    svg {
+      margin: 0.25rem 0.75rem;
+      width: 4rem;
+
+      @media ${mediumUp} {
+        margin: 2rem;
+        width: 6rem;
+      }
+    }
   }
 `;
 
