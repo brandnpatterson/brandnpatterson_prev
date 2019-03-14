@@ -31,8 +31,8 @@ const Header = () => {
 };
 
 const StyledHeader = styled.div`
-  box-shadow: ${boxShadow};
   background: ${navy};
+  box-shadow: ${boxShadow};
   margin-bottom: 5rem;
   width: 100vw;
 
@@ -43,10 +43,10 @@ const StyledHeader = styled.div`
 
   ul {
     display: flex;
+    justify-content: space-around;
     margin: 0 auto;
     max-width: 900px;
-    padding-left: 0;
-    justify-content: space-around;
+    padding: 0 2rem;
   }
 
   li {
@@ -56,8 +56,8 @@ const StyledHeader = styled.div`
   a {
     display: block;
     font-size: 1rem;
-    padding: 1rem 0 0.75rem;
     min-width: 3rem;
+    padding: 1rem 0 0.75rem;
     text-align: center;
 
     &:hover {

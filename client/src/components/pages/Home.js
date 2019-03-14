@@ -65,6 +65,12 @@ function Home() {
 }
 
 const StyledHome = styled.div`
+  height: 84vh;
+
+  .title-text-wrap {
+    margin-bottom: 4rem;
+  }
+
   .title-area {
     padding-left: 0;
 
@@ -73,7 +79,7 @@ const StyledHome = styled.div`
     }
 
     .title-item {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin: 0 auto;
 
       @media ${mediumUp} {
@@ -87,19 +93,21 @@ const StyledHome = styled.div`
     }
   }
 
-  .title-text-wrap {
-    margin-bottom: 2rem;
+  .see-my-work-wrap {
+    margin-bottom: 4rem;
+
+    @media ${mediumUp} {
+      margin-bottom: 3rem;
+    }
   }
 
   .see-my-work {
     background: none;
     border: 1px solid ${surf};
     color: ${surf};
-    margin-bottom: 2.5rem;
     padding: 0.65rem 2.5rem;
 
     @media ${mediumUp} {
-      margin-bottom: 2rem;
       padding: 1rem 3rem;
     }
   }

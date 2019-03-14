@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Summoner from '../Summoner';
+import Tabs from '../Tabs';
 
 import { surf } from '../../../util/colors';
 import { mediumUp } from '../../../util/media';
@@ -18,20 +20,23 @@ const About = () => {
           />
           <div className="about-me-text">
             <h1>A little bit about me</h1>
-            <p>
-              I'm a <span style={{ color: '#ff8800' }}>Web Developer.</span>{' '}
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam,
-              quidem aliquam consequuntur praesentium perferendis laboriosam
-              veniam ducimus similique. Commodi nostrum quisquam suscipit vero
-              quo asperiores. Exercitationem sint hic porro corporis. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Possimus quod
-              hic tempora officia doloribus! Id, reiciendis iusto eum dicta
-              maxime ipsa ipsam officiis consectetur! Nisi temporibus laborum
-              illo reprehenderit porro.
+            <p className="about-me-paragraph">
+              I'm a{' '}
+              <Link to="/projects" style={{ color: '#FF9E00' }}>
+                Front End Developer
+              </Link>{' '}
+              with experience building User Interfaces for global hotel chains.
+              I create websites that support clients at a large scale valuing
+              WCAG accessibility standards. I also have experience building
+              custom blog solutions with React and the Wordpress API. I enjoy
+              creating reusable, scalable tools and build systems that can be
+              utilized by other developers.
             </p>
           </div>
         </div>
-        <Summoner />
+        <Tabs>
+          <Summoner />
+        </Tabs>
       </StyledAbout>
     </Fragment>
   );
@@ -59,8 +64,11 @@ const StyledAbout = styled.div`
     }
 
     .about-me-text {
-      padding: 2rem;
+      padding: 2rem 0;
 
+      @media ${mediumUp} {
+        padding: 2rem;
+      }
       h1 {
         color: ${surf};
         font-size: 1.5rem;
@@ -69,6 +77,10 @@ const StyledAbout = styled.div`
           font-size: 2rem;
         }
       }
+    }
+
+    .about-me-paragraph {
+      line-height: 1.75rem;
     }
   }
 `;

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+
+import { surf } from '../../../util/colors';
 import { mediumUp } from '../../../util/media';
 
 import googleMaps from '../../googleMaps';
@@ -16,10 +18,11 @@ const Contact = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Here is a copy of my resume
+        <code className="mock-code-anchor">{'<a>'}</code> Here is a copy of my
+        resume <code className="mock-code-anchor">{'</a>'}</code>
       </a>
       <p>
-        I am located in the Houston area and I'm currently open to new
+        I'm located in the Houston area and I'm currently open to new
         oppertunities.
       </p>
       <div id="map" />
@@ -42,6 +45,13 @@ const StyledContact = styled.div`
       height: 800px;
       max-width: 100%;
     }
+  }
+
+  .mock-code-anchor {
+    color: ${surf};
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 3rem;
+    font-style: italic;
   }
 `;
 

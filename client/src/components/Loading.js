@@ -14,6 +14,7 @@ const StyledLoading = styled.div`
   display: flex;
   justify-content: center;
 
+  /* eslint-ignore */
   @keyframes spinner {
     to {
       transform: rotate(360deg);

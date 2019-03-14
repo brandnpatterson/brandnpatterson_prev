@@ -9,7 +9,7 @@ import Ranked from './Ranked';
 
 import { surf } from '../../util/colors';
 import { openSans } from '../../util/fonts';
-import { mediumUp } from '../../util/media';
+import { largeUp, mediumUp, smallOnly } from '../../util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -83,15 +83,15 @@ class Summoner extends React.Component {
       <StyledSummoner>
         <div className="summoner-header">
           <div>
-            <h1 className="summoner-name">
-              {data.name}{' '}
-              <span style={{ fontSize: '2rem', color: surf }}>
-                Level: {data.level}
-              </span>
-            </h1>
+            <h3 className="summoner-name">{data.name} </h3>
+            <p style={{ fontSize: '2rem', color: surf, marginTop: '0' }}>
+              Level: {data.level}
+            </p>
           </div>
           <form className="summoner-form" onSubmit={this.onSubmit}>
-            <h2>Search for your top champion stats</h2>
+            <h4 className="summoner-search-text">
+              Search for your League of Legends top champion stats
+            </h4>
             <input
               value={this.state.search}
               onChange={this.onChange}
@@ -124,48 +124,58 @@ class Summoner extends React.Component {
 Summoner.propTypes = propTypes;
 
 const StyledSummoner = styled.div`
-  h1 {
-    margin-bottom: 0;
-  }
-
   .summoner-header {
     align-items: center;
-    justify-content: space-between;
     display: flex;
-    max-width: 80%;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0 auto 1rem;
+    max-width: 90%;
+
+    @media ${smallOnly} {
+      max-width: 100%;
+    }
+
+    @media ${mediumUp} {
+      flex-direction: row;
+    }
+
+    @media ${largeUp} {
+      max-width: 90%;
+    }
   }
 
   .summoner-form {
-    text-align: right;
+    text-align: center;
 
-    h2 {
+    @media ${mediumUp} {
       text-align: right;
     }
+  }
 
-    button {
-      background: none;
-      border: 1px solid ${surf};
-      color: ${surf};
-      margin: 0 0 0 0.5rem;
+  .summoner-form button {
+    background: none;
+    border: 1px solid ${surf};
+    color: ${surf};
+    margin: 0 0 0.5rem 0.5rem;
 
-      &:hover {
-        opacity: 0.5;
-      }
+    &:hover {
+      opacity: 0.5;
     }
   }
 
   .summoner-name {
     font-family: ${openSans};
-    font-weight: 100;
     font-size: 3rem;
+    font-weight: 100;
     letter-spacing: 1.5px;
+    margin-bottom: 0;
   }
 
   .champions {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin: 0 auto;
     max-width: 47.5rem;
 

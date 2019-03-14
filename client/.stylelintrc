@@ -2,6 +2,10 @@
   "processors": ["stylelint-processor-styled-components"],
   "extends": [
     "stylelint-config-recommended",
+    "stylelint-config-sass-guidelines",
     "stylelint-config-styled-components"
-  ]
+  ],
+  "rules": {
+    "max-nesting-depth": 2
+  }
 }

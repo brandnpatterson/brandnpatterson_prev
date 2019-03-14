@@ -13,7 +13,7 @@ import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import Projects from './components/pages/Projects';
 
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 
@@ -48,8 +48,8 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route component={NotFound} />
         </Switch>
-        {/* <Footer /> */}
       </div>
+      <Footer />
     </StyledApp>
   );
 }
@@ -68,7 +68,7 @@ const StyledApp = styled.div`
     max-width: 950px;
 
     @media ${mediumUp} {
-      margin: 0 auto;
+      margin: 0 auto 5rem;
       max-width: 80%;
     }
   }
