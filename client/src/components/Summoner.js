@@ -154,7 +154,7 @@ const StyledSummoner = styled.div`
     justify-content: space-between;
     margin: 0 auto 1rem;
     max-width: 90%;
-    min-height: 171px;
+    min-height: 281.3px;
 
     @media ${smallOnly} {
       max-width: 100%;
@@ -162,6 +162,7 @@ const StyledSummoner = styled.div`
 
     @media ${mediumUp} {
       flex-direction: row;
+      min-height: 171px;
     }
 
     @media ${largeUp} {
@@ -260,9 +261,9 @@ const StyledSummoner = styled.div`
     background: ${surf};
     box-shadow: ${boxShadow};
     height: 120px;
+    margin: 1rem;
     opacity: 0.3;
     width: 120px;
-    margin: 1rem;
 
     @media ${mediumUp} {
       margin: 2rem;

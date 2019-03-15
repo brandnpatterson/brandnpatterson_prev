@@ -84,9 +84,12 @@ const StyledContact = styled.div`
 
   .resume-image {
     display: block;
-    height: 760px;
     margin: 0 auto;
     max-width: 100%;
+
+    @media ${mediumUp} {
+      height: 760px;
+    }
   }
 
   #map {
