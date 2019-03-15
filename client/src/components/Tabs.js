@@ -1,12 +1,12 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { object } from 'prop-types';
 import styled from 'styled-components';
 
 import { boxShadow, cardColor, surf } from '../../util/colors';
 import { mediumUp } from '../../util/media';
 
 const propTypes = {
-  children: array.isRequired
+  children: object.isRequired
 };
 
 const Tabs = props => {
@@ -15,9 +15,9 @@ const Tabs = props => {
 
 const StyledTabs = styled.div`
   @media ${mediumUp} {
-    box-shadow: ${boxShadow};
-    border-radius: 5px;
     background: ${cardColor};
+    border-radius: 5px;
+    box-shadow: ${boxShadow};
     padding: 2rem;
   }
 

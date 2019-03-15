@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Blog = () => {
   return (
-    <div>
+    <StyledBlog>
       <a
         href="https://medium.com/@brandnpatterson"
         target="_blank"
@@ -10,8 +11,10 @@ const Blog = () => {
       >
         You can find me on Medium
       </a>
-    </div>
+    </StyledBlog>
   );
 };
+
+const StyledBlog = styled.div``;
 
 export default Blog;

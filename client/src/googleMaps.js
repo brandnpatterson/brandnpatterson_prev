@@ -117,9 +117,9 @@ const googleMaps = {
     });
 
     const marker = new google.maps.Marker({
-      position: latlng,
-      map: map,
-      title: 'Hello World!'
+      icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+      map,
+      position: latlng
     });
 
     const infoMarkup = `

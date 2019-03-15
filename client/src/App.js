@@ -1,21 +1,20 @@
 import React, { useEffect } from 'react';
 import { func } from 'prop-types';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
 
 import { getChampMastery, getSummonerInfo } from './actions';
 import { getGithubInfo } from './actions';
 
 import About from './components/pages/About';
 import Blog from './components/pages/Blog';
-import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
-import Projects from './components/pages/Projects';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Home from './components/pages/Home';
 import NotFound from './components/NotFound';
+import Projects from './components/pages/Projects';
 
 import { navy, textColor } from '../util/colors';
 import { openSans } from '../util/fonts';
@@ -34,7 +33,7 @@ function App(props) {
     props.getChampMastery(summoner);
     props.getSummonerInfo(summoner);
     props.getGithubInfo();
-  });
+  }, []);
 
   return (
     <StyledApp>
@@ -64,7 +63,7 @@ const StyledApp = styled.div`
   min-height: 100vh;
 
   .content {
-    margin: 0 2rem;
+    margin: 0 2rem 5rem 2rem;
     max-width: 950px;
 
     @media ${mediumUp} {

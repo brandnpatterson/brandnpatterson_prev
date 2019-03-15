@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getChampMastery, getSummonerInfo } from '../actions';
 
-import Loading from './Loading';
 import Ranked from './Ranked';
 
-import { surf } from '../../util/colors';
+import { boxShadow, surf } from '../../util/colors';
 import { openSans } from '../../util/fonts';
 import { largeUp, mediumUp, smallOnly } from '../../util/media';
 
@@ -72,21 +71,46 @@ class Summoner extends React.Component {
     );
   }
 
+  renderPlaceholders() {
+    const placeholders = [];
+
+    for (let i = 0; i < 10; i++) {
+      placeholders.push({
+        id: i
+      });
+    }
+
+    return (
+      <div className="placeholder-champions">
+        {placeholders.map((champ, index) => {
+          return <div className="placeholder-champion" key={index} />;
+        })}
+      </div>
+    );
+  }
+
   render() {
     const { champions, data } = this.props.summoner;
-
-    if (!champions || !data) {
-      return <Loading />;
-    }
 
     return (
       <StyledSummoner>
         <div className="summoner-header">
           <div>
-            <h3 className="summoner-name">{data.name} </h3>
-            <p style={{ fontSize: '2rem', color: surf, marginTop: '0' }}>
-              Level: {data.level}
-            </p>
+            {data ? (
+              <div>
+                <h3 className="summoner-name">
+                  {data.name ? data.name : 'Not Found'}
+                </h3>
+                <p className="summoner-level">
+                  {data.level ? `Level: ${data.level}` : 'Please try again'}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="placeholder-summoner-name" />
+                <div className="placeholder-summoner-level" />
+              </div>
+            )}
           </div>
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">
@@ -104,17 +128,14 @@ class Summoner extends React.Component {
             </button>
           </form>
         </div>
-
-        {data.status || champions.status ? (
-          <div>
-            <p>Summoner not found. Please try again.</p>
-          </div>
-        ) : (
-          <div>
+        {data && champions && !data.status && !champions.status ? (
+          <div className="champions-wrap">
             {this.renderChampions(champions)}
             <Ranked name="Flex 5v5" data={data.ranked.flex} />
             <Ranked name="Solo / Duo" data={data.ranked.solo} />
           </div>
+        ) : (
+          <div className="champions-wrap">{this.renderPlaceholders()}</div>
         )}
       </StyledSummoner>
     );
@@ -124,6 +145,8 @@ class Summoner extends React.Component {
 Summoner.propTypes = propTypes;
 
 const StyledSummoner = styled.div`
+  min-height: 661px;
+
   .summoner-header {
     align-items: center;
     display: flex;
@@ -131,6 +154,7 @@ const StyledSummoner = styled.div`
     justify-content: space-between;
     margin: 0 auto 1rem;
     max-width: 90%;
+    min-height: 171px;
 
     @media ${smallOnly} {
       max-width: 100%;
@@ -143,6 +167,12 @@ const StyledSummoner = styled.div`
     @media ${largeUp} {
       max-width: 90%;
     }
+  }
+
+  .summoner-level {
+    color: ${surf};
+    font-size: 2rem;
+    margin-top: 0;
   }
 
   .summoner-form {
@@ -185,6 +215,53 @@ const StyledSummoner = styled.div`
   }
 
   .champion {
+    margin: 1rem;
+
+    @media ${mediumUp} {
+      margin: 2rem;
+    }
+  }
+
+  .placeholder-summoner-name {
+    background: ${surf};
+    box-shadow: ${boxShadow};
+    height: 55px;
+    margin-bottom: 0.5rem;
+    opacity: 0.3;
+    width: 250px;
+  }
+
+  .placeholder-summoner-level {
+    background: ${surf};
+    box-shadow: ${boxShadow};
+    height: 36px;
+    opacity: 0.3;
+    width: 250px;
+  }
+
+  .placeholder-champions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 47.5rem;
+    min-height: 474px;
+
+    @media ${mediumUp} {
+      max-width: 57.5rem;
+    }
+  }
+
+  .champions-wrap {
+    min-height: 474px;
+  }
+
+  .placeholder-champion {
+    background: ${surf};
+    box-shadow: ${boxShadow};
+    height: 120px;
+    opacity: 0.3;
+    width: 120px;
     margin: 1rem;
 
     @media ${mediumUp} {

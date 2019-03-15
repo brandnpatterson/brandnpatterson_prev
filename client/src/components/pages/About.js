@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Summoner from '../Summoner';
 import Tabs from '../Tabs';
 
-import { surf } from '../../../util/colors';
+import { orange, surf } from '../../../util/colors';
 import { mediumUp } from '../../../util/media';
 
 const About = () => {
@@ -22,15 +22,20 @@ const About = () => {
             <h1>A little bit about me</h1>
             <p className="about-me-paragraph">
               I'm a{' '}
-              <Link to="/projects" style={{ color: '#FF9E00' }}>
+              <Link to="/projects" style={{ color: orange }}>
                 Front End Developer
               </Link>{' '}
-              with experience building User Interfaces for global hotel chains.
-              I create websites that support clients at a large scale valuing
-              WCAG accessibility standards. I also have experience building
-              custom blog solutions with React and the Wordpress API. I enjoy
-              creating reusable, scalable tools and build systems that can be
-              utilized by other developers.
+              with experience building User Interfaces for global companies.
+              I've created websites that support clients at a large scale
+              valuing WCAG accessibility standards. I also have experience
+              building custom blog solutions with React and the Wordpress API. I
+              enjoy creating reusable, scalable tools and build systems that can
+              be utilized by other developers.
+            </p>
+            <p className="about-me-paragraph">
+              I'm a fan of League of Legends and below I've used the Riot API to
+              display the top 10 champions that i've played. Feel free to search
+              for your account if you have one!
             </p>
           </div>
         </div>
@@ -72,6 +77,7 @@ const StyledAbout = styled.div`
       h1 {
         color: ${surf};
         font-size: 1.5rem;
+        letter-spacing: 4px;
 
         @media ${mediumUp} {
           font-size: 2rem;

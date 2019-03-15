@@ -9,12 +9,12 @@ const propTypes = {
 };
 
 const ProjectCard = props => {
-  return <StyledCard>{props.children}</StyledCard>;
+  return <StyledProjectCard>{props.children}</StyledProjectCard>;
 };
 
 ProjectCard.propTypes = propTypes;
 
-const StyledCard = styled.div`
+const StyledProjectCard = styled.div`
   @media ${mediumUp} {
     background: ${cardColor};
     border-radius: 5px;
@@ -75,10 +75,9 @@ const StyledCard = styled.div`
       background: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-radius: none;
       box-shadow: none;
       max-width: 100%;
-      padding: 0 2rem 0 2rem;
+      padding: 0 2rem;
     }
   }
 
@@ -86,13 +85,13 @@ const StyledCard = styled.div`
     color: ${surf};
     font-size: 1.25rem;
     letter-spacing: 4px;
-    padding: 2rem 2rem 0 2rem;
     margin-top: 0;
+    padding: 2rem 2rem 0;
 
     @media ${mediumUp} {
       font-size: 2rem;
-      margin-top: 2rem;
       margin-bottom: 0;
+      margin-top: 2rem;
       padding: 0;
     }
 
@@ -117,8 +116,8 @@ const StyledCard = styled.div`
     margin: 0;
 
     &:nth-child(1) {
-      margin-top: 2rem;
       font-weight: bold;
+      margin-top: 2rem;
     }
   }
 `;

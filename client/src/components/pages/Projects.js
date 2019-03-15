@@ -36,7 +36,7 @@ const Projects = () => {
         <div className="card-content">
           <h1 className="card-header">Coriander</h1>
           <div className="card-paragraphs">
-            <p>Form validation library built with JavaScript</p>
+            <p>Form validation library written in JavaScript</p>
             <div className="built-with">
               <p>Built with:</p>
               <p>JavaScript, Gulp, NPM, Jasmine</p>
@@ -55,7 +55,7 @@ const Projects = () => {
         <div className="card-content">
           <h1 className="card-header">Hello Webpack</h1>
           <div className="card-paragraphs">
-            <p>Front End dev env using webpack</p>
+            <p>Front End development environment using webpack</p>
             <div className="built-with">
               <p>Built with:</p>
               <p>Webpack, Babel, jQuery, Bootstrap</p>

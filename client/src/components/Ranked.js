@@ -12,7 +12,7 @@ const Ranked = ({ name, data }) => {
   }
 
   return (
-    <div>
+    <div style={{ padding: '2rem 4rem' }}>
       <h3>{name}</h3>
       <p>League Name: {data.leagueName}</p>
       <p>

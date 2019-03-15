@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { object } from 'prop-types';
@@ -22,17 +22,19 @@ function Home() {
     'Learner'
   ];
 
-  function titleTimeout() {
-    setTimeout(() => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
       if (index === titles.length - 1) {
         setIndex(0);
       } else {
         setIndex(index + 1);
       }
     }, 2000);
-  }
 
-  titleTimeout();
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
 
   return (
     <StyledHome>
