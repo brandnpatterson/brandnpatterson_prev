@@ -221,7 +221,7 @@ const StyledSummoner = styled.div`
     border-radius: 0;
     height: 2.25rem;
     margin-right: 1.25rem;
-    padding-left: 1rem;
+    padding-left: 1.25rem;
 
     @media screen and (min-width: 450px) {
       margin-right: inherit;
