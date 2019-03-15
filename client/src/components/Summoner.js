@@ -6,7 +6,7 @@ import { getChampMastery, getSummonerInfo } from '../actions';
 
 import Ranked from './Ranked';
 
-import { boxShadow, surf } from '../util/colors';
+import { boxShadow, cardColor, surf } from '../util/colors';
 import { openSans } from '../util/fonts';
 import { largeUp, mediumUp, smallOnly } from '../util/media';
 
@@ -146,6 +146,13 @@ Summoner.propTypes = propTypes;
 
 const StyledSummoner = styled.div`
   min-height: 661px;
+
+  @media ${mediumUp} {
+    background: ${cardColor};
+    border-radius: 5px;
+    box-shadow: ${boxShadow};
+    padding: 2rem;
+  }
 
   .summoner-header {
     align-items: center;
