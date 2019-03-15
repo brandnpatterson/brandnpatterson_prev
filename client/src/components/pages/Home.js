@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { object } from 'prop-types';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { surf } from '../../../util/colors';
-import { mediumUp, largeUp } from '../../../util/media';
+import { surf } from '../../util/colors';
+import { mediumUp, largeUp } from '../../util/media';
 
 const propTypes = {
   github: object.isRequired

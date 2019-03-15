@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { textColor, navy } from '../../util/colors';
+import { textColor, navy } from '../util/colors';
 
 const propTypes = {
   children: string.isRequired

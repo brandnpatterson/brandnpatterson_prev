@@ -6,9 +6,9 @@ import { getChampMastery, getSummonerInfo } from '../actions';
 
 import Ranked from './Ranked';
 
-import { boxShadow, surf } from '../../util/colors';
-import { openSans } from '../../util/fonts';
-import { largeUp, mediumUp, smallOnly } from '../../util/media';
+import { boxShadow, surf } from '../util/colors';
+import { openSans } from '../util/fonts';
+import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -170,6 +170,14 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .summoner-name {
+    font-family: ${openSans};
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+  }
+
   .summoner-level {
     color: ${surf};
     font-size: 2rem;
@@ -193,14 +201,6 @@ const StyledSummoner = styled.div`
     &:hover {
       opacity: 0.5;
     }
-  }
-
-  .summoner-name {
-    font-family: ${openSans};
-    font-size: 3rem;
-    font-weight: 100;
-    letter-spacing: 1.5px;
-    margin-bottom: 0;
   }
 
   .champions {

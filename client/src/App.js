@@ -8,7 +8,7 @@ import { getChampMastery, getSummonerInfo } from './actions';
 import { getGithubInfo } from './actions';
 
 import About from './components/pages/About';
-import Blog from './components/pages/Blog';
+// import Blog from './components/pages/Blog';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -16,9 +16,9 @@ import Home from './components/pages/Home';
 import NotFound from './components/NotFound';
 import Projects from './components/pages/Projects';
 
-import { navy, textColor } from '../util/colors';
-import { openSans } from '../util/fonts';
-import { mediumUp } from '../util/media';
+import { navy, textColor } from './util/colors';
+import { openSans } from './util/fonts';
+import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -41,7 +41,7 @@ function App(props) {
       <div className="content">
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/blog" component={Blog} />
+          {/* <Route path="/blog" component={Blog} /> */}
           <Route path="/contact" component={Contact} />
           <Route path="/projects" component={Projects} />
           <Route exact path="/" component={Home} />

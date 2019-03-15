@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { boxShadow, navy, surf, textHoverColor } from '../../util/colors';
-import { openSans } from '../../util/fonts';
+import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
+import { openSans } from '../util/fonts';
 
 const Header = () => {
   return (
@@ -19,9 +19,9 @@ const Header = () => {
         <li>
           <NavLink to="/projects">Projects</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/blog">Blog</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/contact">Contact</NavLink>
         </li>
@@ -39,6 +39,7 @@ const StyledHeader = styled.div`
   .active {
     border-bottom: 4px solid ${surf};
     color: ${surf};
+    min-width: 5rem;
   }
 
   ul {
@@ -51,6 +52,7 @@ const StyledHeader = styled.div`
 
   li {
     font-family: ${openSans};
+    min-width: 5rem;
   }
 
   a {

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { surf } from '../../../util/colors';
-import { mediumUp } from '../../../util/media';
+import { orange, surf } from '../../util/colors';
+import { mediumUp } from '../../util/media';
 
 import googleMaps from '../../googleMaps';
 
@@ -15,21 +15,29 @@ const Contact = () => {
 
   return (
     <StyledContact>
+      <h1 className="heading-title">Contact Me</h1>
       <div className="contact-header">
-        <a className="contact-info" href="tel:979-236-4789">
-          Phone number: 979-236-4789
-        </a>
-        <a className="contact-info" href="mailto:brandnpatterson@gmail.com">
-          E-mail: brandnpatterson@gmail.com
-        </a>
-        <a
-          className="contact-info"
-          href="https://github.com/brandnpatterson"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Github: brandnpatterson
-        </a>
+        <p className="contact-info">
+          Phone number: <a href="tel:979-236-4789">979-236-4789</a>
+        </p>
+
+        <p className="contact-info">
+          E-mail:{' '}
+          <a href="mailto:brandnpatterson@gmail.com">
+            brandnpatterson@gmail.com
+          </a>
+        </p>
+
+        <p className="contact-info">
+          Github:{' '}
+          <a
+            href="https://github.com/brandnpatterson"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            brandnpatterson
+          </a>
+        </p>
       </div>
       <div className="contact-wrap">
         <div className="contact-content">
@@ -52,12 +60,24 @@ const Contact = () => {
 };
 
 const StyledContact = styled.div`
+  .heading-title {
+    color: ${surf};
+    padding: 2rem 0;
+    letter-spacing: 4px;
+    padding-top: 0;
+  }
+
   .contact-header {
     display: flex;
     flex-direction: column;
 
+    @media ${mediumUp} {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     .contact-info {
-      color: ${surf};
+      color: ${orange};
       padding: 0 0 2rem;
       width: 17rem;
     }
@@ -78,7 +98,7 @@ const StyledContact = styled.div`
     @media ${mediumUp} {
       margin-bottom: 0;
       padding-right: 3rem;
-      width: 45%;
+      width: 50%;
     }
   }
 

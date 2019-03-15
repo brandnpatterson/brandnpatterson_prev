@@ -1,8 +1,8 @@
 import React from 'react';
 import { array } from 'prop-types';
 import styled from 'styled-components';
-import { boxShadow, cardColor, surf, textColor } from '../../util/colors';
-import { largeUp, mediumUp, smallOnly } from '../../util/media';
+import { boxShadow, cardColor, orange, surf, textColor } from '../util/colors';
+import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
   children: array.isRequired
@@ -112,13 +112,16 @@ const StyledProjectCard = styled.div`
     }
   }
 
-  .built-with p {
+  .built-with-wrap p {
     margin: 0;
 
-    &:nth-child(1) {
-      font-weight: bold;
-      margin-top: 2rem;
+    @media ${mediumUp} {
+      margin: 1rem auto;
     }
+  }
+
+  .built-with {
+    color: ${orange};
   }
 `;
 

@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import Summoner from '../Summoner';
 import Tabs from '../Tabs';
 
-import { orange, surf } from '../../../util/colors';
-import { mediumUp } from '../../../util/media';
+import { orange, surf } from '../../util/colors';
+import { mediumUp } from '../../util/media';
 
 const About = () => {
   return (
