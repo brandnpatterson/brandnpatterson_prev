@@ -124,16 +124,18 @@ class Summoner extends React.Component {
                 name="summoner"
                 type="text"
               />
-              <button className="summoner-button" type="submit">
-                Search
-              </button>
-              <button
-                className="summoner-button"
-                onClick={this.onReset}
-                type="button"
-              >
-                Reset
-              </button>
+              <div className="summoner-buttons">
+                <button className="summoner-button" type="submit">
+                  Search
+                </button>
+                <button
+                  className="summoner-button"
+                  onClick={this.onReset}
+                  type="button"
+                >
+                  Reset
+                </button>
+              </div>
             </div>
           </form>
         </div>
@@ -217,15 +219,31 @@ const StyledSummoner = styled.div`
   .summoner-input {
     border: 0;
     height: 2.25rem;
+    margin-right: 1.25rem;
     padding-left: 1rem;
+
+    @media screen and (min-width: 450px) {
+      margin-right: inherit;
+    }
+  }
+
+  .summoner-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.25rem;
+
+    @media screen and (min-width: 450px) {
+      flex-direction: row;
+      margin-right: inherit;
+    }
   }
 
   .summoner-button {
     background: none;
     border: 1px solid ${surf};
     color: ${surf};
-    padding: 0.55rem;
     margin: 0 0 0.5rem 0.5rem;
+    padding: 0.55rem;
 
     &:hover {
       opacity: 0.5;
