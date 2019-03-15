@@ -220,7 +220,8 @@ const StyledSummoner = styled.div`
     border: 0;
     border-radius: 0;
     height: 2.25rem;
-    margin-right: 2.25rem;
+    padding-left: 1rem;
+    width: 12.75rem;
 
     @media screen and (min-width: 450px) {
       margin-right: inherit;
@@ -230,7 +231,7 @@ const StyledSummoner = styled.div`
   .summoner-buttons {
     display: flex;
     flex-direction: column;
-    margin-right: 1.25rem;
+    margin-right: 2rem;
 
     @media screen and (min-width: 450px) {
       flex-direction: row;
