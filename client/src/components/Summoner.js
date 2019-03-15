@@ -106,7 +106,7 @@ class Summoner extends React.Component {
                 </p>
               </div>
             ) : (
-              <div>
+              <div className="placeholder-info">
                 <div className="placeholder-summoner-name" />
                 <div className="placeholder-summoner-level" />
               </div>
@@ -116,16 +116,25 @@ class Summoner extends React.Component {
             <h4 className="summoner-search-text">
               Search for your League of Legends top champion stats
             </h4>
-            <input
-              value={this.state.search}
-              onChange={this.onChange}
-              name="summoner"
-              type="text"
-            />
-            <button type="submit">Search</button>
-            <button onClick={this.onReset} type="button">
-              Reset
-            </button>
+            <div className="summoner-interface">
+              <input
+                className="summoner-input"
+                value={this.state.search}
+                onChange={this.onChange}
+                name="summoner"
+                type="text"
+              />
+              <button className="summoner-button" type="submit">
+                Search
+              </button>
+              <button
+                className="summoner-button"
+                onClick={this.onReset}
+                type="button"
+              >
+                Reset
+              </button>
+            </div>
           </form>
         </div>
         {data && champions && !data.status && !champions.status ? (
@@ -199,10 +208,23 @@ const StyledSummoner = styled.div`
     }
   }
 
-  .summoner-form button {
+  .summoner-interface {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .summoner-input {
+    border: 0;
+    height: 2.25rem;
+    padding-left: 1rem;
+  }
+
+  .summoner-button {
     background: none;
     border: 1px solid ${surf};
     color: ${surf};
+    padding: 0.55rem;
     margin: 0 0 0.5rem 0.5rem;
 
     &:hover {
