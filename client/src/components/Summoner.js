@@ -219,7 +219,7 @@ const StyledSummoner = styled.div`
   .summoner-input {
     border: 0;
     border-radius: 0;
-    height: 2.25rem;
+    height: 2rem;
     padding-left: 1rem;
     width: 12rem;
 
