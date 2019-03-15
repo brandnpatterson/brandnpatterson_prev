@@ -76,6 +76,10 @@ const StyledHome = styled.div`
 
   .title-text-wrap {
     margin-bottom: 8rem;
+
+    @media ${mediumUp} {
+      margin-bottom: 4rem;
+    }
   }
 
   .title-area {
