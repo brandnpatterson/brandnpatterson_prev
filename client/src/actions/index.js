@@ -1,12 +1,7 @@
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 
-import {
-  GET_CHAMPION_MASTERY,
-  GET_ERRORS,
-  GET_SUMMONER_INFO,
-  GET_GITHUB_INFO
-} from './types';
+import { GET_CHAMPION_MASTERY, GET_ERRORS, GET_SUMMONER_INFO } from './types';
 
 // Riot
 export const getChampMastery = summonerName => dispatch => {
@@ -32,24 +27,6 @@ export const getSummonerInfo = summonerName => dispatch => {
     .then(response => {
       dispatch({
         type: GET_SUMMONER_INFO,
-        payload: response.data
-      });
-    })
-    .catch(err => {
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      });
-    });
-};
-
-// Github
-export const getGithubInfo = () => dispatch => {
-  axios
-    .get('/api/v1/github/user/brandnpatterson')
-    .then(response => {
-      dispatch({
-        type: GET_GITHUB_INFO,
         payload: response.data
       });
     })

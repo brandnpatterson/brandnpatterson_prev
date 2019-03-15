@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Summoner from '../Summoner';
+import Github from '../Github';
 
 import { orange, surf } from '../../util/colors';
 import { mediumUp } from '../../util/media';
@@ -37,15 +37,10 @@ const About = () => {
               passion for all things programming and a vision for creating
               outstanding User Interfaces.
             </div>
-            <p className="about-me-paragraph">
-              As a fan of League of Legends and in no way affiliated, below I've
-              used the Riot API to display the top 10 champions that i've
-              played. Feel free to search for your account if you have one!
-            </p>
           </div>
         </div>
-        <Summoner />
       </StyledAbout>
+      <Github />
     </Fragment>
   );
 };
@@ -64,18 +59,18 @@ const StyledAbout = styled.div`
     @media ${mediumUp} {
       flex-direction: row;
       justify-content: space-around;
-      margin-bottom: 10rem;
+      margin-bottom: 2rem;
     }
 
     .about-me-image {
+      margin: 0 auto;
       max-height: 20rem;
       max-width: 100%;
-      width: 20rem;
 
       @media ${mediumUp} {
+        margin: inherit;
         max-height: 25rem;
         max-width: inherit;
-        width: 28rem;
       }
     }
 
@@ -83,8 +78,8 @@ const StyledAbout = styled.div`
       padding: 2rem 0;
 
       @media ${mediumUp} {
-        padding: 0 2rem 2rem;
-        width: 45%;
+        padding: 0;
+        width: 50%;
       }
 
       h1 {

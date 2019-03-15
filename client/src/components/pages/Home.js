@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { object } from 'prop-types';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { surf } from '../../util/colors';
+import { orange, surf } from '../../util/colors';
 import { mediumUp, largeUp } from '../../util/media';
 
 const propTypes = {
@@ -75,7 +75,7 @@ const StyledHome = styled.div`
   height: 84vh;
 
   .title-text-wrap {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 
     @media ${mediumUp} {
       margin-bottom: 4rem;
@@ -85,12 +85,16 @@ const StyledHome = styled.div`
   .title-area {
     padding-left: 0;
 
+    @media ${mediumUp} {
+      margin-left: 4rem;
+    }
+
     @media ${largeUp} {
       padding-left: 0;
     }
 
     .title-item {
-      font-size: 2rem;
+      font-size: 3rem;
       margin: 0 auto;
 
       @media ${mediumUp} {
@@ -101,6 +105,10 @@ const StyledHome = styled.div`
         font-size: 5rem;
         max-width: 100%;
       }
+    }
+
+    .title-last {
+      min-height: 110px;
     }
   }
 
@@ -114,8 +122,8 @@ const StyledHome = styled.div`
 
   .see-my-work {
     background: none;
-    border: 1px solid ${surf};
-    color: ${surf};
+    border: 1px solid ${orange};
+    color: ${orange};
     padding: 0.65rem 2.5rem;
 
     @media ${mediumUp} {

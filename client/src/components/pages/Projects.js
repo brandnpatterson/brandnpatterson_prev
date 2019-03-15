@@ -1,39 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { object } from 'prop-types';
 
-import Loading from '../Loading';
 import ProjectCard from '../ProjectCard';
+import Summoner from '../Summoner';
 
-const propTypes = {
-  github: object.isRequired
-};
-
-function Projects({ github }) {
-  const { languages } = github.data;
-
-  function renderLanguages(languages) {
-    return (
-      <div>
-        <h3>Langauges most used</h3>
-        {languages
-          .sort((a, b) => b.points - a.points)
-          .map(language => {
-            return (
-              <li key={language.id}>
-                {language.name}: {language.points}{' '}
-                {language.name === 'JavaScript' &&
-                  '(JavaScript, React, Webpack, Gulp, Node, Vue, jQuery, etc)'}
-              </li>
-            );
-          })}
-      </div>
-    );
-  }
-
+function Projects() {
   return (
-    <StyledProjects>
+    <div>
+      <Summoner />
       <ProjectCard>
         <a href="http://runebear.com" target="_blank" rel="noopener noreferrer">
           <img src="images/projects/runebear.png" alt="Rune Bear" />
@@ -93,36 +66,8 @@ function Projects({ github }) {
           </div>
         </div>
       </ProjectCard>
-      <div className="github-stats">
-        <h2>Github commits</h2>
-        <img
-          style={{ marginBottom: '2rem' }}
-          src="https://ghchart.rshah.org/37fdfc/brandnpatterson"
-          alt="Brandon's Github chart"
-        />
-      </div>
-      {!languages ? <Loading /> : renderLanguages(languages)}
-    </StyledProjects>
+    </div>
   );
 }
 
-Projects.propTypes = propTypes;
-
-const StyledProjects = styled.div`
-  .github-stats {
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
-  }
-`;
-
-const mapStateToProps = state => ({
-  github: state.github
-});
-
-const mapDispatchToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Projects);
+export default Projects;

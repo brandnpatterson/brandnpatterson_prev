@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p",
-    "dev": "npm run stylelint && webpack-dev-server -d --open --port 3000",
+    "dev": "npm run stylelint && webpack-dev-server -d --open --port 3000 --host 0.0.0.0",
     "start": "npm run build",
     "stylelint": "stylelint src/**/*.js",
     "cypress": "cypress open",

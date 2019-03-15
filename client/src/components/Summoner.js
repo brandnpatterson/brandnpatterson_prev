@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -81,9 +81,9 @@ class Summoner extends React.Component {
     }
 
     return (
-      <div className="placeholder-champions">
+      <div className="champions">
         {placeholders.map((champ, index) => {
-          return <div className="placeholder-champion" key={index} />;
+          return <div className="champion placeholder" key={index} />;
         })}
       </div>
     );
@@ -97,19 +97,19 @@ class Summoner extends React.Component {
         <div className="summoner-header">
           <div>
             {data ? (
-              <div>
+              <Fragment>
                 <h3 className="summoner-name">
                   {data.name ? data.name : 'Not Found'}
                 </h3>
                 <p className="summoner-level">
                   {data.level ? `Level: ${data.level}` : 'Please try again'}
                 </p>
-              </div>
+              </Fragment>
             ) : (
-              <div className="placeholder-info">
-                <div className="placeholder-summoner-name" />
-                <div className="placeholder-summoner-level" />
-              </div>
+              <Fragment>
+                <div className="summoner-name placeholder" />
+                <div className="summoner-level placeholder" />
+              </Fragment>
             )}
           </div>
           <form className="summoner-form" onSubmit={this.onSubmit}>
@@ -156,22 +156,25 @@ class Summoner extends React.Component {
 Summoner.propTypes = propTypes;
 
 const StyledSummoner = styled.div`
+  background: ${cardColor};
+  border-radius: 5px;
+  box-shadow: ${boxShadow};
+  margin: 0 auto 2.45rem;
+  max-width: 40rem;
   min-height: 661px;
+  padding: 2rem;
 
   @media ${mediumUp} {
-    background: ${cardColor};
-    border-radius: 5px;
-    box-shadow: ${boxShadow};
-    padding: 2rem;
+    margin-bottom: 3rem;
+    max-width: 100%;
   }
 
   .summoner-header {
-    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto 1rem;
-    max-width: 90%;
+    margin: 0 auto 3rem;
+    max-width: 80%;
     min-height: 281.3px;
 
     @media ${smallOnly} {
@@ -179,7 +182,10 @@ const StyledSummoner = styled.div`
     }
 
     @media ${mediumUp} {
+      align-items: center;
       flex-direction: row;
+      margin-bottom: 1rem;
+      max-width: 90%;
       min-height: 171px;
     }
 
@@ -188,21 +194,51 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .placeholder {
+    background: ${surf};
+    box-shadow: ${boxShadow};
+    opacity: 0.3;
+  }
+
   .summoner-name {
     font-family: ${openSans};
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 100;
     letter-spacing: 1.5px;
     margin-bottom: 0;
+
+    @media ${mediumUp} {
+      font-size: 3rem;
+    }
+  }
+
+  .summoner-name.placeholder {
+    @media ${mediumUp} {
+      margin-bottom: 1rem;
+      min-height: 55px;
+      min-width: 254px;
+    }
   }
 
   .summoner-level {
     color: ${surf};
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 0;
+
+    @media ${mediumUp} {
+      font-size: 2rem;
+    }
+  }
+
+  .summoner-level.placeholder {
+    @media ${mediumUp} {
+      min-height: 36px;
+      min-width: 254px;
+    }
   }
 
   .summoner-form {
+    padding-left: 0.75rem;
     text-align: center;
 
     @media ${mediumUp} {
@@ -210,16 +246,30 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .summoner-search-text {
+    text-align: left;
+  }
+
   .summoner-interface {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
+
+    @media ${mediumUp} {
+      flex-direction: row;
+    }
+  }
+
+  .summoner-button,
+  .summoner-input {
+    height: 2rem;
   }
 
   .summoner-input {
     border: 0;
     border-radius: 0;
     height: 2rem;
+    margin-bottom: 1rem;
     padding-left: 1rem;
     width: 12rem;
 
@@ -230,11 +280,10 @@ const StyledSummoner = styled.div`
 
   .summoner-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-right: 1.75rem;
 
     @media screen and (min-width: 450px) {
-      flex-direction: row;
       margin-right: inherit;
     }
   }
@@ -243,11 +292,26 @@ const StyledSummoner = styled.div`
     background: none;
     border: 1px solid ${surf};
     color: ${surf};
-    margin: 0 0 0.5rem 0.5rem;
-    padding: 0.55rem;
+    width: 5rem;
 
     &:hover {
       opacity: 0.5;
+    }
+  }
+
+  .summoner-button:first-child {
+    margin-right: 1rem;
+
+    @media ${mediumUp} {
+      margin-left: 1rem;
+    }
+  }
+
+  .champions-wrap {
+    min-height: 200px;
+
+    @media ${mediumUp} {
+      min-height: 474px;
     }
   }
 
@@ -256,7 +320,7 @@ const StyledSummoner = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 47.5rem;
+    max-width: 25rem;
 
     @media ${mediumUp} {
       max-width: 57.5rem;
@@ -264,57 +328,24 @@ const StyledSummoner = styled.div`
   }
 
   .champion {
-    margin: 1rem;
+    margin: 0.5rem;
+    width: 4rem;
 
     @media ${mediumUp} {
       margin: 2rem;
+      width: 7.5rem;
+    }
+
+    img {
+      width: 100%;
     }
   }
 
-  .placeholder-summoner-name {
-    background: ${surf};
-    box-shadow: ${boxShadow};
-    height: 55px;
-    margin-bottom: 0.5rem;
-    opacity: 0.3;
-    width: 250px;
-  }
-
-  .placeholder-summoner-level {
-    background: ${surf};
-    box-shadow: ${boxShadow};
-    height: 36px;
-    opacity: 0.3;
-    width: 250px;
-  }
-
-  .placeholder-champions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 47.5rem;
-    min-height: 474px;
-
+  .champion.placeholder {
     @media ${mediumUp} {
-      max-width: 57.5rem;
-    }
-  }
-
-  .champions-wrap {
-    min-height: 474px;
-  }
-
-  .placeholder-champion {
-    background: ${surf};
-    box-shadow: ${boxShadow};
-    height: 120px;
-    margin: 1rem;
-    opacity: 0.3;
-    width: 120px;
-
-    @media ${mediumUp} {
-      margin: 2rem;
+      margin-bottom: 1rem;
+      min-height: 120px;
+      min-width: 120px;
     }
   }
 `;

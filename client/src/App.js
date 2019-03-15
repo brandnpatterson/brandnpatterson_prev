@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import { getChampMastery, getSummonerInfo } from './actions';
-import { getGithubInfo } from './actions';
 
 import About from './components/pages/About';
 // import Blog from './components/pages/Blog';
@@ -22,7 +21,6 @@ import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getGithubInfo: func.isRequired,
   getSummonerInfo: func.isRequired
 };
 
@@ -32,7 +30,6 @@ function App(props) {
   useEffect(() => {
     props.getChampMastery(summoner);
     props.getSummonerInfo(summoner);
-    props.getGithubInfo();
   }, []);
 
   return (
@@ -86,7 +83,6 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
   getChampMastery,
-  getGithubInfo,
   getSummonerInfo
 };
 
