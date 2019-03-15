@@ -25,7 +25,6 @@ function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (index === titles.length - 1) {
-        setIndex(-1);
         setIndex(0);
       } else {
         setIndex(-1);
@@ -76,7 +75,7 @@ const StyledHome = styled.div`
   height: 84vh;
 
   .title-text-wrap {
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
   }
 
   .title-area {

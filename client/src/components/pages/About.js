@@ -12,7 +12,11 @@ const About = () => {
     <Fragment>
       <StyledAbout>
         <div className="about-me">
-          <img src="images/about-me.jpg" alt="Brandon Patterson" />
+          <img
+            className="about-me-image"
+            src="images/about-me.jpg"
+            alt="Brandon Patterson"
+          />
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
@@ -63,7 +67,7 @@ const StyledAbout = styled.div`
       margin-bottom: 10rem;
     }
 
-    img {
+    .about-me-image {
       max-height: 20rem;
       max-width: 100%;
       width: 20rem;
@@ -71,7 +75,7 @@ const StyledAbout = styled.div`
       @media ${mediumUp} {
         max-height: 25rem;
         max-width: inherit;
-        width: 30rem;
+        width: 28rem;
       }
     }
 

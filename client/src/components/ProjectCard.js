@@ -27,7 +27,7 @@ const StyledProjectCard = styled.div`
   }
 
   @media ${largeUp} {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   img {
