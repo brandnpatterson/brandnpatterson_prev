@@ -25,8 +25,10 @@ function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (index === titles.length - 1) {
+        setIndex(-1);
         setIndex(0);
       } else {
+        setIndex(-1);
         setIndex(index + 1);
       }
     }, 2000);
@@ -47,7 +49,11 @@ function Home() {
           <h3 className="title-item title-last">{titles[index]}</h3>
         </div>
         <div className="see-my-work-wrap">
-          <Link className="see-my-work" to="/projects">
+          <Link
+            onClick={() => document.activeElement.blur()}
+            className="see-my-work"
+            to="/projects"
+          >
             See my work
           </Link>
         </div>

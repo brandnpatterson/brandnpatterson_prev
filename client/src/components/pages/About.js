@@ -12,11 +12,7 @@ const About = () => {
     <Fragment>
       <StyledAbout>
         <div className="about-me">
-          <img
-            style={{ maxWidth: '400px' }}
-            src="images/about-me.jpg"
-            alt="Brandon Patterson"
-          />
+          <img src="images/about-me.jpg" alt="Brandon Patterson" />
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
@@ -62,20 +58,19 @@ const StyledAbout = styled.div`
     flex-direction: column;
 
     @media ${mediumUp} {
-      margin-bottom: 10rem;
-    }
-
-    @media screen and (min-width: 1140px) {
       flex-direction: row;
       justify-content: space-around;
+      margin-bottom: 10rem;
     }
 
     img {
       max-height: 20rem;
+      max-width: 100%;
       width: 20rem;
 
       @media ${mediumUp} {
         max-height: 25rem;
+        max-width: inherit;
         width: 30rem;
       }
     }
@@ -85,7 +80,9 @@ const StyledAbout = styled.div`
 
       @media ${mediumUp} {
         padding: 0 2rem 2rem;
+        width: 45%;
       }
+
       h1 {
         color: ${surf};
         font-size: 1.5rem;

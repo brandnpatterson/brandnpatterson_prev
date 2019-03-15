@@ -20,7 +20,6 @@ const Contact = () => {
         <p className="contact-info">
           Phone number: <a href="tel:979-236-4789">979-236-4789</a>
         </p>
-
         <p className="contact-info">
           E-mail:{' '}
           <a href="mailto:brandnpatterson@gmail.com">
@@ -70,6 +69,7 @@ const StyledContact = styled.div`
   .contact-header {
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
 
     @media ${mediumUp} {
       flex-direction: row;
@@ -78,7 +78,7 @@ const StyledContact = styled.div`
 
     .contact-info {
       color: ${orange};
-      padding: 0 0 2rem;
+      padding: 0;
       width: 17rem;
     }
   }
