@@ -85,7 +85,12 @@ class Summoner extends React.Component {
     return (
       <div className="champions">
         {placeholders.map((champ, index) => {
-          return <div className="champion placeholder" key={index} />;
+          return (
+            <div key={index}>
+              <div className="champion placeholder" />
+              <div className="champion-name placeholder" />
+            </div>
+          );
         })}
       </div>
     );
@@ -97,23 +102,6 @@ class Summoner extends React.Component {
     return (
       <StyledSummoner>
         <div className="summoner-header">
-          <div>
-            {data ? (
-              <Fragment>
-                <h3 className="summoner-name">
-                  {data.name ? data.name : 'Not Found'}
-                </h3>
-                <p className="summoner-level">
-                  {data.level ? `Level: ${data.level}` : 'Please try again'}
-                </p>
-              </Fragment>
-            ) : (
-              <Fragment>
-                <div className="summoner-name placeholder" />
-                <div className="summoner-level placeholder" />
-              </Fragment>
-            )}
-          </div>
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">
               Search for your League of Legends top champion stats
@@ -140,6 +128,23 @@ class Summoner extends React.Component {
               </div>
             </div>
           </form>
+          <div className="summoner-name-wrap">
+            {data ? (
+              <Fragment>
+                <h3 className="summoner-name">
+                  {data.name ? data.name : 'Not Found'}
+                </h3>
+                <p className="summoner-level">
+                  {data.level ? `Level: ${data.level}` : 'Please try again'}
+                </p>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <div className="summoner-name placeholder" />
+                <div className="summoner-level placeholder" />
+              </Fragment>
+            )}
+          </div>
         </div>
         {data && champions && !data.status && !champions.status ? (
           <div className="champions-wrap">
@@ -162,6 +167,7 @@ const StyledSummoner = styled.div`
   margin: 0 auto 2.45rem;
   max-width: 36.4rem;
   min-height: 661px;
+
   padding: 2rem;
 
   @media ${mediumUp} {
@@ -206,6 +212,7 @@ const StyledSummoner = styled.div`
     font-weight: 100;
     letter-spacing: 1px;
     margin-bottom: 0;
+    margin-top: 0;
 
     @media ${mediumUp} {
       font-size: 3rem;
@@ -227,6 +234,7 @@ const StyledSummoner = styled.div`
   .summoner-level {
     color: ${surf};
     font-size: 1.5rem;
+    margin-bottom: 0;
     margin-top: 0;
 
     @media ${mediumUp} {
@@ -253,6 +261,7 @@ const StyledSummoner = styled.div`
   }
 
   .summoner-search-text {
+    margin-top: 0;
     text-align: left;
   }
 
@@ -313,14 +322,6 @@ const StyledSummoner = styled.div`
     }
   }
 
-  .champions-wrap {
-    min-height: 200px;
-
-    @media ${mediumUp} {
-      min-height: 474px;
-    }
-  }
-
   .champions {
     display: flex;
     flex-wrap: wrap;
@@ -347,7 +348,7 @@ const StyledSummoner = styled.div`
     }
   }
 
-  .champion-image-wrap {
+  .champion.placeholder {
     height: 64px;
     width: 64px;
 
@@ -358,13 +359,12 @@ const StyledSummoner = styled.div`
     }
   }
 
-  .champion.placeholder {
-    height: 64px;
+  .champion-name {
+    height: 20px;
+    margin: 1rem auto 1.49rem;
     width: 64px;
 
     @media ${mediumUp} {
-      height: 120px;
-      margin-bottom: 1rem;
       width: 120px;
     }
   }
