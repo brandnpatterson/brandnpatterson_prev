@@ -84,7 +84,7 @@ const StyledProjectCard = styled.div`
   .card-header {
     color: ${surf};
     font-size: 1.25rem;
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     margin-top: 0;
     padding: 2rem 2rem 0;
 

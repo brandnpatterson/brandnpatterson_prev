@@ -85,7 +85,7 @@ const StyledAbout = styled.div`
       h1 {
         color: ${surf};
         font-size: 1.5rem;
-        letter-spacing: 4px;
+        letter-spacing: 1.5px;
 
         @media ${mediumUp} {
           font-size: 2rem;

@@ -213,10 +213,14 @@ const StyledSummoner = styled.div`
   }
 
   .summoner-name.placeholder {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    min-height: 36px;
+    width: 200px;
+
     @media ${mediumUp} {
-      margin-bottom: 1rem;
       min-height: 55px;
-      min-width: 254px;
+      width: 250px;
     }
   }
 
@@ -231,14 +235,16 @@ const StyledSummoner = styled.div`
   }
 
   .summoner-level.placeholder {
+    min-height: 27px;
+    width: 100px;
+
     @media ${mediumUp} {
       min-height: 36px;
-      min-width: 254px;
+      width: 150px;
     }
   }
 
   .summoner-form {
-    padding-left: 0.75rem;
     text-align: center;
 
     @media ${mediumUp} {
@@ -342,10 +348,13 @@ const StyledSummoner = styled.div`
   }
 
   .champion.placeholder {
+    height: 64px;
+    width: 64px;
+
     @media ${mediumUp} {
       margin-bottom: 1rem;
-      min-height: 120px;
-      min-width: 120px;
+      height: 120px;
+      width: 120px;
     }
   }
 `;

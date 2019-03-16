@@ -62,7 +62,7 @@ const StyledContact = styled.div`
   .heading-title {
     color: ${surf};
     padding: 2rem 0;
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     padding-top: 0;
   }
 

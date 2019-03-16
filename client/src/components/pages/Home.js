@@ -73,9 +73,10 @@ function Home() {
 
 const StyledHome = styled.div`
   height: 84vh;
+  padding-bottom: 3rem;
 
   .title-text-wrap {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 
     @media ${mediumUp} {
       margin-bottom: 4rem;
@@ -94,7 +95,7 @@ const StyledHome = styled.div`
     }
 
     .title-item {
-      font-size: 3rem;
+      font-size: 2rem;
       margin: 0 auto;
 
       @media ${mediumUp} {
