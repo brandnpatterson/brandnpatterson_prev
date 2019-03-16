@@ -12,10 +12,9 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/pages/Home';
 import NotFound from './components/NotFound';
-import Popout from './components/Popout';
 import Projects from './components/pages/Projects';
 
-import { navy, textColor } from './util/colors';
+import { lightgray, navy } from './util/colors';
 import { openSans } from './util/fonts';
 import { mediumUp } from './util/media';
 
@@ -44,7 +43,6 @@ function App(props) {
           <Route component={NotFound} />
         </Switch>
       </div>
-      <Popout />
       <Footer />
     </StyledApp>
   );
@@ -54,7 +52,7 @@ App.propTypes = propTypes;
 
 const StyledApp = styled.div`
   background: ${navy};
-  color: ${textColor};
+  color: ${lightgray};
   display: block;
   font-family: ${openSans};
   min-height: 100vh;
@@ -70,7 +68,7 @@ const StyledApp = styled.div`
   }
 
   a {
-    color: ${textColor};
+    color: ${lightgray};
     text-decoration: none;
   }
 

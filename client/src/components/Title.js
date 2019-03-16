@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { textColor, navy } from '../util/colors';
+import { lightgray, navy } from '../util/colors';
 
 const propTypes = {
   children: string.isRequired
@@ -10,7 +10,7 @@ const Title = props => {
   return (
     <div
       style={{
-        background: textColor,
+        background: lightgray,
         color: navy,
         padding: '1rem',
         textAlign: 'center',

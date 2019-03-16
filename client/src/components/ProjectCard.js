@@ -1,7 +1,7 @@
 import React from 'react';
 import { array } from 'prop-types';
 import styled from 'styled-components';
-import { boxShadow, cardColor, orange, surf, textColor } from '../util/colors';
+import { boxShadow, cardColor, lightgray, orange, surf } from '../util/colors';
 import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
@@ -17,7 +17,7 @@ const StyledProjectCard = styled.div`
     background: ${cardColor};
     border-radius: 5px;
     box-shadow: ${boxShadow};
-    color: ${textColor};
+    color: ${lightgray};
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
