@@ -12,11 +12,13 @@ const About = () => {
     <Fragment>
       <StyledAbout>
         <div className="about-me">
-          <img
-            className="about-me-image"
-            src="images/about-me.jpg"
-            alt="Brandon Patterson"
-          />
+          <div className="about-me-image-wrap">
+            <img
+              className="about-me-image"
+              src="images/about-me.jpg"
+              alt="Brandon Patterson"
+            />
+          </div>
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
@@ -62,15 +64,31 @@ const StyledAbout = styled.div`
       margin-bottom: 2rem;
     }
 
+    .about-me-image-wrap {
+      min-height: 320px;
+      min-width: 342.81px;
+      position: relative;
+
+      @media ${mediumUp} {
+        min-height: 399.98px;
+        min-width: 428.52px;
+      }
+    }
+
     .about-me-image {
       margin: 0 auto;
       max-height: 20rem;
       max-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      vertical-align: middle;
 
       @media ${mediumUp} {
         margin: inherit;
         max-height: 25rem;
-        max-width: inherit;
       }
     }
 
@@ -85,7 +103,7 @@ const StyledAbout = styled.div`
       h1 {
         color: ${surf};
         font-size: 1.5rem;
-        letter-spacing: 1.5px;
+        letter-spacing: 1px;
 
         @media ${mediumUp} {
           font-size: 2rem;

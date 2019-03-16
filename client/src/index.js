@@ -6,9 +6,15 @@ import store from './store';
 import App from './App';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faAngleRight,
+  faDatabase,
+  faEnvelope,
+  faPhone
+} from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faDatabase, faSpinner);
+library.add(fab, faAngleLeft, faAngleRight, faDatabase, faEnvelope, faPhone);
 
 render(
   <Provider store={store}>

@@ -12,8 +12,6 @@ const ProjectCard = props => {
   return <StyledProjectCard>{props.children}</StyledProjectCard>;
 };
 
-ProjectCard.propTypes = propTypes;
-
 const StyledProjectCard = styled.div`
   @media ${mediumUp} {
     background: ${cardColor};
@@ -84,7 +82,6 @@ const StyledProjectCard = styled.div`
   .card-header {
     color: ${surf};
     font-size: 1.25rem;
-    letter-spacing: 1.5px;
     margin-top: 0;
     padding: 2rem 2rem 0;
 
@@ -124,5 +121,7 @@ const StyledProjectCard = styled.div`
     color: ${orange};
   }
 `;
+
+ProjectCard.propTypes = propTypes;
 
 export default ProjectCard;

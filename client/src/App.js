@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
 
 import { getChampMastery, getSummonerInfo } from './actions';
 
 import About from './components/pages/About';
-// import Blog from './components/pages/Blog';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/pages/Home';
 import NotFound from './components/NotFound';
+import Popout from './components/Popout';
 import Projects from './components/pages/Projects';
 
 import { navy, textColor } from './util/colors';
@@ -38,13 +38,13 @@ function App(props) {
       <div className="content">
         <Switch>
           <Route path="/about" component={About} />
-          {/* <Route path="/blog" component={Blog} /> */}
           <Route path="/contact" component={Contact} />
           <Route path="/projects" component={Projects} />
           <Route exact path="/" component={Home} />
           <Route component={NotFound} />
         </Switch>
       </div>
+      <Popout />
       <Footer />
     </StyledApp>
   );

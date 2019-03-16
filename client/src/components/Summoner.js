@@ -62,7 +62,9 @@ class Summoner extends React.Component {
         {champions.map(champ => {
           return (
             <div className="champion" key={champ.id}>
-              <img src={champ.src} alt={champ.name} />
+              <div className="champion-image-wrap">
+                <img src={champ.src} alt={champ.name} />
+              </div>
               <p>{champ.name}</p>
             </div>
           );
@@ -153,14 +155,12 @@ class Summoner extends React.Component {
   }
 }
 
-Summoner.propTypes = propTypes;
-
 const StyledSummoner = styled.div`
   background: ${cardColor};
   border-radius: 5px;
   box-shadow: ${boxShadow};
   margin: 0 auto 2.45rem;
-  max-width: 40rem;
+  max-width: 36.4rem;
   min-height: 661px;
   padding: 2rem;
 
@@ -204,7 +204,7 @@ const StyledSummoner = styled.div`
     font-family: ${openSans};
     font-size: 2rem;
     font-weight: 100;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     margin-bottom: 0;
 
     @media ${mediumUp} {
@@ -213,8 +213,8 @@ const StyledSummoner = styled.div`
   }
 
   .summoner-name.placeholder {
-    margin-top: 2rem;
     margin-bottom: 0.5rem;
+    margin-top: 2rem;
     min-height: 36px;
     width: 200px;
 
@@ -347,17 +347,30 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .champion-image-wrap {
+    height: 64px;
+    width: 64px;
+
+    @media ${mediumUp} {
+      height: 120px;
+      margin-bottom: 1rem;
+      width: 120px;
+    }
+  }
+
   .champion.placeholder {
     height: 64px;
     width: 64px;
 
     @media ${mediumUp} {
-      margin-bottom: 1rem;
       height: 120px;
+      margin-bottom: 1rem;
       width: 120px;
     }
   }
 `;
+
+Summoner.propTypes = propTypes;
 
 const mapStateToProps = state => ({
   summoner: state.summoner
