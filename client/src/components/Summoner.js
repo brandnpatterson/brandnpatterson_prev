@@ -6,7 +6,7 @@ import { getChampMastery, getSummonerInfo } from '../actions';
 
 import Ranked from './Ranked';
 
-import { boxShadow, cardColor, surf } from '../util/colors';
+import { boxShadow, cardColor, orange, surf } from '../util/colors';
 import { openSans } from '../util/fonts';
 import { largeUp, mediumUp, smallOnly } from '../util/media';
 
@@ -104,7 +104,7 @@ class Summoner extends React.Component {
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">
-              Search for your League of Legends top champion stats
+              Search for your top 10 most played champions*
             </h4>
             <div className="summoner-interface">
               <input
@@ -155,6 +155,10 @@ class Summoner extends React.Component {
         ) : (
           <div className="champions-wrap">{this.renderPlaceholders()}</div>
         )}
+        <div className="built-with-wrap">
+          <p className="built-with">Built with:</p>
+          <p>Node, Express, MySQL, React, and Redux</p>
+        </div>
       </StyledSummoner>
     );
   }
@@ -168,18 +172,19 @@ const StyledSummoner = styled.div`
   max-width: 36.4rem;
   min-height: 661px;
 
-  padding: 2rem;
+  padding: 2rem 2rem 0 2rem;
 
   @media ${mediumUp} {
     margin-bottom: 3rem;
     max-width: 100%;
+    padding: 2rem;
   }
 
   .summoner-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto 3rem;
+    margin: 0 auto 3rem 0.5rem;
     max-width: 80%;
     min-height: 281.3px;
 
@@ -189,8 +194,9 @@ const StyledSummoner = styled.div`
 
     @media ${mediumUp} {
       align-items: center;
-      flex-direction: row;
+      flex-direction: row-reverse;
       margin-bottom: 1rem;
+      margin-left: 0;
       max-width: 90%;
       min-height: 171px;
     }
@@ -263,6 +269,10 @@ const StyledSummoner = styled.div`
   .summoner-search-text {
     margin-top: 0;
     text-align: left;
+
+    @media ${mediumUp} {
+      text-align: right;
+    }
   }
 
   .summoner-interface {
@@ -322,6 +332,18 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .champions-wrap {
+    min-height: 266px;
+
+    @media ${smallOnly} {
+      min-height: 532px;
+    }
+
+    @media ${mediumUp} {
+      min-height: 474px;
+    }
+  }
+
   .champions {
     display: flex;
     flex-wrap: wrap;
@@ -367,6 +389,26 @@ const StyledSummoner = styled.div`
     @media ${mediumUp} {
       width: 120px;
     }
+  }
+
+  .champion-name.placeholder {
+    margin-bottom: 1.4rem;
+
+    @media ${mediumUp} {
+      margin-bottom: 2.7rem;
+    }
+  }
+
+  .built-with-wrap {
+    padding: 3rem 0 1rem;
+
+    @media ${mediumUp} {
+      padding: 3rem 0 1rem 2.9rem;
+    }
+  }
+
+  .built-with {
+    color: ${orange};
   }
 `;
 

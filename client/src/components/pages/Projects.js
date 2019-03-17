@@ -3,6 +3,8 @@ import React from 'react';
 import ProjectCard from '../ProjectCard';
 import Summoner from '../Summoner';
 
+import { orange } from '../../util/colors';
+
 function Projects() {
   return (
     <div>
@@ -42,7 +44,17 @@ function Projects() {
             <p>Form validation library written in JavaScript</p>
             <div className="built-with-wrap">
               <p className="built-with">Built with:</p>
-              <p>JavaScript, Gulp, NPM, Jasmine</p>
+              <p>
+                JavaScript, Gulp, and Jasmine. Published to{' '}
+                <a
+                  style={{ color: orange, textDecoration: 'underline' }}
+                  href="https://www.npmjs.com/package/coriander"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  NPM
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -61,7 +73,7 @@ function Projects() {
             <p>Front End development environment using webpack</p>
             <div className="built-with-wrap">
               <p className="built-with">Built with:</p>
-              <p>Webpack, Babel, jQuery, Bootstrap</p>
+              <p>Webpack, Babel, jQuery, and Bootstrap</p>
             </div>
           </div>
         </div>

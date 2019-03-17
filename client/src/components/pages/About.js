@@ -26,19 +26,14 @@ const About = () => {
               <Link to="/projects" style={{ color: orange }}>
                 Front End Developer
               </Link>{' '}
-              with experience building User Interfaces for global companies.
-              I've created websites that support clients at a large scale and
-              valuing WCAG accessibility standards. I also have experience
-              building custom blog solutions with React and the Wordpress API. I
-              enjoy creating reusable, scalable tools and build systems that can
-              be utilized by other developers.
+              in Houston, Texas with experience building User Interfaces for
+              global companies. I create websites and Single Page Applications
+              that are responsive, accessibility compliant, and aesthetically
+              pleasing. I enjoy using the latest JavaScript features and
+              libraries such as ES6, Webpack, Babel, and React. When I’m not
+              coding, I like to travel, spend time with my family, and play
+              League of Legends*.
             </p>
-            <div className="about-me-paragraph">
-              I hold a Bachelors of Music in Composition and Technology from
-              Oral Roberts University. I'm a self taught developer with a
-              passion for all things programming and a vision for creating
-              outstanding User Interfaces.
-            </div>
           </div>
         </div>
       </StyledAbout>
@@ -61,7 +56,7 @@ const StyledAbout = styled.div`
     @media ${mediumUp} {
       flex-direction: row;
       justify-content: space-around;
-      margin-bottom: 2rem;
+      margin-bottom: 6rem;
     }
 
     .about-me-image-wrap {
@@ -70,7 +65,7 @@ const StyledAbout = styled.div`
       position: relative;
 
       @media ${mediumUp} {
-        min-height: 399.98px;
+        min-height: 400px;
         min-width: 428.52px;
       }
     }
@@ -96,7 +91,7 @@ const StyledAbout = styled.div`
       padding: 2rem 0;
 
       @media ${mediumUp} {
-        padding: 0;
+        padding: 0 0 0 3rem;
         width: 50%;
       }
 

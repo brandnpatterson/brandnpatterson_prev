@@ -74,6 +74,7 @@ const StyledProjectCard = styled.div`
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       box-shadow: none;
+      margin: 0;
       max-width: 100%;
       padding: 0 2rem;
     }
@@ -109,16 +110,16 @@ const StyledProjectCard = styled.div`
     }
   }
 
-  .built-with-wrap p {
+  .built-with-wrap .languages-used {
     margin: 0;
-
-    @media ${mediumUp} {
-      margin: 1rem auto;
-    }
   }
 
   .built-with {
     color: ${orange};
+
+    @media ${mediumUp} {
+      margin: 1rem auto;
+    }
   }
 `;
 
