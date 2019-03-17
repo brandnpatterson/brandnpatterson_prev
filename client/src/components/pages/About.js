@@ -32,7 +32,14 @@ const About = () => {
               pleasing. I enjoy using the latest JavaScript features and
               libraries such as ES6, Webpack, Babel, and React. When I’m not
               coding, I like to travel, spend time with my family, and play
-              League of Legends*.
+              video games like{' '}
+              <Link
+                style={{ color: surf, textDecoration: 'underline' }}
+                to="/projects"
+              >
+                League of Legends
+              </Link>
+              .
             </p>
           </div>
         </div>
@@ -108,6 +115,7 @@ const StyledAbout = styled.div`
 
     .about-me-paragraph {
       line-height: 1.75rem;
+      text-align: justify;
     }
   }
 `;

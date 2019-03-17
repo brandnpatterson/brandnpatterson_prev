@@ -12,8 +12,11 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} Brandon Patterson
       </a>
       <p>
-        * In no way associated or affiliated with League of Legends or Riot
-        Games.
+        This website isn’t endorsed by Riot Games and doesn’t reflect the views
+        or opinions of Riot Games or anyone officially involved in producing or
+        managing League of Legends. League of Legends and Riot Games are
+        trademarks or registered trademarks of Riot Games, Inc. League of
+        Legends © Riot Games, Inc.
       </p>
     </StyledFooter>
   );
@@ -21,8 +24,7 @@ const Footer = () => {
 
 const StyledFooter = styled.footer`
   background: rgba(0, 0, 0, 0.2);
-  height: 2rem;
-  padding: 2rem;
+  padding: 2rem 2rem 1rem;
 
   p {
     font-size: 0.85rem;

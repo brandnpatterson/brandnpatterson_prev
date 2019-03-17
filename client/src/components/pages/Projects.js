@@ -3,7 +3,7 @@ import React from 'react';
 import ProjectCard from '../ProjectCard';
 import Summoner from '../Summoner';
 
-import { orange } from '../../util/colors';
+import { surf } from '../../util/colors';
 
 function Projects() {
   return (
@@ -47,7 +47,7 @@ function Projects() {
               <p>
                 JavaScript, Gulp, and Jasmine. Published to{' '}
                 <a
-                  style={{ color: orange, textDecoration: 'underline' }}
+                  style={{ color: surf, textDecoration: 'underline' }}
                   href="https://www.npmjs.com/package/coriander"
                   target="_blank"
                   rel="noopener noreferrer"

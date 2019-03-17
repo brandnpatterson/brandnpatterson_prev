@@ -104,7 +104,7 @@ class Summoner extends React.Component {
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">
-              Search for your top 10 most played champions*
+              Your most played champions in League of Legends
             </h4>
             <div className="summoner-interface">
               <input
@@ -172,7 +172,7 @@ const StyledSummoner = styled.div`
   max-width: 36.4rem;
   min-height: 661px;
 
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem 2rem 0;
 
   @media ${mediumUp} {
     margin-bottom: 3rem;
@@ -195,8 +195,7 @@ const StyledSummoner = styled.div`
     @media ${mediumUp} {
       align-items: center;
       flex-direction: row-reverse;
-      margin-bottom: 1rem;
-      margin-left: 0;
+      margin: 0 auto 1rem;
       max-width: 90%;
       min-height: 171px;
     }

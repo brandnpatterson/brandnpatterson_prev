@@ -13,22 +13,21 @@ const propTypes = {
 const Github = () => {
   return (
     <StyledGithub>
-      <h2 className="title">
-        <span>Github</span> -{' '}
-        <a
-          style={{ color: orange }}
-          href="https://github.com/brandnpatterson"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          brandnpatterson
-        </a>
-      </h2>
-      <img
-        className="github-stats-img"
-        src="https://ghchart.rshah.org/329AD1/brandnpatterson"
-        alt="Brandon's Github chart"
-      />
+      <a
+        href="https://github.com/brandnpatterson"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h2 className="title">
+          <span>Github</span> -{' '}
+          <span style={{ color: orange }}>brandnpatterson</span>
+        </h2>{' '}
+        <img
+          className="github-stats-img"
+          src="https://ghchart.rshah.org/329AD1/brandnpatterson"
+          alt="Brandon's Github chart"
+        />
+      </a>
     </StyledGithub>
   );
 };
