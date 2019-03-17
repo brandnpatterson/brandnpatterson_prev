@@ -20,7 +20,10 @@ class Summoner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: '',
+      championsHeight: '266px',
+      championsHeightMedium: '532px',
+      championsHeightSmall: '474px'
     };
 
     this.onChange = this.onChange.bind(this);
@@ -332,14 +335,14 @@ const StyledSummoner = styled.div`
   }
 
   .champions-wrap {
-    min-height: 266px;
+    min-height: ${Summoner.championsHeight};
 
     @media ${smallOnly} {
-      min-height: 532px;
+      min-height: ${Summoner.championsHeightMedium};
     }
 
     @media ${mediumUp} {
-      min-height: 474px;
+      min-height: ${Summoner.championsHeightSmall};
     }
   }
 
