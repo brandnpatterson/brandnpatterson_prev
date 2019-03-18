@@ -31,7 +31,7 @@ const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
-    padding: 2rem 2rem 1rem;
+    padding: 2rem 2rem 0;
     width: 20rem;
   }
 

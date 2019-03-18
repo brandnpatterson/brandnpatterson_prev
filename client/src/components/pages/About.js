@@ -68,7 +68,6 @@ const StyledAbout = styled.div`
 
     .about-me-image-wrap {
       min-height: 320px;
-      min-width: 342.81px;
       position: relative;
 
       @media ${mediumUp} {
