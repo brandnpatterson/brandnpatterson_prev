@@ -26,17 +26,10 @@ const Footer = () => {
         <a
           className="footer-copyright-wrap"
           href="mailto:brandnpatterson@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon="envelope" size="2x" />
         </a>
-        <a
-          className="footer-copyright-wrap"
-          href="tel:979-236-4789"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="footer-copyright-wrap" href="tel:979-236-4789">
           <FontAwesomeIcon icon="phone" size="2x" />
         </a>
       </div>
