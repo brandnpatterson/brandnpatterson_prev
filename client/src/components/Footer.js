@@ -7,10 +7,38 @@ const Footer = () => {
   return (
     <StyledFooter>
       <div className="footer-icons">
-        <FontAwesomeIcon icon={['fab', 'linkedin']} size="2x" />
-        <FontAwesomeIcon icon={['fab', 'github']} size="2x" />
-        <FontAwesomeIcon icon="envelope" size="2x" />
-        <FontAwesomeIcon icon="phone" size="2x" />
+        <a
+          className="footer-copyright-wrap"
+          href="https://linkedin.com/in/brandnpatterson"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={['fab', 'linkedin']} size="2x" />
+        </a>
+        <a
+          className="footer-copyright-wrap"
+          href="https://github.com/brandnpatterson"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={['fab', 'github']} size="2x" />
+        </a>
+        <a
+          className="footer-copyright-wrap"
+          href="mailto:brandnpatterson@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon="envelope" size="2x" />
+        </a>
+        <a
+          className="footer-copyright-wrap"
+          href="tel:979-236-4789"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon="phone" size="2x" />
+        </a>
       </div>
       <a
         className="footer-copyright-wrap"
