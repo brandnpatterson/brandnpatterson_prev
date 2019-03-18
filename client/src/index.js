@@ -13,6 +13,7 @@ import {
   faEnvelope,
   faPhone
 } from '@fortawesome/free-solid-svg-icons';
+import 'core-js/modules/es6.promise';
 
 library.add(fab, faAngleLeft, faAngleRight, faDatabase, faEnvelope, faPhone);
 
