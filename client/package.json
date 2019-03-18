@@ -57,5 +57,14 @@
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "android 4.4",
+    "chrome >= 55",
+    "firefox >= 50",
+    "ie >= 11",
+    "iOS >= 10",
+    "safari >= 10"
+  ]
 }

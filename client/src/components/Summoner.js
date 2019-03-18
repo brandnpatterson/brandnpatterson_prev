@@ -287,11 +287,6 @@ const StyledSummoner = styled.div`
     }
   }
 
-  .summoner-button,
-  .summoner-input {
-    height: 2rem;
-  }
-
   .summoner-input {
     border: 0;
     border-radius: 0;
@@ -301,6 +296,7 @@ const StyledSummoner = styled.div`
     width: 12rem;
 
     @media screen and (min-width: 450px) {
+      height: 1.85rem;
       margin-right: inherit;
     }
   }
@@ -319,6 +315,7 @@ const StyledSummoner = styled.div`
     background: none;
     border: 1px solid ${surf};
     color: ${surf};
+    height: 2rem;
     width: 5rem;
 
     &:hover {
