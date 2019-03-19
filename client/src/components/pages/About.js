@@ -15,7 +15,7 @@ const About = () => {
           <div className="about-me-image-wrap">
             <img
               className="about-me-image"
-              src="images/about-me.jpg"
+              src="images/about-me4.jpg"
               alt="Brandon Patterson"
             />
           </div>
