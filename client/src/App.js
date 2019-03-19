@@ -77,6 +77,7 @@ const StyledApp = styled.div`
   display: block;
   font-family: ${openSans};
   min-height: 100vh;
+  overflow-x: hidden;
 
   .content {
     margin: 0 2rem 5rem 2rem;
