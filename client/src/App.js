@@ -25,13 +25,19 @@ const propTypes = {
 };
 
 function App(props) {
-  const summoner = 'Brandy Bot';
+  const summonerName = 'Brandy Bot';
 
   useEffect(() => {
-    props.getChampMastery(summoner);
-    props.getSummonerInfo(summoner);
+    props.getChampMastery(summonerName);
+    props.getSummonerInfo(summonerName);
 
-    if (props.summoner) {
+    if (
+      localStorage.getItem('summoner-champions') !== undefined &&
+      localStorage.getItem('summoner-data') !== undefined &&
+      props.summoner &&
+      props.summoner.data &&
+      props.summoner.data.name === summonerName
+    ) {
       if (props.summoner.champions.length > 0) {
         localStorage.setItem(
           'summoner-champions',

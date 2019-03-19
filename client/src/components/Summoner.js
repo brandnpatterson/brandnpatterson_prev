@@ -37,6 +37,30 @@ class Summoner extends React.Component {
     this.renderChampions = this.renderChampions.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    const { champions } = newProps.summoner;
+
+    if (champions.length <= 3) {
+      this.setState({
+        championsHeight: '133px',
+        championsHeightMedium: '229px',
+        championsHeightSmall: '133px'
+      });
+    } else if (champions.length < 6) {
+      this.setState({
+        championsHeight: '266px',
+        championsHeightMedium: '458px',
+        championsHeightSmall: '266px'
+      });
+    } else if (champions.length < 9) {
+      this.setState({
+        championsHeight: '399px',
+        championsHeightMedium: '687px',
+        championsHeightSmall: '399px'
+      });
+    }
+  }
+
   onChange(event) {
     this.setState({
       search: event.target.value
@@ -61,7 +85,9 @@ class Summoner extends React.Component {
     }
   }
 
-  renderChampions(champions) {
+  renderChampions() {
+    const { champions } = this.props.summoner;
+
     return (
       <div className="champions">
         {champions.map(champ => {
@@ -105,7 +131,11 @@ class Summoner extends React.Component {
     const { champions, data } = this.props.summoner;
 
     return (
-      <StyledSummoner>
+      <StyledSummoner
+        championsHeight={this.state.championsHeight}
+        championsHeightMedium={this.state.championsHeightMedium}
+        championsHeightSmall={this.state.championsHeightSmall}
+      >
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">
@@ -153,7 +183,7 @@ class Summoner extends React.Component {
         </div>
         {data && champions && !data.status && !champions.status ? (
           <div className="champions-wrap">
-            {this.renderChampions(champions)}
+            {this.renderChampions()}
             <Ranked name="Flex 5v5" data={data.ranked.flex} />
             <Ranked name="Solo / Duo" data={data.ranked.solo} />
           </div>
@@ -334,14 +364,14 @@ const StyledSummoner = styled.div`
   }
 
   .champions-wrap {
-    min-height: ${Summoner.championsHeight};
+    min-height: ${props => props.championsHeight};
 
     @media ${smallOnly} {
-      min-height: ${Summoner.championsHeightMedium};
+      min-height: ${props => props.championsHeightSmall};
     }
 
     @media ${mediumUp} {
-      min-height: ${Summoner.championsHeightSmall};
+      min-height: ${props => props.championsHeightMedium};
     }
   }
 
@@ -363,7 +393,7 @@ const StyledSummoner = styled.div`
 
     @media ${mediumUp} {
       margin: 2rem;
-      width: 7.5rem;
+      width: 7rem;
     }
 
     img {
@@ -372,20 +402,20 @@ const StyledSummoner = styled.div`
   }
 
   .champion.placeholder {
-    height: 64px;
-    width: 64px;
+    height: 4rem;
+    width: 4rem;
 
     @media ${mediumUp} {
-      height: 120px;
+      height: 7rem;
       margin-bottom: 1rem;
-      width: 120px;
+      width: 7rem;
     }
   }
 
   .champion-name {
     height: 20px;
     margin: 1rem auto 1.49rem;
-    width: 64px;
+    width: 4rem;
 
     @media ${mediumUp} {
       width: 120px;

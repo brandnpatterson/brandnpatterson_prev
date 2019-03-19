@@ -23,7 +23,11 @@ const About = () => {
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
               I'm a{' '}
-              <Link to="/projects" style={{ color: orange }}>
+              <Link
+                to="/projects"
+                onClick={() => window.scrollTo(0, 0)}
+                style={{ color: orange }}
+              >
                 Front End Developer
               </Link>{' '}
               in Houston, Texas with experience building User Interfaces for
@@ -34,8 +38,9 @@ const About = () => {
               coding, I like to travel, spend time with my family, and play
               video games like{' '}
               <Link
-                style={{ color: surf, textDecoration: 'underline' }}
                 to="/projects"
+                onClick={() => window.scrollTo(0, 0)}
+                style={{ color: surf, textDecoration: 'underline' }}
               >
                 League of Legends
               </Link>

@@ -43,7 +43,7 @@ function Home() {
         </div>
         <div className="see-my-work-wrap">
           <Link
-            onClick={() => document.activeElement.blur()}
+            onClick={() => window.scrollTo(0, 0)}
             className="see-my-work"
             to="/projects"
           >
