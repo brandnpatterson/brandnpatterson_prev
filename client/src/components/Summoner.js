@@ -437,6 +437,14 @@ const StyledSummoner = styled.div`
     }
   }
 
+  .champion-image-wrap {
+    min-height: 64px;
+
+    @media ${mediumUp} {
+      min-height: 112px;
+    }
+  }
+
   .no-champion-history {
     @media ${mediumUp} {
       padding-left: 2.9rem;
