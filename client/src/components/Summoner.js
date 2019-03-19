@@ -28,8 +28,8 @@ class Summoner extends React.Component {
     this.state = {
       search: '',
       championsHeight: '266px',
-      championsHeightMedium: '532px',
-      championsHeightSmall: '474px'
+      championsHeightMedium: '546px',
+      championsHeightSmall: '460px'
     };
 
     this.onChange = this.onChange.bind(this);
@@ -41,7 +41,7 @@ class Summoner extends React.Component {
   componentWillReceiveProps(newProps) {
     const { champions } = newProps.summoner;
 
-    if (champions.length <= 3) {
+    if (champions.length !== 0 && champions.length <= 3) {
       this.setState({
         championsHeight: '133px',
         championsHeightMedium: '229px',
@@ -50,7 +50,7 @@ class Summoner extends React.Component {
     } else if (champions.length < 6) {
       this.setState({
         championsHeight: '266px',
-        championsHeightMedium: '458px',
+        championsHeightMedium: '460px',
         championsHeightSmall: '266px'
       });
     } else if (champions.length < 9) {
@@ -91,20 +91,24 @@ class Summoner extends React.Component {
   renderChampions() {
     const { champions } = this.props.summoner;
 
-    return (
-      <div className="champions">
-        {champions.map(champ => {
-          return (
-            <div className="champion" key={champ.id}>
-              <div className="champion-image-wrap">
-                <img src={champ.src} alt={champ.name} />
+    if (champions.length === 0) {
+      return <p className="no-champion-history">No champion history found</p>;
+    } else {
+      return (
+        <div className="champions">
+          {champions.map(champ => {
+            return (
+              <div className="champion" key={champ.id}>
+                <div className="champion-image-wrap">
+                  <img src={champ.src} alt={champ.name} />
+                </div>
+                <p>{champ.name}</p>
               </div>
-              <p>{champ.name}</p>
-            </div>
-          );
-        })}
-      </div>
-    );
+            );
+          })}
+        </div>
+      );
+    }
   }
 
   renderPlaceholders() {
@@ -430,6 +434,12 @@ const StyledSummoner = styled.div`
 
     @media ${mediumUp} {
       margin-bottom: 2.7rem;
+    }
+  }
+
+  .no-champion-history {
+    @media ${mediumUp} {
+      padding-left: 2.9rem;
     }
   }
 
