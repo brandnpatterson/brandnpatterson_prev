@@ -13,6 +13,7 @@ import Ranked from './Ranked';
 import { boxShadow, cardColor, orange, surf } from '../util/colors';
 import { openSans } from '../util/fonts';
 import { largeUp, mediumUp, smallOnly } from '../util/media';
+import { trimAndLower } from '../util';
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -76,10 +77,12 @@ class Summoner extends React.Component {
   onSubmit(event) {
     event.preventDefault();
 
+    const currentSummoner = trimAndLower(this.props.summoner.data.name);
+    const searching = trimAndLower(this.state.search);
     const data = new FormData(event.target);
     const summoner = data.get('summoner');
 
-    if (summoner !== '') {
+    if (summoner !== '' && currentSummoner !== searching) {
       this.props.getChampMastery(summoner);
       this.props.getSummonerInfo(summoner);
     }
