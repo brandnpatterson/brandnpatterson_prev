@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { func } from 'prop-types';
+import { func, object } from 'prop-types';
 import styled from 'styled-components';
 
 import { getChampMastery, getSummonerInfo } from './actions';
@@ -20,7 +20,8 @@ import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getSummonerInfo: func.isRequired
+  getSummonerInfo: func.isRequired,
+  summoner: object.isRequired
 };
 
 function App(props) {
@@ -29,6 +30,22 @@ function App(props) {
   useEffect(() => {
     props.getChampMastery(summoner);
     props.getSummonerInfo(summoner);
+
+    if (props.summoner) {
+      if (props.summoner.champions.length > 0) {
+        localStorage.setItem(
+          'summoner-champions',
+          JSON.stringify(props.summoner.champions)
+        );
+      }
+
+      if (props.summoner.data) {
+        localStorage.setItem(
+          'summoner-data',
+          JSON.stringify(props.summoner.data)
+        );
+      }
+    }
   }, []);
 
   return (
@@ -77,7 +94,9 @@ const StyledApp = styled.div`
   }
 `;
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  summoner: state.summoner
+});
 
 const mapDispatchToProps = {
   getChampMastery,

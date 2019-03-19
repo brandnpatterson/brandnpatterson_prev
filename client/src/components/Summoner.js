@@ -2,7 +2,11 @@ import React, { Fragment } from 'react';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { getChampMastery, getSummonerInfo } from '../actions';
+import {
+  getChampMastery,
+  getInfoFromLocalStorage,
+  getSummonerInfo
+} from '../actions';
 
 import Ranked from './Ranked';
 
@@ -12,6 +16,7 @@ import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
+  getInfoFromLocalStorage: func.isRequired,
   getSummonerInfo: func.isRequired,
   summoner: object.isRequired
 };
@@ -39,10 +44,7 @@ class Summoner extends React.Component {
   }
 
   onReset() {
-    const summoner = 'Brandy Bot';
-
-    this.props.getChampMastery(summoner);
-    this.props.getSummonerInfo(summoner);
+    this.props.getInfoFromLocalStorage();
 
     this.setState({ search: '' });
   }
@@ -417,7 +419,11 @@ const mapStateToProps = state => ({
   summoner: state.summoner
 });
 
-const mapDispatchToProps = { getChampMastery, getSummonerInfo };
+const mapDispatchToProps = {
+  getChampMastery,
+  getInfoFromLocalStorage,
+  getSummonerInfo
+};
 
 export default connect(
   mapStateToProps,
