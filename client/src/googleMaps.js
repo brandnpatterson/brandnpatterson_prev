@@ -123,9 +123,9 @@ const googleMaps = {
     });
 
     const infoMarkup = `
-        <h4 class="google-maps-title">Brandon Patterson</h4>
-        <h5>Front End Developer</h5>
-      `;
+      <h4 class="google-maps-title">Brandon Patterson</h4>
+      <h5>Front End Developer</h5>
+    `;
 
     google.maps.event.addListener(marker, 'click', () => {
       infowindow.setContent(infoMarkup);
