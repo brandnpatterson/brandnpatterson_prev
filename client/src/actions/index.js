@@ -10,8 +10,10 @@ import {
 
 // Riot
 export const getChampMastery = summonerName => dispatch => {
-  axios
-    .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}/mastery`)
+  axios({
+    method: 'get',
+    url: `/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}/mastery`
+  })
     .then(response => {
       dispatch({
         type: GET_CHAMPION_MASTERY,
@@ -27,8 +29,10 @@ export const getChampMastery = summonerName => dispatch => {
 };
 
 export const getSummonerInfo = summonerName => dispatch => {
-  axios
-    .get(`/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}`)
+  axios({
+    method: 'get',
+    url: `/api/v1/riot/summoner/${DOMPurify.sanitize(summonerName)}`
+  })
     .then(response => {
       dispatch({
         type: GET_SUMMONER_INFO,

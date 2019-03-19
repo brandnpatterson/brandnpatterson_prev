@@ -77,14 +77,14 @@ class Summoner extends React.Component {
   onSubmit(event) {
     event.preventDefault();
 
-    const currentSummoner = trimAndLower(this.props.summoner.data.name);
-    const searching = trimAndLower(this.state.search);
-    const data = new FormData(event.target);
-    const summoner = data.get('summoner');
+    const { search } = this.state;
 
-    if (summoner !== '' && currentSummoner !== searching) {
-      this.props.getChampMastery(summoner);
-      this.props.getSummonerInfo(summoner);
+    const currentSummoner = trimAndLower(this.props.summoner.data.name);
+    const searching = trimAndLower(search);
+
+    if (search !== '' && currentSummoner !== searching) {
+      this.props.getChampMastery(search);
+      this.props.getSummonerInfo(search);
     }
   }
 
