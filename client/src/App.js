@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 
-import { getChampMastery, getSummonerInfo } from './actions';
+import {
+  getChampMastery,
+  getInfoFromLocalStorage,
+  getSummonerInfo
+} from './actions';
 
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
@@ -20,6 +24,7 @@ import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
+  getInfoFromLocalStorage: func.isRequired,
   getSummonerInfo: func.isRequired,
   summoner: object.isRequired
 };
@@ -28,29 +33,27 @@ function App(props) {
   const summonerName = 'Brandy Bot';
 
   useEffect(() => {
-    props.getChampMastery(summonerName);
-    props.getSummonerInfo(summonerName);
-
     if (
-      props.summoner &&
-      props.summoner.data &&
-      props.summoner.data.name === summonerName
+      localStorage.getItem('summoner-champions') &&
+      localStorage.getItem('summoner-data')
     ) {
-      if (props.summoner.champions.length > 0) {
-        localStorage.setItem(
-          'summoner-champions',
-          JSON.stringify(props.summoner.champions)
-        );
-      }
-
-      if (props.summoner.data) {
-        localStorage.setItem(
-          'summoner-data',
-          JSON.stringify(props.summoner.data)
-        );
-      }
+      props.getInfoFromLocalStorage();
+    } else {
+      props.getChampMastery(summonerName);
+      props.getSummonerInfo(summonerName);
     }
   }, []);
+
+  if (props.summoner.champions.length > 0 && !props.summoner.status) {
+    localStorage.setItem(
+      'summoner-champions',
+      JSON.stringify(props.summoner.champions)
+    );
+  }
+
+  if (props.summoner.data !== null && !props.summoner.status) {
+    localStorage.setItem('summoner-data', JSON.stringify(props.summoner.data));
+  }
 
   return (
     <StyledApp>
@@ -105,6 +108,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getChampMastery,
+  getInfoFromLocalStorage,
   getSummonerInfo
 };
 

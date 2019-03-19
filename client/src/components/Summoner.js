@@ -188,11 +188,11 @@ class Summoner extends React.Component {
             )}
           </div>
         </div>
-        {data && champions && !data.status && !champions.status ? (
+        {champions && data && !champions.status && !data.status ? (
           <div className="champions-wrap">
             {this.renderChampions()}
-            <Ranked name="Flex 5v5" data={data.ranked.flex} />
-            <Ranked name="Solo / Duo" data={data.ranked.solo} />
+            <Ranked name="Flex 5v5" data={data.ranked && data.ranked.flex} />
+            <Ranked name="Solo / Duo" data={data.ranked && data.ranked.solo} />
           </div>
         ) : (
           <div className="champions-wrap">{this.renderPlaceholders()}</div>
