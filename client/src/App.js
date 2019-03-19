@@ -30,29 +30,27 @@ function App(props) {
   useEffect(() => {
     props.getChampMastery(summonerName);
     props.getSummonerInfo(summonerName);
-
-    if (
-      localStorage.getItem('summoner-champions') !== undefined &&
-      localStorage.getItem('summoner-data') !== undefined &&
-      props.summoner &&
-      props.summoner.data &&
-      props.summoner.data.name === summonerName
-    ) {
-      if (props.summoner.champions.length > 0) {
-        localStorage.setItem(
-          'summoner-champions',
-          JSON.stringify(props.summoner.champions)
-        );
-      }
-
-      if (props.summoner.data) {
-        localStorage.setItem(
-          'summoner-data',
-          JSON.stringify(props.summoner.data)
-        );
-      }
-    }
   }, []);
+
+  if (
+    props.summoner &&
+    props.summoner.data &&
+    props.summoner.data.name === summonerName
+  ) {
+    if (props.summoner.champions.length > 0) {
+      localStorage.setItem(
+        'summoner-champions',
+        JSON.stringify(props.summoner.champions)
+      );
+    }
+
+    if (props.summoner.data) {
+      localStorage.setItem(
+        'summoner-data',
+        JSON.stringify(props.summoner.data)
+      );
+    }
+  }
 
   return (
     <StyledApp>
