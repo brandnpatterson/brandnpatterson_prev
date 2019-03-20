@@ -47,8 +47,8 @@ const Contact = () => {
           >
             <img
               className="resume-image"
-              src="images/resume.png"
-              alt="Resume"
+              src="images/BrandonPattersonResume.png"
+              alt="Brandon Patterson's Resume"
             />
           </a>
         </div>
