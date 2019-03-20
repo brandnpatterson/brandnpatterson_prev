@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 
-import {
-  getChampMastery,
-  getInfoFromLocalStorage,
-  getSummonerInfo
-} from './actions';
+import { getChampMastery, getSummonerInfo } from './actions';
 
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
@@ -24,7 +20,6 @@ import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getInfoFromLocalStorage: func.isRequired,
   getSummonerInfo: func.isRequired,
   summoner: object.isRequired
 };
@@ -33,15 +28,8 @@ function App(props) {
   const summonerName = 'Brandy Bot';
 
   useEffect(() => {
-    if (
-      localStorage.getItem('summoner-champions') &&
-      localStorage.getItem('summoner-data')
-    ) {
-      props.getInfoFromLocalStorage();
-    } else {
-      props.getChampMastery(summonerName);
-      props.getSummonerInfo(summonerName);
-    }
+    props.getChampMastery(summonerName);
+    props.getSummonerInfo(summonerName);
   }, []);
 
   return (
@@ -97,7 +85,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getChampMastery,
-  getInfoFromLocalStorage,
   getSummonerInfo
 };
 

@@ -2,11 +2,7 @@ import React, { Fragment } from 'react';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import {
-  getChampMastery,
-  getInfoFromLocalStorage,
-  getSummonerInfo
-} from '../actions';
+import { getChampMastery, getSummonerInfo } from '../actions';
 
 import Ranked from './Ranked';
 
@@ -17,7 +13,6 @@ import { trimAndLower } from '../util';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getInfoFromLocalStorage: func.isRequired,
   getSummonerInfo: func.isRequired,
   summoner: object.isRequired
 };
@@ -69,7 +64,10 @@ class Summoner extends React.Component {
   }
 
   onReset() {
-    this.props.getInfoFromLocalStorage();
+    const summonerName = 'Brandy Bot';
+
+    this.props.getChampMastery(summonerName);
+    this.props.getSummonerInfo(summonerName);
 
     this.setState({ search: '' });
   }
@@ -472,7 +470,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getChampMastery,
-  getInfoFromLocalStorage,
   getSummonerInfo
 };
 

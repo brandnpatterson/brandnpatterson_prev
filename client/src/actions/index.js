@@ -41,8 +41,3 @@ export const getSummonerInfo = summonerName => dispatch => {
       });
     });
 };
-
-export const getInfoFromLocalStorage = () => dispatch => {
-  dispatch(getChampMastery('Brandy Bot'));
-  dispatch(getSummonerInfo('Brandy Bot'));
-};
