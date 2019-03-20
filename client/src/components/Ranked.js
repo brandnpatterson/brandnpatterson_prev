@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import { mediumUp } from '../util/media';
 
 const propTypes = {
-  data: object.isRequired,
+  data: object,
   name: string.isRequired
 };
 
 const Ranked = ({ name, data }) => {
-  if (Object.keys(data).length === 0) {
+  if (!data || Object.keys(data).length === 0) {
     return false;
   }
 
