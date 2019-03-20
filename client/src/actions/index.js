@@ -1,12 +1,7 @@
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 
-import {
-  GET_CHAMPION_MASTERY,
-  GET_INFO_FROM_LOCAL_STORAGE,
-  GET_ERRORS,
-  GET_SUMMONER_INFO
-} from './types';
+import { GET_CHAMPION_MASTERY, GET_ERRORS, GET_SUMMONER_INFO } from './types';
 
 // Riot
 export const getChampMastery = summonerName => dispatch => {
@@ -48,19 +43,6 @@ export const getSummonerInfo = summonerName => dispatch => {
 };
 
 export const getInfoFromLocalStorage = () => dispatch => {
-  const champions = localStorage.getItem('summoner-champions');
-  const data = localStorage.getItem('summoner-data');
-
-  if (champions && data) {
-    dispatch({
-      type: GET_INFO_FROM_LOCAL_STORAGE,
-      payload: {
-        champions: JSON.parse(champions),
-        data: JSON.parse(data)
-      }
-    });
-  } else {
-    dispatch(getChampMastery('Brandy Bot'));
-    dispatch(getSummonerInfo('Brandy Bot'));
-  }
+  dispatch(getChampMastery('Brandy Bot'));
+  dispatch(getSummonerInfo('Brandy Bot'));
 };

@@ -44,27 +44,6 @@ function App(props) {
     }
   }, []);
 
-  if (
-    props.summoner.data &&
-    props.summoner.data.name === summonerName &&
-    props.summoner.champions.length > 0 &&
-    !props.summoner.status
-  ) {
-    localStorage.setItem(
-      'summoner-champions',
-      JSON.stringify(props.summoner.champions)
-    );
-  }
-
-  if (
-    props.summoner.data &&
-    props.summoner.data.name === summonerName &&
-    props.summoner.data !== null &&
-    !props.summoner.status
-  ) {
-    localStorage.setItem('summoner-data', JSON.stringify(props.summoner.data));
-  }
-
   return (
     <StyledApp>
       <Header />
