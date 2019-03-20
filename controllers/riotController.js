@@ -103,14 +103,26 @@ exports.getSummonerInfo = async (req, res) => {
       };
     });
 
-    const rankedData = {
-      name: summoner.name,
-      level: summoner.summonerLevel,
-      ranked: {
-        flex: ranked[0] ? ranked[0] : {},
-        solo: ranked[1] ? ranked[1] : {}
-      }
-    };
+    let rankedData;
+
+    if (summonerRank.length === 2) {
+      rankedData = {
+        name: summoner.name,
+        level: summoner.summonerLevel,
+        ranked: {
+          flex: ranked[0] ? ranked[0] : {},
+          solo: ranked[1] ? ranked[1] : {}
+        }
+      };
+    } else {
+      rankedData = {
+        name: summoner.name,
+        level: summoner.summonerLevel,
+        ranked: {
+          solo: ranked[0] ? ranked[0] : {}
+        }
+      };
+    }
 
     res.json(rankedData);
   } else {
