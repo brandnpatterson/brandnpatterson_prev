@@ -97,14 +97,12 @@ const StyledContact = styled.div`
 
     @media ${mediumUp} {
       margin-bottom: 0;
-      padding-right: 3rem;
       width: 50%;
     }
   }
 
   .resume-image {
     display: block;
-    margin: 0 auto;
     max-width: 100%;
 
     @media ${mediumUp} {
