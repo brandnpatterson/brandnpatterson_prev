@@ -37,7 +37,7 @@ function Home() {
         <div className="title-text-wrap">
           <h1 className="title-item title-first">Hi.</h1>
           <h2 className="title-item">
-            I'm <span style={{ color: surf }}>Brandon,</span>
+            {"I'm"} <span style={{ color: surf }}>Brandon,</span>
           </h2>
           <h3 className="title-item title-last">{titles[index]}</h3>
         </div>
