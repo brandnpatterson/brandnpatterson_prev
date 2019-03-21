@@ -69,7 +69,9 @@ class Summoner extends React.Component {
     this.props.getChampMastery(summonerName);
     this.props.getSummonerInfo(summonerName);
 
-    this.setState({ search: '' });
+    this.setState({
+      search: ''
+    });
   }
 
   onSubmit(event) {
@@ -133,13 +135,20 @@ class Summoner extends React.Component {
   }
 
   render() {
-    const { champions, data } = this.props.summoner;
+    const {
+      champions,
+      championsHeight,
+      championsHeightMedium,
+      championsHeightSmall,
+      data,
+      search
+    } = this.props.summoner;
 
     return (
       <StyledSummoner
-        championsHeight={this.state.championsHeight}
-        championsHeightMedium={this.state.championsHeightMedium}
-        championsHeightSmall={this.state.championsHeightSmall}
+        championsHeight={championsHeight}
+        championsHeightMedium={championsHeightMedium}
+        championsHeightSmall={championsHeightSmall}
       >
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
@@ -149,7 +158,7 @@ class Summoner extends React.Component {
             <div className="summoner-interface">
               <input
                 className="summoner-input"
-                value={this.state.search}
+                value={search}
                 onChange={this.onChange}
                 name="summoner"
                 type="text"
