@@ -91,9 +91,7 @@ class Summoner extends React.Component {
   renderChampions() {
     const { champions } = this.props.summoner;
 
-    if (champions.length === 0) {
-      return <p className="no-champion-history">No champion history found</p>;
-    } else {
+    if (champions.length !== 0) {
       return (
         <div className="champions">
           {champions.map(champ => {
