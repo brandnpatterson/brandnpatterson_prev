@@ -430,7 +430,7 @@ const StyledSummoner = styled.div`
     width: 4rem;
 
     @media ${mediumUp} {
-      width: 120px;
+      width: 7rem;
     }
   }
 
