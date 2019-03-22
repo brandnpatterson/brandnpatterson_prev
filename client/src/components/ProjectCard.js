@@ -114,11 +114,17 @@ const StyledProjectCard = styled.div`
     margin: 0;
   }
 
+  .built-with-wrap p:not(.built-with) {
+    @media ${mediumUp} {
+      margin: 0 auto 2.2rem;
+    }
+  }
+
   .built-with {
     color: ${orange};
 
     @media ${mediumUp} {
-      margin: 1rem auto;
+      margin: 0 auto;
     }
   }
 `;
