@@ -36,24 +36,26 @@ class Summoner extends React.Component {
   componentWillReceiveProps(newProps) {
     const { champions } = newProps.summoner;
 
-    if (champions.length !== 0 && champions.length <= 3) {
-      this.setState({
-        championsHeight: '133px',
-        championsHeightMedium: '229px',
-        championsHeightSmall: '133px'
-      });
-    } else if (champions.length < 6) {
-      this.setState({
-        championsHeight: '266px',
-        championsHeightMedium: '460px',
-        championsHeightSmall: '266px'
-      });
-    } else if (champions.length < 9) {
-      this.setState({
-        championsHeight: '399px',
-        championsHeightMedium: '687px',
-        championsHeightSmall: '399px'
-      });
+    if (champions.length > 0) {
+      if (champions.length <= 3) {
+        this.setState({
+          championsHeight: '133px',
+          championsHeightMedium: '229px',
+          championsHeightSmall: '133px'
+        });
+      } else if (champions.length < 6) {
+        this.setState({
+          championsHeight: '266px',
+          championsHeightMedium: '460px',
+          championsHeightSmall: '266px'
+        });
+      } else if (champions.length < 9) {
+        this.setState({
+          championsHeight: '399px',
+          championsHeightMedium: '687px',
+          championsHeightSmall: '399px'
+        });
+      }
     }
   }
 
@@ -91,22 +93,20 @@ class Summoner extends React.Component {
   renderChampions() {
     const { champions } = this.props.summoner;
 
-    if (champions.length !== 0) {
-      return (
-        <div className="champions">
-          {champions.map(champ => {
-            return (
-              <div className="champion" key={champ.id}>
-                <div className="champion-image-wrap">
-                  <img src={champ.src} alt={champ.name} />
-                </div>
-                <p>{champ.name}</p>
+    return (
+      <div className="champions">
+        {champions.map(champ => {
+          return (
+            <div className="champion" key={champ.id}>
+              <div className="champion-image-wrap">
+                <img src={champ.src} alt={champ.name} />
               </div>
-            );
-          })}
-        </div>
-      );
-    }
+              <p>{champ.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   renderPlaceholders() {
