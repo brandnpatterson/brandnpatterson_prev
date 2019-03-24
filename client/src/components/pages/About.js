@@ -48,13 +48,16 @@ const About = () => {
             </p>
           </div>
         </div>
+        <Github />
       </StyledAbout>
-      <Github />
     </Fragment>
   );
 };
 
 const StyledAbout = styled.div`
+  margin: 0 auto;
+  max-width: 60rem;
+
   .title {
     @media ${mediumUp} {
       margin-top: 0;
@@ -67,23 +70,20 @@ const StyledAbout = styled.div`
 
     @media ${mediumUp} {
       flex-direction: row;
-      justify-content: space-around;
-      margin-bottom: 6rem;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto 6rem;
     }
 
     .about-me-image-wrap {
-      min-height: 320px;
+      min-height: 25rem;
+      min-width: 308.86px;
       position: relative;
-
-      @media ${mediumUp} {
-        min-height: 400px;
-        min-width: 428.52px;
-      }
     }
 
     .about-me-image {
       margin: 0 auto;
-      max-height: 20rem;
+      max-height: 25rem;
       max-width: 100%;
       position: absolute;
       top: 0;
@@ -91,18 +91,15 @@ const StyledAbout = styled.div`
       right: 0;
       bottom: 0;
       vertical-align: middle;
-
-      @media ${mediumUp} {
-        margin: inherit;
-        max-height: 25rem;
-      }
     }
 
     .about-me-text {
+      margin: 0 auto;
+      max-width: 30rem;
       padding: 2rem 0;
 
       @media ${mediumUp} {
-        padding: 0 0 0 3rem;
+        padding: 0;
         width: 50%;
       }
 

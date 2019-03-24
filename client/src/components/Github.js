@@ -37,10 +37,6 @@ Github.propTypes = propTypes;
 const StyledGithub = styled.div`
   margin-bottom: 2rem;
 
-  @media ${mediumUp} {
-    margin-left: 5%;
-  }
-
   .title {
     font-size: 1.25rem;
 
