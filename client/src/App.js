@@ -25,7 +25,7 @@ const propTypes = {
 };
 
 function App(props) {
-  const summonerName = 'Brandy Bot';
+  const summonerName = 'brandybot';
 
   useEffect(() => {
     props.getChampMastery(summonerName);

@@ -21,10 +21,11 @@ class Summoner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: '',
       championsHeight: '266px',
       championsHeightMedium: '546px',
-      championsHeightSmall: '460px'
+      championsHeightSmall: '460px',
+      currentSummoner: 'Brandy Bot',
+      search: ''
     };
 
     this.onChange = this.onChange.bind(this);
@@ -66,14 +67,17 @@ class Summoner extends React.Component {
   }
 
   onReset() {
-    const summonerName = 'Brandy Bot';
+    const summonerName = 'brandybot';
 
-    this.props.getChampMastery(summonerName);
-    this.props.getSummonerInfo(summonerName);
+    if (trimAndLower(this.state.currentSummoner) !== summonerName) {
+      this.props.getChampMastery(summonerName);
+      this.props.getSummonerInfo(summonerName);
 
-    this.setState({
-      search: ''
-    });
+      this.setState({
+        currentSummoner: summonerName,
+        search: ''
+      });
+    }
   }
 
   onSubmit(event) {
@@ -87,6 +91,10 @@ class Summoner extends React.Component {
     if (search !== '' && currentSummoner !== searching) {
       this.props.getChampMastery(search);
       this.props.getSummonerInfo(search);
+
+      this.setState({
+        currentSummoner: search
+      });
     }
   }
 
