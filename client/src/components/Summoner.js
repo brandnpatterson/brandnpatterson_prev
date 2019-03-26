@@ -34,8 +34,8 @@ class Summoner extends React.Component {
     this.renderChampions = this.renderChampions.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    const { champions } = newProps.summoner;
+  componentDidMount() {
+    const { champions } = this.props.summoner;
 
     if (champions.length > 0) {
       if (champions.length <= 3) {
