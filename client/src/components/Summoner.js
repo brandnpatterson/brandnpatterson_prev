@@ -137,19 +137,13 @@ class Summoner extends React.Component {
   }
 
   render() {
-    const {
-      champions,
-      championsHeight,
-      championsHeightMedium,
-      championsHeightSmall,
-      data
-    } = this.props.summoner;
+    const { champions, data } = this.props.summoner;
 
     return (
       <StyledSummoner
-        championsHeight={championsHeight}
-        championsHeightMedium={championsHeightMedium}
-        championsHeightSmall={championsHeightSmall}
+        championsHeight={this.state.championsHeight}
+        championsHeightMedium={this.state.championsHeightMedium}
+        championsHeightSmall={this.state.championsHeightSmall}
       >
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
