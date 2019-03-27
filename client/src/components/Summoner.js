@@ -24,7 +24,6 @@ class Summoner extends React.Component {
       championsHeight: '266px',
       championsHeightMedium: '546px',
       championsHeightSmall: '460px',
-      currentSummoner: 'Brandy Bot',
       search: ''
     };
 
@@ -67,17 +66,18 @@ class Summoner extends React.Component {
   }
 
   onReset() {
+    const { search } = this.state;
+
     const summonerName = 'brandybot';
 
-    if (trimAndLower(this.state.currentSummoner) !== summonerName) {
+    if (search !== '' && trimAndLower(search) !== summonerName) {
       this.props.getChampMastery(summonerName);
       this.props.getSummonerInfo(summonerName);
-
-      this.setState({
-        currentSummoner: summonerName,
-        search: ''
-      });
     }
+
+    this.setState({
+      search: ''
+    });
   }
 
   onSubmit(event) {
@@ -91,10 +91,6 @@ class Summoner extends React.Component {
     if (search !== '' && currentSummoner !== searching) {
       this.props.getChampMastery(search);
       this.props.getSummonerInfo(search);
-
-      this.setState({
-        currentSummoner: search
-      });
     }
   }
 
@@ -146,8 +142,7 @@ class Summoner extends React.Component {
       championsHeight,
       championsHeightMedium,
       championsHeightSmall,
-      data,
-      search
+      data
     } = this.props.summoner;
 
     return (
@@ -164,7 +159,7 @@ class Summoner extends React.Component {
             <div className="summoner-interface">
               <input
                 className="summoner-input"
-                value={search}
+                value={this.state.search}
                 onChange={this.onChange}
                 name="summoner"
                 type="text"
