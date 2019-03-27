@@ -8,6 +8,7 @@ const Footer = () => {
     <StyledFooter>
       <div className="footer-icons">
         <a
+          aria-label="Linkedin Icon"
           className="footer-copyright-wrap"
           href="https://linkedin.com/in/brandnpatterson"
           target="_blank"
@@ -16,6 +17,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={['fab', 'linkedin']} size="2x" />
         </a>
         <a
+          aria-label="Github Icon"
           className="footer-copyright-wrap"
           href="https://github.com/brandnpatterson"
           target="_blank"
@@ -24,12 +26,17 @@ const Footer = () => {
           <FontAwesomeIcon icon={['fab', 'github']} size="2x" />
         </a>
         <a
+          aria-label="Mail Icon"
           className="footer-copyright-wrap"
           href="mailto:brandnpatterson@gmail.com"
         >
           <FontAwesomeIcon icon="envelope" size="2x" />
         </a>
-        <a className="footer-copyright-wrap" href="tel:979-236-4789">
+        <a
+          aria-label="Phone Icon"
+          className="footer-copyright-wrap"
+          href="tel:979-236-4789"
+        >
           <FontAwesomeIcon icon="phone" size="2x" />
         </a>
       </div>

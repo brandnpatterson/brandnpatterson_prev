@@ -152,6 +152,7 @@ class Summoner extends React.Component {
             </h4>
             <div className="summoner-interface">
               <input
+                aria-label="summoner input"
                 className="summoner-input"
                 value={this.state.search}
                 onChange={this.onChange}
