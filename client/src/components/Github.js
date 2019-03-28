@@ -7,7 +7,7 @@ import { orange } from '../util/colors';
 import { mediumUp } from '../util/media';
 
 const propTypes = {
-  github: object.isRequired
+  github: object
 };
 
 const Github = () => {
