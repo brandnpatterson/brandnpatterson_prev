@@ -41,6 +41,7 @@ function App(props) {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/" component={Home} />
+          <Route exact path="/league" component={Summoner} />
           <Route exact path="/projects" component={Summoner} />
           <Route path="/work" component={Work} />
           <Route component={NotFound} />
