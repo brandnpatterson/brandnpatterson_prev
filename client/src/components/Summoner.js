@@ -387,8 +387,6 @@ const StyledSummoner = styled.div`
   }
 
   .champions-wrap {
-    border: 1px solid black;
-
     min-height: ${props => props.championsHeight};
   }
 
