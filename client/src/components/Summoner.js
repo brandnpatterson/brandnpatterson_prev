@@ -33,13 +33,15 @@ class Summoner extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.summoner) {
-      this.setChampionsHeight(nextProps.summoner.champions);
+    const { summoner } = nextProps;
+
+    if (summoner && summoner.champions) {
+      this.setChampionsHeight(summoner.champions);
     }
   }
 
   setChampionsHeight(champions) {
-    if (champions && champions.length <= 3) {
+    if (champions.length <= 3) {
       if (window.innerWidth <= 640) {
         this.setState({
           championsHeight: '8.313rem'
@@ -49,7 +51,7 @@ class Summoner extends React.Component {
           championsHeight: '14.31rem'
         });
       }
-    } else if (champions && champions.length < 6) {
+    } else if (champions.length < 6) {
       if (window.innerWidth <= 640) {
         this.setState({
           championsHeight: '16.63rem'
@@ -59,7 +61,7 @@ class Summoner extends React.Component {
           championsHeight: '28.75rem'
         });
       }
-    } else if (champions && champions.length < 9) {
+    } else if (champions.length < 9) {
       if (window.innerWidth <= 640) {
         this.setState({
           championsHeight: '33.25rem'
