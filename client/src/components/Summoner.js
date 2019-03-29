@@ -2,11 +2,7 @@ import React, { Fragment } from 'react';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import {
-  getChampMastery,
-  getInfoFromLocalStorage,
-  getSummonerInfo
-} from '../actions';
+import { getChampMastery, getSummonerInfo } from '../actions';
 
 import Ranked from './Ranked';
 
@@ -17,7 +13,6 @@ import { trimAndLower } from '../util';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getInfoFromLocalStorage: func.isRequired,
   getSummonerInfo: func.isRequired,
   summoner: object.isRequired
 };
@@ -26,39 +21,66 @@ class Summoner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: '',
-      championsHeight: '266px',
-      championsHeightMedium: '546px',
-      championsHeightSmall: '460px'
+      championsHeight: null,
+      search: ''
     };
 
     this.onChange = this.onChange.bind(this);
     this.onReset = this.onReset.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.renderChampions = this.renderChampions.bind(this);
+    this.setChampionsHeight = this.setChampionsHeight.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    const { champions } = newProps.summoner;
+  componentWillReceiveProps(nextProps) {
+    const { summoner } = nextProps;
 
-    if (champions.length !== 0 && champions.length <= 3) {
-      this.setState({
-        championsHeight: '133px',
-        championsHeightMedium: '229px',
-        championsHeightSmall: '133px'
-      });
+    if (summoner && summoner.champions) {
+      this.setChampionsHeight(summoner.champions);
+    }
+  }
+
+  setChampionsHeight(champions) {
+    if (champions.length <= 3) {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '8.313rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '14.31rem'
+        });
+      }
     } else if (champions.length < 6) {
-      this.setState({
-        championsHeight: '266px',
-        championsHeightMedium: '460px',
-        championsHeightSmall: '266px'
-      });
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '16.63rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '28.75rem'
+        });
+      }
     } else if (champions.length < 9) {
-      this.setState({
-        championsHeight: '399px',
-        championsHeightMedium: '687px',
-        championsHeightSmall: '399px'
-      });
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '33.25rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '42.94rem'
+        });
+      }
+    } else {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '25rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '25rem'
+        });
+      }
     }
   }
 
@@ -69,9 +91,18 @@ class Summoner extends React.Component {
   }
 
   onReset() {
-    this.props.getInfoFromLocalStorage();
+    const { search } = this.state;
 
-    this.setState({ search: '' });
+    const summonerName = 'brandybot';
+
+    if (search !== '' && trimAndLower(search) !== summonerName) {
+      this.props.getChampMastery(summonerName);
+      this.props.getSummonerInfo(summonerName);
+    }
+
+    this.setState({
+      search: ''
+    });
   }
 
   onSubmit(event) {
@@ -91,24 +122,20 @@ class Summoner extends React.Component {
   renderChampions() {
     const { champions } = this.props.summoner;
 
-    if (champions.length === 0) {
-      return <p className="no-champion-history">No champion history found</p>;
-    } else {
-      return (
-        <div className="champions">
-          {champions.map(champ => {
-            return (
-              <div className="champion" key={champ.id}>
-                <div className="champion-image-wrap">
-                  <img src={champ.src} alt={champ.name} />
-                </div>
-                <p>{champ.name}</p>
+    return (
+      <div className="champions">
+        {champions.map(champ => {
+          return (
+            <div className="champion" key={champ.id}>
+              <div className="champion-image-wrap">
+                <img src={champ.src} alt={champ.name} />
               </div>
-            );
-          })}
-        </div>
-      );
-    }
+              <p>{champ.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   renderPlaceholders() {
@@ -150,6 +177,7 @@ class Summoner extends React.Component {
             </h4>
             <div className="summoner-interface">
               <input
+                aria-label="summoner input"
                 className="summoner-input"
                 value={this.state.search}
                 onChange={this.onChange}
@@ -372,14 +400,6 @@ const StyledSummoner = styled.div`
 
   .champions-wrap {
     min-height: ${props => props.championsHeight};
-
-    @media ${smallOnly} {
-      min-height: ${props => props.championsHeightSmall};
-    }
-
-    @media ${mediumUp} {
-      min-height: ${props => props.championsHeightMedium};
-    }
   }
 
   .champions {
@@ -425,7 +445,7 @@ const StyledSummoner = styled.div`
     width: 4rem;
 
     @media ${mediumUp} {
-      width: 120px;
+      width: 7rem;
     }
   }
 
@@ -472,7 +492,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getChampMastery,
-  getInfoFromLocalStorage,
   getSummonerInfo
 };
 
