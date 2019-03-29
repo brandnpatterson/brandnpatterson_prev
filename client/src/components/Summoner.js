@@ -21,9 +21,7 @@ class Summoner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      championsHeight: '266px',
-      championsHeightMedium: '546px',
-      championsHeightSmall: '460px',
+      championsHeight: '42.94rem',
       search: ''
     };
 
@@ -31,29 +29,46 @@ class Summoner extends React.Component {
     this.onReset = this.onReset.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.renderChampions = this.renderChampions.bind(this);
+    this.setChampionsHeight = this.setChampionsHeight.bind(this);
   }
 
-  componentDidMount() {
-    const { champions } = this.props.summoner;
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.summoner) {
+      this.setChampionsHeight(nextProps.summoner.champions);
+    }
+  }
 
-    if (champions.length <= 3) {
-      this.setState({
-        championsHeight: '133px',
-        championsHeightMedium: '229px',
-        championsHeightSmall: '133px'
-      });
-    } else if (champions.length < 6) {
-      this.setState({
-        championsHeight: '266px',
-        championsHeightMedium: '460px',
-        championsHeightSmall: '266px'
-      });
-    } else if (champions.length < 9) {
-      this.setState({
-        championsHeight: '399px',
-        championsHeightMedium: '687px',
-        championsHeightSmall: '399px'
-      });
+  setChampionsHeight(champions) {
+    if (champions && champions.length <= 3) {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '8.313rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '14.31rem'
+        });
+      }
+    } else if (champions && champions.length < 6) {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '16.63rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '28.75rem'
+        });
+      }
+    } else if (champions && champions.length < 9) {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '33.25rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '42.94rem'
+        });
+      }
     }
   }
 
@@ -136,8 +151,6 @@ class Summoner extends React.Component {
 
   render() {
     const { champions, data } = this.props.summoner;
-
-    console.log(this.state.championsHeightSmall);
 
     return (
       <StyledSummoner
@@ -374,15 +387,9 @@ const StyledSummoner = styled.div`
   }
 
   .champions-wrap {
+    border: 1px solid black;
+
     min-height: ${props => props.championsHeight};
-
-    @media ${smallOnly} {
-      min-height: ${props => props.championsHeightSmall};
-    }
-
-    @media ${mediumUp} {
-      min-height: ${props => props.championsHeightMedium};
-    }
   }
 
   .champions {
