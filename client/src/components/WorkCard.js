@@ -86,11 +86,12 @@ const StyledWorkCard = styled.div`
 
   .secondary-content a {
     border-radius: 5px;
-    height: 350px;
+    height: 300px;
     margin: 1.5rem auto;
+    max-width: 500px;
 
     @media ${smallOnly} {
-      height: 250px;
+      height: 200px;
     }
 
     @media ${mediumUp} {
@@ -101,10 +102,10 @@ const StyledWorkCard = styled.div`
 
   .secondary-content img {
     @media ${smallOnly} {
-      height: 250px;
+      height: 200px;
     }
 
-    height: 350px;
+    height: 300px;
   }
 
   .sabre-wrap {
