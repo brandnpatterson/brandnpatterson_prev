@@ -21,7 +21,7 @@ class Summoner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      championsHeight: '42.94rem',
+      championsHeight: null,
       search: ''
     };
 
@@ -69,6 +69,16 @@ class Summoner extends React.Component {
       } else if (window.innerWidth >= 1024) {
         this.setState({
           championsHeight: '42.94rem'
+        });
+      }
+    } else {
+      if (window.innerWidth <= 640) {
+        this.setState({
+          championsHeight: '25rem'
+        });
+      } else if (window.innerWidth >= 1024) {
+        this.setState({
+          championsHeight: '25rem'
         });
       }
     }
