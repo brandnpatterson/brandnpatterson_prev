@@ -9,28 +9,15 @@ const propTypes = {
 };
 
 const ProjectCard = props => {
-  return <StyledProjectCard>{props.children}</StyledProjectCard>;
+  return <StyledWorkCard>{props.children}</StyledWorkCard>;
 };
 
-const StyledProjectCard = styled.div`
-  @media ${mediumUp} {
-    background: ${cardColor};
-    border-radius: 5px;
-    box-shadow: ${boxShadow};
-    color: ${lightgray};
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-    padding: 3rem;
-  }
-
-  @media ${largeUp} {
-    flex-direction: row-reverse;
-  }
+const StyledWorkCard = styled.div`
+  background: ${cardColor};
+  border-radius: 5px;
+  box-shadow: ${boxShadow};
 
   img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     display: block;
     height: 30rem;
     margin: 0 auto;
@@ -52,6 +39,101 @@ const StyledProjectCard = styled.div`
 
     &:hover {
       opacity: 0.5;
+    }
+  }
+
+  .main-content {
+    @media ${mediumUp} {
+      color: ${lightgray};
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      padding: 3rem;
+    }
+
+    @media ${largeUp} {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+
+  .main-content.main-content-sabre {
+    margin-bottom: 0;
+
+    @media ${mediumUp} {
+      padding: 3rem 4rem 1rem;
+    }
+  }
+
+  .secondary-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+
+    @media ${mediumUp} {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-bottom: 5rem;
+    }
+  }
+
+  .secondary-content a {
+    border-radius: 5px;
+    height: 350px;
+    margin: 1.5rem auto;
+
+    @media ${smallOnly} {
+      height: 250px;
+    }
+
+    @media ${mediumUp} {
+      margin: 1.5rem;
+      max-width: 43%;
+    }
+  }
+
+  .secondary-content img {
+    @media ${smallOnly} {
+      height: 250px;
+    }
+
+    height: 350px;
+  }
+
+  .sabre-wrap {
+    background: #e50000;
+    height: 8rem;
+    margin: 0 auto;
+    min-width: 100%;
+    width: 17rem;
+
+    @media ${smallOnly} {
+      min-width: 100%;
+    }
+
+    @media ${largeUp} {
+      min-width: 0;
+      width: 17rem;
+    }
+  }
+
+  .sabre-wrap img {
+    height: 8rem;
+    width: 10rem;
+  }
+
+  .hotel-name {
+    font-weight: bold;
+
+    @media ${smallOnly} {
+      padding-left: 1rem;
     }
   }
 
@@ -80,6 +162,24 @@ const StyledProjectCard = styled.div`
     }
   }
 
+  .card-content.card-content-sabre {
+    background: none;
+    box-shadow: none;
+    padding-left: 0;
+
+    @media ${smallOnly} {
+      padding: 1rem;
+    }
+
+    @media ${mediumUp} {
+      background: ${cardColor};
+    }
+
+    h1 {
+      color: #fff;
+    }
+  }
+
   .card-header {
     color: ${surf};
     font-size: 1.25rem;
@@ -96,6 +196,10 @@ const StyledProjectCard = styled.div`
     @media ${largeUp} {
       margin-top: 0;
     }
+  }
+
+  .card-header.card-header-sabre {
+    padding-left: 0;
   }
 
   .card-paragraphs {

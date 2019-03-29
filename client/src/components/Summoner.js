@@ -229,6 +229,19 @@ class Summoner extends React.Component {
           <p className="built-with">Built with:</p>
           <p>Node, Express, MySQL, React, and Redux</p>
         </div>
+        <p
+          style={{
+            color: 'silver',
+            fontSize: '0.85rem',
+            maxWidth: '25rem'
+          }}
+        >
+          This website isn’t endorsed by Riot Games and doesn’t reflect the
+          views or opinions of Riot Games or anyone officially involved in
+          producing or managing League of Legends. League of Legends and Riot
+          Games are trademarks or registered trademarks of Riot Games, Inc.
+          League of Legends © Riot Games, Inc.
+        </p>
       </StyledSummoner>
     );
   }
@@ -242,7 +255,7 @@ const StyledSummoner = styled.div`
   max-width: 36.4rem;
   min-height: 661px;
 
-  padding: 2rem 2rem 0;
+  padding: 2rem;
 
   @media ${mediumUp} {
     margin-bottom: 3rem;
@@ -420,7 +433,7 @@ const StyledSummoner = styled.div`
 
     @media ${mediumUp} {
       margin: 2rem;
-      width: 7rem;
+      width: 6rem;
     }
 
     img {
@@ -433,9 +446,9 @@ const StyledSummoner = styled.div`
     width: 4rem;
 
     @media ${mediumUp} {
-      height: 7rem;
+      height: 6rem;
       margin-bottom: 1rem;
-      width: 7rem;
+      width: 6rem;
     }
   }
 
@@ -445,7 +458,7 @@ const StyledSummoner = styled.div`
     width: 4rem;
 
     @media ${mediumUp} {
-      width: 7rem;
+      width: 6rem;
     }
   }
 

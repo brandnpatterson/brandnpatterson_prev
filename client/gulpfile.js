@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
-gulp.task('imagemin', () => {
+gulp.task('images', () => {
   return gulp
     .src('public/images/raw/**/*')
     .pipe(
@@ -11,6 +11,13 @@ gulp.task('imagemin', () => {
         }),
         imagemin.optipng({
           optimizationLevel: 5
+        }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: true
+            }
+          ]
         })
       ])
     )

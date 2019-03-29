@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
 import { openSans } from '../util/fonts';
+import { smallOnly } from '../util/media';
 
 const Header = () => {
+  const [isDropdown, setIsDropdown] = useState(false);
+
+  console.log(isDropdown);
+  console.log(setIsDropdown);
+
   return (
     <StyledHeader>
       <ul>
@@ -17,7 +23,10 @@ const Header = () => {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/work">Work</NavLink>
+        </li>
+        <li>
+          <NavLink to="/league">League</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
@@ -61,6 +70,11 @@ const StyledHeader = styled.div`
 
     &:hover {
       color: ${textHoverColor};
+    }
+
+    @media ${smallOnly} {
+      font-size: 0.75rem;
+      min-width: 4rem;
     }
   }
 `;

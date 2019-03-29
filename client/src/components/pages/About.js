@@ -30,13 +30,13 @@ const About = () => {
               >
                 Front End Developer
               </Link>{' '}
-              in Houston, Texas with experience building User Interfaces for
-              global companies. I create websites and Single Page Applications
-              that are responsive, accessibility compliant, and aesthetically
-              pleasing. I enjoy using the latest JavaScript features and
-              libraries such as ES6, Webpack, Babel, and React. When I’m not
-              coding, I like to travel, spend time with my family, and play
-              video games like{' '}
+              at Sabre Hospitality Solutions. I work remotely in Houston, Texas
+              and I have experience building User Interfaces for global
+              companies. I create websites and Single Page Applications that are
+              responsive, accessibility compliant, and aesthetically pleasing. I
+              enjoy using the latest JavaScript features and libraries such as
+              ES6, Webpack, Babel, and React. When I’m not coding, I like to
+              travel, spend time with my family, and play video games like{' '}
               <Link
                 to="/projects"
                 onClick={() => window.scrollTo(0, 0)}
@@ -116,7 +116,6 @@ const StyledAbout = styled.div`
 
     .about-me-paragraph {
       line-height: 1.75rem;
-      text-align: justify;
     }
   }
 `;

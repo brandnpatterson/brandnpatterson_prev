@@ -12,7 +12,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/pages/Home';
 import NotFound from './components/NotFound';
-import Projects from './components/pages/Projects';
+import Summoner from './components/Summoner';
+import Work from './components/pages/Work';
 
 import { lightgray, navy } from './util/colors';
 import { openSans } from './util/fonts';
@@ -39,8 +40,9 @@ function App(props) {
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/projects" component={Projects} />
           <Route exact path="/" component={Home} />
+          <Route exact path="/league" component={Summoner} />
+          <Route path="/work" component={Work} />
           <Route component={NotFound} />
         </Switch>
       </div>
