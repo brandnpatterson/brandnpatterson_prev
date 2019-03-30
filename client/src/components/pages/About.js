@@ -24,7 +24,7 @@ const About = () => {
             <p className="about-me-paragraph">
               I'm a{' '}
               <Link
-                to="/projects"
+                to="/work"
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ color: orange }}
               >
@@ -38,7 +38,7 @@ const About = () => {
               ES6, Webpack, Babel, and React. When I’m not coding, I like to
               travel, spend time with my family, and play video games like{' '}
               <Link
-                to="/projects"
+                to="/league"
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ color: surf, textDecoration: 'underline' }}
               >

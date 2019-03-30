@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
@@ -6,11 +6,6 @@ import { openSans } from '../util/fonts';
 import { smallOnly } from '../util/media';
 
 const Header = () => {
-  const [isDropdown, setIsDropdown] = useState(false);
-
-  console.log(isDropdown);
-  console.log(setIsDropdown);
-
   return (
     <StyledHeader>
       <ul>

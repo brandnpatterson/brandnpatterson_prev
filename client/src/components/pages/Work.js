@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import WorkCard from '../WorkCard';
 
@@ -8,66 +8,68 @@ function Work() {
   return (
     <div>
       <WorkCard>
-        <div className="main-content main-content-sabre">
-          <div className="sabre-wrap">
-            <img src="images/works/sabre/sabre.svg" alt="Sabre" />
+        <Fragment>
+          <div className="main-content main-content-sabre">
+            <div className="sabre-wrap">
+              <img src="images/works/sabre/sabre.svg" alt="Sabre" />
+            </div>
+            <div className="card-content card-content-sabre">
+              <h1
+                style={{ color: surf }}
+                className="card-header card-header-sabre"
+              >
+                Sabre Hospitality Solutions
+              </h1>
+              <p>
+                These are some of the websites that I've worked on with my team
+                at Sabre.
+              </p>
+            </div>
           </div>
-          <div className="card-content card-content-sabre">
-            <h1
-              style={{ color: surf }}
-              className="card-header card-header-sabre"
+          <div className="secondary-content">
+            <a
+              href="https://fontainebleau.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Sabre Hospitality Solutions
-            </h1>
-            <p>
-              These are some of the websites that I've worked on with my team at
-              Sabre.
-            </p>
+              <p className="hotel-name">Fontaine Bleau</p>
+              <img
+                src="images/works/sabre/fontainebleau.jpg"
+                alt="Fontaine Bleau"
+              />
+            </a>
+            <a
+              href="https://www.mandarinoriental.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="hotel-name"> Mandarin Oriental</p>
+              <img
+                src="images/works/sabre/mo.jpg"
+                alt="Mandarin Oriental - the Hotel Group"
+              />
+            </a>
+            <a
+              href="https://www.trumphotels.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="hotel-name">Trump Hotels</p>
+              <img src="images/works/sabre/trump.jpg" alt="Trump Hotels" />
+            </a>
+            <a
+              href="https://www.ojaivalleyinn.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="hotel-name">Ojai Valley Inn</p>
+              <img
+                src="images/works/sabre/ojai.jpg"
+                alt="Ojai Valley Inn Resorts Hotels"
+              />
+            </a>
           </div>
-        </div>
-        <div className="secondary-content">
-          <a
-            href="https://fontainebleau.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="hotel-name">Fontaine Bleau</p>
-            <img
-              src="images/works/sabre/fontainebleau.jpg"
-              alt="Fontaine Bleau"
-            />
-          </a>
-          <a
-            href="https://www.mandarinoriental.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="hotel-name"> Mandarin Oriental</p>
-            <img
-              src="images/works/sabre/mo.jpg"
-              alt="Mandarin Oriental - the Hotel Group"
-            />
-          </a>
-          <a
-            href="https://www.trumphotels.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="hotel-name">Trump Hotels</p>
-            <img src="images/works/sabre/trump.jpg" alt="Trump Hotels" />
-          </a>
-          <a
-            href="https://www.ojaivalleyinn.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="hotel-name">Ojai Valley Inn</p>
-            <img
-              src="images/works/sabre/ojai.jpg"
-              alt="Ojai Valley Inn Resorts Hotels"
-            />
-          </a>
-        </div>
+        </Fragment>
       </WorkCard>
       <h1>Other Projects</h1>
       <WorkCard>

@@ -1,14 +1,14 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { object } from 'prop-types';
 import styled from 'styled-components';
 import { boxShadow, cardColor, lightgray, orange, surf } from '../util/colors';
 import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
-  children: array.isRequired
+  children: object.isRequired
 };
 
-const ProjectCard = props => {
+const WorkCard = props => {
   return <StyledWorkCard>{props.children}</StyledWorkCard>;
 };
 
@@ -234,6 +234,6 @@ const StyledWorkCard = styled.div`
   }
 `;
 
-ProjectCard.propTypes = propTypes;
+WorkCard.propTypes = propTypes;
 
-export default ProjectCard;
+export default WorkCard;
