@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { func, object } from 'prop-types';
 import styled from 'styled-components';
@@ -41,8 +41,8 @@ function App(props) {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/" component={Home} />
-          <Route exact path="/league" component={Summoner} />
-          <Route exact path="/projects" component={Summoner} />
+          <Route path="/league" component={Summoner} />
+          <Route path="/projects" render={() => <Redirect to="/league" />} />
           <Route path="/work" component={Work} />
           <Route component={NotFound} />
         </Switch>
