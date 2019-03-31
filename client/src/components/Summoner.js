@@ -172,9 +172,7 @@ class Summoner extends React.Component {
       >
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
-            <h4 className="summoner-search-text">
-              Your most played champions in League of Legends
-            </h4>
+            <h4 className="summoner-search-text">League of Legends Top 10</h4>
             <div className="summoner-interface">
               <input
                 aria-label="summoner input"
