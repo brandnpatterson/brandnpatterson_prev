@@ -165,11 +165,7 @@ class Summoner extends React.Component {
     const { champions, data } = this.props.summoner;
 
     return (
-      <StyledSummoner
-        championsHeight={this.state.championsHeight}
-        championsHeightMedium={this.state.championsHeightMedium}
-        championsHeightSmall={this.state.championsHeightSmall}
-      >
+      <StyledSummoner championsHeight={this.state.championsHeight}>
         <div className="summoner-header">
           <form className="summoner-form" onSubmit={this.onSubmit}>
             <h4 className="summoner-search-text">League of Legends Top 10</h4>
@@ -221,7 +217,9 @@ class Summoner extends React.Component {
             <Ranked name="Solo / Duo" data={data.ranked && data.ranked.solo} />
           </div>
         ) : (
-          <div className="champions-wrap">{this.renderPlaceholders()}</div>
+          <div className="champions-wrap champions-wrap-placeholder">
+            {this.renderPlaceholders()}
+          </div>
         )}
         <div className="built-with-wrap">
           <p className="built-with">Built with:</p>
@@ -411,6 +409,14 @@ const StyledSummoner = styled.div`
 
   .champions-wrap {
     min-height: ${props => props.championsHeight};
+  }
+
+  .champions-wrap-placeholder {
+    min-height: 33rem;
+
+    @media ${mediumUp} {
+      min-height: 28.25rem;
+    }
   }
 
   .champions {
