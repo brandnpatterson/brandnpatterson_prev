@@ -45,7 +45,7 @@ function Home() {
           <Link
             onClick={() => window.scrollTo(0, 0)}
             className="see-my-work"
-            to="/projects"
+            to="/work"
           >
             See my work
           </Link>
