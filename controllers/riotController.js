@@ -5,7 +5,7 @@ const Champion = require('../models/champion');
 /**
  *  URLs
  */
-const ddragon = url => 'http://ddragon.leagueoflegends.com/cdn/9.1.1' + url;
+const ddragon = url => `http://ddragon.leagueoflegends.com/cdn/9.1.1${url}`;
 const riotGames = (url, reigon = 'na1') =>
   `https://${reigon}.api.riotgames.com/lol${url}?api_key=${
     process.env.RIOT_API_KEY
