@@ -32,11 +32,17 @@ class Summoner extends React.Component {
     this.setChampionsHeight = this.setChampionsHeight.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { summoner } = nextProps;
+  componentDidMount() {
+    const { summoner } = this.props;
 
-    if (summoner && summoner.champions) {
+    if (summoner.champions && summoner.champions.length > 0) {
       this.setChampionsHeight(summoner.champions);
+    }
+  }
+
+  componentDidUpdate(nextProps) {
+    if (this.props.summoner.champions !== nextProps.summoner.champions) {
+      this.setChampionsHeight(this.props.summoner.champions);
     }
   }
 
