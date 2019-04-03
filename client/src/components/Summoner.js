@@ -40,8 +40,8 @@ class Summoner extends React.Component {
     }
   }
 
-  componentDidUpdate(nextProps) {
-    if (this.props.summoner.champions !== nextProps.summoner.champions) {
+  componentDidUpdate(prevProps) {
+    if (this.props.summoner.champions !== prevProps.summoner.champions) {
       this.setChampionsHeight(this.props.summoner.champions);
     }
   }
