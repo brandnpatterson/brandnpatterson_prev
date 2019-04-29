@@ -66,7 +66,7 @@ function Home() {
 }
 
 const StyledHome = styled.div`
-  height: 84vh;
+  height: 100vh;
   padding-bottom: 3rem;
 
   .title-text-wrap {
