@@ -55,10 +55,10 @@ function Home() {
         </div>
       </div>
       <div className="icons">
-        <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'html5']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'css3-alt']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'sass']} size="6x" />
+        <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'react']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'node-js']} size="6x" />
         <FontAwesomeIcon icon={['fab', 'php']} size="6x" />
@@ -81,9 +81,9 @@ const StyledHome = styled.div`
   }
 
   .title-area {
-    padding-left: 0;
     opacity: ${props => props.opacity};
-    transition: all 1s;
+    padding-left: 0;
+    transition: opacity 1s;
 
     @media ${mediumUp} {
       margin-left: 4rem;
@@ -138,9 +138,9 @@ const StyledHome = styled.div`
     justify-content: space-around;
     margin: 0 auto;
     max-width: 20rem;
-    width: 100%;
     opacity: ${props => props.opacity};
-    transition: all 1s;
+    transition: opacity 1s;
+    width: 100%;
 
     @media ${mediumUp} {
       flex-wrap: none;
@@ -149,7 +149,7 @@ const StyledHome = styled.div`
     }
   }
 
-  svg {
+  .icons svg {
     margin: 0.25rem 0.75rem;
     width: 4rem;
 
