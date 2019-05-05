@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { orange, surf } from '../../util/colors';
-import { mediumUp, largeUp } from '../../util/media';
+import { orange, surf } from '../util/colors';
+import { mediumUp, largeUp } from '../util/media';
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -88,22 +88,22 @@ const StyledHome = styled.div`
       padding-left: 0;
     }
 
-    .title-item {
-      font-size: 2rem;
-      margin: 0 auto;
-
-      @media ${mediumUp} {
-        font-size: 3rem;
-      }
-
-      @media ${largeUp} {
-        font-size: 5rem;
-        max-width: 100%;
-      }
-    }
-
     .title-last {
       min-height: 110px;
+    }
+  }
+
+  .title-item {
+    font-size: 2rem;
+    margin: 0 auto;
+
+    @media ${mediumUp} {
+      font-size: 3rem;
+    }
+
+    @media ${largeUp} {
+      font-size: 5rem;
+      max-width: 100%;
     }
   }
 
@@ -140,15 +140,15 @@ const StyledHome = styled.div`
       height: 15rem;
       max-width: 45rem;
     }
+  }
 
-    svg {
-      margin: 0.25rem 0.75rem;
-      width: 4rem;
+  svg {
+    margin: 0.25rem 0.75rem;
+    width: 4rem;
 
-      @media ${mediumUp} {
-        margin: 2rem;
-        width: 6rem;
-      }
+    @media ${mediumUp} {
+      margin: 2rem;
+      width: 6rem;
     }
   }
 `;

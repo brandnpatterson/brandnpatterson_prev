@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { orange, surf } from '../../util/colors';
-import { mediumUp } from '../../util/media';
+import { black, orange, surf } from '../util/colors';
+import { mediumUp } from '../util/media';
 
-import googleMaps from '../../googleMaps';
+import googleMaps from '../googleMaps';
 
 const Contact = () => {
   useEffect(() => {
@@ -52,7 +52,7 @@ const Contact = () => {
             />
           </a>
         </div>
-        <div id="map" />
+        <div id="map" className="map" />
       </div>
     </StyledContact>
   );
@@ -61,8 +61,8 @@ const Contact = () => {
 const StyledContact = styled.div`
   .heading-title {
     color: ${surf};
-    padding: 2rem 0;
     letter-spacing: 1px;
+    padding: 2rem 0;
     padding-top: 0;
   }
 
@@ -110,11 +110,11 @@ const StyledContact = styled.div`
     }
   }
 
-  #map {
-    color: black;
-    position: relative;
-    height: 440px;
+  .map {
+    color: ${black};
     flex: 1;
+    height: 440px;
+    position: relative;
     z-index: 1;
 
     @media ${mediumUp} {

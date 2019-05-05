@@ -6,14 +6,15 @@ import styled from 'styled-components';
 
 import { getChampMastery, getSummonerInfo } from './actions';
 
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Summoner from './pages/Summoner';
+import Work from './pages/Work';
+
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Home from './components/pages/Home';
-import NotFound from './components/NotFound';
-import Summoner from './components/Summoner';
-import Work from './components/pages/Work';
 
 import { lightgray, navy } from './util/colors';
 import { openSans } from './util/fonts';

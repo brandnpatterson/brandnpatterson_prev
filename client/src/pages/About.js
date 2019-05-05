@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Github from '../Github';
+import Github from '../components/Github';
 
-import { orange, surf } from '../../util/colors';
-import { mediumUp } from '../../util/media';
+import { orange, surf } from '../util/colors';
+import { mediumUp } from '../util/media';
 
 const About = () => {
   return (
@@ -69,54 +69,54 @@ const StyledAbout = styled.div`
     flex-direction: column;
 
     @media ${mediumUp} {
+      align-items: center;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
       margin: 0 auto 6rem;
     }
+  }
 
-    .about-me-image-wrap {
-      min-height: 25rem;
-      min-width: 308.86px;
-      position: relative;
+  .about-me-image-wrap {
+    min-height: 25rem;
+    min-width: 308.86px;
+    position: relative;
+  }
+
+  .about-me-image {
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    max-height: 25rem;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+  }
+
+  .about-me-text {
+    margin: 0 auto;
+    max-width: 30rem;
+    padding: 2rem 0;
+
+    @media ${mediumUp} {
+      padding: 0;
+      width: 50%;
     }
+  }
 
-    .about-me-image {
-      margin: 0 auto;
-      max-height: 25rem;
-      max-width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      vertical-align: middle;
+  .about-me-text h1 {
+    color: ${surf};
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+
+    @media ${mediumUp} {
+      font-size: 2rem;
     }
+  }
 
-    .about-me-text {
-      margin: 0 auto;
-      max-width: 30rem;
-      padding: 2rem 0;
-
-      @media ${mediumUp} {
-        padding: 0;
-        width: 50%;
-      }
-
-      h1 {
-        color: ${surf};
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-
-        @media ${mediumUp} {
-          font-size: 2rem;
-        }
-      }
-    }
-
-    .about-me-paragraph {
-      line-height: 1.75rem;
-    }
+  .about-me-paragraph {
+    line-height: 1.75rem;
   }
 `;
 

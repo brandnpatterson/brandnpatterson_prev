@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import WorkCard from '../WorkCard';
+import WorkCard from '../components/WorkCard';
 
-import { surf } from '../../util/colors';
+import { surf } from '../util/colors';
 
 function Work() {
   return (

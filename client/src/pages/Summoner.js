@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getChampMastery, getSummonerInfo } from '../actions';
 
-import Ranked from './Ranked';
+import Ranked from '../components/Ranked';
 
 import { boxShadow, cardColor, orange, surf } from '../util/colors';
 import { openSans } from '../util/fonts';
