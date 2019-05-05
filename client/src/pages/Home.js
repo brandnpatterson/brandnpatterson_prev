@@ -7,6 +7,8 @@ import { mediumUp, largeUp } from '../util/media';
 
 function Home() {
   const [index, setIndex] = useState(0);
+  const [titleOpacity, setTitleOpacity] = useState(0);
+  const [iconsOpacity, setIconsOpacity] = useState(0);
   const titles = [
     'Front End Developer',
     'JavaScript Engineer',
@@ -26,13 +28,20 @@ function Home() {
       }
     }, 2000);
 
+    setTitleOpacity(1);
+
+    const iconsTimeout = setTimeout(() => {
+      setIconsOpacity(1);
+    }, 250);
+
     return () => {
       clearTimeout(timeout);
+      clearTimeout(iconsTimeout);
     };
   });
 
   return (
-    <StyledHome>
+    <StyledHome iconsOpacity={iconsOpacity} titleOpacity={titleOpacity}>
       <div className="title-area">
         <div className="title-text-wrap">
           <h1 className="title-item title-first">Hi.</h1>
@@ -79,6 +88,8 @@ const StyledHome = styled.div`
 
   .title-area {
     padding-left: 0;
+    opacity: ${props => props.titleOpacity};
+    transition: all 1s;
 
     @media ${mediumUp} {
       margin-left: 4rem;
@@ -134,6 +145,8 @@ const StyledHome = styled.div`
     margin: 0 auto;
     max-width: 20rem;
     width: 100%;
+    opacity: ${props => props.iconsOpacity};
+    transition: all 1s;
 
     @media ${mediumUp} {
       flex-wrap: none;
