@@ -9,7 +9,6 @@
     "dev": "npm run stylelint && webpack-dev-server -d --open --port 3000",
     "start": "npm run build",
     "stylelint": "stylelint src/**/*.js",
-    "cypress": "cypress open",
     "jest": "jest --config jest.config.json --no-cache --watch"
   },
   "dependencies": {
@@ -36,7 +35,6 @@
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.26.0",
-    "cypress": "^3.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
