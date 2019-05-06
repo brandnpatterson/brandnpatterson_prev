@@ -68,8 +68,8 @@ const StyledApp = styled.div`
     max-width: 950px;
 
     @media ${mediumUp} {
-      margin: 0 auto 5rem;
-      max-width: 95%;
+      margin: 0 auto 10rem;
+      max-width: 92%;
     }
   }
 

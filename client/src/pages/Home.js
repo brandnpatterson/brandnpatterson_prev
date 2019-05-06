@@ -55,14 +55,14 @@ function Home() {
         </div>
       </div>
       <div className="icons">
-        <FontAwesomeIcon icon={['fab', 'html5']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'css3-alt']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'sass']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'js']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'react']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'node-js']} size="6x" />
-        <FontAwesomeIcon icon={['fab', 'php']} size="6x" />
-        <FontAwesomeIcon icon="database" size="6x" />
+        <FontAwesomeIcon icon={['fab', 'html5']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'css3-alt']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'sass']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'js']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'react']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'node-js']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'php']} size="5x" />
+        <FontAwesomeIcon icon="database" size="5x" />
       </div>
     </StyledHome>
   );
@@ -116,7 +116,7 @@ const StyledHome = styled.div`
     margin-bottom: 4rem;
 
     @media ${mediumUp} {
-      margin-bottom: 3rem;
+      margin-bottom: 5rem;
     }
   }
 
