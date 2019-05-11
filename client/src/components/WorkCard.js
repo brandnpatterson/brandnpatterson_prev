@@ -1,8 +1,8 @@
-import React from 'react';
-import { object } from 'prop-types';
-import styled from 'styled-components';
-import { boxShadow, cardColor, lightgray, orange, surf } from '../util/colors';
-import { largeUp, mediumUp, smallOnly } from '../util/media';
+import React from "react";
+import { object } from "prop-types";
+import styled from "styled-components";
+import { boxShadow, cardColor, lightgray, orange, surf } from "../util/colors";
+import { largeUp, mediumUp, smallOnly } from "../util/media";
 
 const propTypes = {
   children: object.isRequired
@@ -14,7 +14,7 @@ const WorkCard = props => {
 
 const StyledWorkCard = styled.div`
   background: ${cardColor};
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   box-shadow: ${boxShadow};
 
   img {
@@ -56,8 +56,8 @@ const StyledWorkCard = styled.div`
     }
 
     img {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-top-left-radius: 0.3125rem;
+      border-top-right-radius: 0.3125rem;
     }
   }
 
@@ -85,13 +85,13 @@ const StyledWorkCard = styled.div`
   }
 
   .secondary-content a {
-    border-radius: 5px;
-    height: 300px;
+    border-radius: 0.3125rem;
+    height: 18.75rem;
     margin: 1.5rem auto;
-    max-width: 500px;
+    max-width: 31.25rem;
 
     @media ${smallOnly} {
-      height: 200px;
+      height: 12.5rem;
     }
 
     @media ${mediumUp} {
@@ -102,10 +102,10 @@ const StyledWorkCard = styled.div`
 
   .secondary-content img {
     @media ${smallOnly} {
-      height: 200px;
+      height: 12.5rem;
     }
 
-    height: 300px;
+    height: 15.75rem;
   }
 
   .sabre-wrap {
@@ -140,8 +140,8 @@ const StyledWorkCard = styled.div`
 
   .card-content {
     background: ${cardColor};
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0.3125rem;
+    border-bottom-right-radius: 0.3125rem;
     box-shadow: ${boxShadow};
     flex: 2;
     margin: 0 auto 2.45rem;

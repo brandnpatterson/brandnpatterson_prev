@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
-import { openSans } from '../util/fonts';
-import { smallOnly } from '../util/media';
+import React from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { boxShadow, navy, surf, textHoverColor } from "../util/colors";
+import { openSans } from "../util/fonts";
+import { smallOnly } from "../util/media";
 
 const Header = () => {
   return (
@@ -38,7 +38,7 @@ const StyledHeader = styled.div`
   width: 100vw;
 
   .active {
-    border-bottom: 4px solid ${surf};
+    border-bottom: 0.25rem solid ${surf};
     color: ${surf};
     min-width: 5rem;
   }
@@ -47,7 +47,7 @@ const StyledHeader = styled.div`
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 59.38rem;
     padding: 0 2rem;
   }
 

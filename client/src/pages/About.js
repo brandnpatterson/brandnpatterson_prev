@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import Github from '../components/Github';
+import Github from "../components/Github";
 
-import { orange, surf } from '../util/colors';
-import { mediumUp } from '../util/media';
+import { orange, surf } from "../util/colors";
+import { mediumUp } from "../util/media";
 
 const About = () => {
   return (
@@ -22,25 +22,25 @@ const About = () => {
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
-              I'm a{' '}
+              I'm a{" "}
               <Link
                 to="/work"
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ color: orange }}
               >
-                Front End Developer
-              </Link>{' '}
+                Full Stack Developer
+              </Link>{" "}
               at Square 205. I work remotely in Houston, Texas and I have
               experience building User Interfaces for global companies. I create
               websites and single page applications that are responsive,
               accessibility compliant, and aesthetically pleasing. I enjoy using
               the latest JavaScript features and libraries such as ES6, Webpack,
               Babel, and React. When I’m not coding, I like to travel, spend
-              time with my family, and play video games like{' '}
+              time with my family, and play video games like{" "}
               <Link
                 to="/league"
                 onClick={() => window.scrollTo(0, 0)}
-                style={{ color: surf, textDecoration: 'underline' }}
+                style={{ color: surf, textDecoration: "underline" }}
               >
                 League of Legends
               </Link>
@@ -78,7 +78,7 @@ const StyledAbout = styled.div`
 
   .about-me-image-wrap {
     min-height: 25rem;
-    min-width: 308.86px;
+    min-width: 19.25rem;
     position: relative;
   }
 
@@ -108,7 +108,7 @@ const StyledAbout = styled.div`
   .about-me-text h1 {
     color: ${surf};
     font-size: 1.5rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
 
     @media ${mediumUp} {
       font-size: 2rem;

@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import { func, object } from 'prop-types';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { getChampMastery, getSummonerInfo } from '../actions';
+import React, { Fragment } from "react";
+import { func, object } from "prop-types";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { getChampMastery, getSummonerInfo } from "../actions";
 
-import Ranked from '../components/Ranked';
+import Ranked from "../components/Ranked";
 
-import { boxShadow, cardColor, orange, surf } from '../util/colors';
-import { openSans } from '../util/fonts';
-import { largeUp, mediumUp, smallOnly } from '../util/media';
-import { trimAndLower } from '../util';
+import { boxShadow, cardColor, orange, surf } from "../util/colors";
+import { openSans } from "../util/fonts";
+import { largeUp, mediumUp, smallOnly } from "../util/media";
+import { trimAndLower } from "../util";
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -22,7 +22,7 @@ class Summoner extends React.Component {
     super(props);
     this.state = {
       championsHeight: null,
-      search: ''
+      search: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -50,41 +50,41 @@ class Summoner extends React.Component {
     if (champions.length <= 3) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '8.313rem'
+          championsHeight: "8.313rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '14.31rem'
+          championsHeight: "14.31rem"
         });
       }
     } else if (champions.length < 6) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '16.63rem'
+          championsHeight: "16.63rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '28.75rem'
+          championsHeight: "28.75rem"
         });
       }
     } else if (champions.length < 9) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '33.25rem'
+          championsHeight: "33.25rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '42.94rem'
+          championsHeight: "42.94rem"
         });
       }
     } else {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '25rem'
+          championsHeight: "25rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '25rem'
+          championsHeight: "25rem"
         });
       }
     }
@@ -99,15 +99,15 @@ class Summoner extends React.Component {
   onReset() {
     const { search } = this.state;
 
-    const summonerName = 'brandybot';
+    const summonerName = "brandybot";
 
-    if (search !== '' && trimAndLower(search) !== summonerName) {
+    if (search !== "" && trimAndLower(search) !== summonerName) {
       this.props.getChampMastery(summonerName);
       this.props.getSummonerInfo(summonerName);
     }
 
     this.setState({
-      search: ''
+      search: ""
     });
   }
 
@@ -119,7 +119,7 @@ class Summoner extends React.Component {
     const currentSummoner = trimAndLower(this.props.summoner.data.name);
     const searching = trimAndLower(search);
 
-    if (search !== '' && currentSummoner !== searching) {
+    if (search !== "" && currentSummoner !== searching) {
       this.props.getChampMastery(search);
       this.props.getSummonerInfo(search);
     }
@@ -202,10 +202,10 @@ class Summoner extends React.Component {
             {data ? (
               <Fragment>
                 <h3 className="summoner-name">
-                  {data.name ? data.name : 'Not Found'}
+                  {data.name ? data.name : "Not Found"}
                 </h3>
                 <p className="summoner-level">
-                  {data.level ? `Level: ${data.level}` : 'Please try again'}
+                  {data.level ? `Level: ${data.level}` : "Please try again"}
                 </p>
               </Fragment>
             ) : (
@@ -233,9 +233,9 @@ class Summoner extends React.Component {
         </div>
         <p
           style={{
-            color: 'silver',
-            fontSize: '0.85rem',
-            maxWidth: '25rem'
+            color: "silver",
+            fontSize: "0.85rem",
+            maxWidth: "25rem"
           }}
         >
           This website isn’t endorsed by Riot Games and doesn’t reflect the
@@ -251,11 +251,11 @@ class Summoner extends React.Component {
 
 const StyledSummoner = styled.div`
   background: ${cardColor};
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   box-shadow: ${boxShadow};
   margin: 0 auto 2.45rem;
   max-width: 36.4rem;
-  min-height: 661px;
+  min-height: 41.31rem;
 
   padding: 2rem;
 
@@ -271,7 +271,7 @@ const StyledSummoner = styled.div`
     justify-content: space-between;
     margin: 0 auto 3rem 0.5rem;
     max-width: 80%;
-    min-height: 281.3px;
+    min-height: 17.56rem;
 
     @media ${smallOnly} {
       max-width: 100%;
@@ -282,7 +282,7 @@ const StyledSummoner = styled.div`
       flex-direction: row-reverse;
       margin: 0 auto 1rem;
       max-width: 90%;
-      min-height: 171px;
+      min-height: 10.69rem;
     }
 
     @media ${largeUp} {
@@ -300,7 +300,7 @@ const StyledSummoner = styled.div`
     font-family: ${openSans};
     font-size: 2rem;
     font-weight: 100;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     margin-bottom: 0;
     margin-top: 0;
 
@@ -312,12 +312,12 @@ const StyledSummoner = styled.div`
   .summoner-name.placeholder {
     margin-bottom: 0.5rem;
     margin-top: 2rem;
-    min-height: 36px;
-    width: 200px;
+    min-height: 2.25rem;
+    width: 12.5rem;
 
     @media ${mediumUp} {
-      min-height: 55px;
-      width: 250px;
+      min-height: 3.438rem;
+      width: 15.63rem;
     }
   }
 
@@ -333,12 +333,12 @@ const StyledSummoner = styled.div`
   }
 
   .summoner-level.placeholder {
-    min-height: 27px;
-    width: 100px;
+    min-height: 1.688rem;
+    width: 6.25rem;
 
     @media ${mediumUp} {
-      min-height: 36px;
-      width: 150px;
+      min-height: 2.25rem;
+      width: 9.375rem;
     }
   }
 
@@ -377,7 +377,7 @@ const StyledSummoner = styled.div`
     padding-left: 1rem;
     width: 12rem;
 
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 28.125em) {
       height: 1.85rem;
       margin-right: inherit;
     }
@@ -388,7 +388,7 @@ const StyledSummoner = styled.div`
     flex-direction: row;
     margin-right: 1.75rem;
 
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 28.125em) {
       margin-right: inherit;
     }
   }
@@ -463,7 +463,7 @@ const StyledSummoner = styled.div`
   }
 
   .champion-name {
-    height: 20px;
+    height: 1.25rem;
     margin: 1rem auto 1.49rem;
     width: 4rem;
 
@@ -481,10 +481,10 @@ const StyledSummoner = styled.div`
   }
 
   .champion-image-wrap {
-    min-height: 64px;
+    min-height: 4rem;
 
     @media ${mediumUp} {
-      min-height: 112px;
+      min-height: 7rem;
     }
   }
 

@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { func, object } from 'prop-types';
-import styled from 'styled-components';
+import React, { useEffect } from "react";
+import { Route, Redirect, Switch, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { func, object } from "prop-types";
+import styled from "styled-components";
 
-import { getChampMastery, getSummonerInfo } from './actions';
+import { getChampMastery, getSummonerInfo } from "./actions";
 
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Summoner from './pages/Summoner';
-import Work from './pages/Work';
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Summoner from "./pages/Summoner";
+import Work from "./pages/Work";
 
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-import { lightgray, navy } from './util/colors';
-import { openSans } from './util/fonts';
-import { mediumUp } from './util/media';
+import { lightgray, navy } from "./util/colors";
+import { openSans } from "./util/fonts";
+import { mediumUp } from "./util/media";
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -27,7 +27,7 @@ const propTypes = {
 };
 
 function App(props) {
-  const summonerName = 'brandybot';
+  const summonerName = "brandybot";
 
   useEffect(() => {
     props.getChampMastery(summonerName);
@@ -65,7 +65,7 @@ const StyledApp = styled.div`
 
   .content {
     margin: 0 2rem 5rem 2rem;
-    max-width: 950px;
+    max-width: 59.38rem;
 
     @media ${mediumUp} {
       margin: 0 auto 10rem;
