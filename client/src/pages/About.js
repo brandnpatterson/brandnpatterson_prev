@@ -28,7 +28,7 @@ const About = () => {
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ color: orange }}
               >
-                Full Stack Developer
+                Developer
               </Link>{" "}
               at Square 205. I work remotely in Houston, Texas and I have
               experience building User Interfaces for global companies. I create
