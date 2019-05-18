@@ -1,46 +1,46 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import Github from "../components/Github";
+import Github from '../components/Github';
 
-import { orange, surf } from "../util/colors";
-import { mediumUp } from "../util/media";
+import { orange, surf } from '../util/colors';
+import { mediumUp, smallOnly } from '../util/media';
 
 const About = () => {
   return (
     <Fragment>
       <StyledAbout>
-        <div className="about-me">
-          <div className="about-me-image-wrap">
+        <div className='about-me'>
+          <div className='about-me-image-wrap'>
             <img
-              className="about-me-image"
-              src="images/about-me.jpg"
-              alt="Brandon Patterson"
+              className='about-me-image'
+              src='images/about-me.jpg'
+              alt='Brandon Patterson'
             />
           </div>
-          <div className="about-me-text">
-            <h1 className="title">A little bit about me</h1>
-            <p className="about-me-paragraph">
-              I'm a{" "}
+          <div className='about-me-text'>
+            <h1 className='title'>A little bit about me</h1>
+            <p className='about-me-paragraph'>
+              I'm a{' '}
               <Link
-                to="/work"
+                to='/work'
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ color: orange }}
               >
                 Developer
-              </Link>{" "}
+              </Link>{' '}
               at Square 205. I work remotely in Houston, Texas and I have
               experience building User Interfaces for global companies. I create
               websites and single page applications that are responsive,
               accessibility compliant, and aesthetically pleasing. I enjoy using
               the latest JavaScript features and libraries such as ES6, Webpack,
-              Babel, and React. When I’m not coding, I like to travel, spend
-              time with my family, and play video games like{" "}
+              Babel, React, and React Native. When I’m not coding, I like to travel, spend
+              time with my family, and play video games like{' '}
               <Link
-                to="/league"
+                to='/league'
                 onClick={() => window.scrollTo(0, 0)}
-                style={{ color: surf, textDecoration: "underline" }}
+                style={{ color: surf, textDecoration: 'underline' }}
               >
                 League of Legends
               </Link>
@@ -117,6 +117,10 @@ const StyledAbout = styled.div`
 
   .about-me-paragraph {
     line-height: 1.75rem;
+
+    @media ${smallOnly} {
+      max-width: 26.6rem;
+    }
   }
 `;
 
