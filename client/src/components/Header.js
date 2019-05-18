@@ -1,11 +1,28 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { boxShadow, navy, surf, textHoverColor } from "../util/colors";
-import { openSans } from "../util/fonts";
-import { smallOnly } from "../util/media";
+import React, { useEffect } from 'react';
+import { bool, func, object } from 'prop-types';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
+import { openSans } from '../util/fonts';
+import { smallOnly } from '../util/media';
 
-const Header = () => {
+const propTypes = {
+  isFocusing: bool.isRequired,
+  setIsFocusing: func.isRequired,
+  workNavRef: object.isRequired
+};
+
+const Header = ({ isFocusing, setIsFocusing, workNavRef }) => {
+  useEffect(() => {
+    if (isFocusing) {
+      workNavRef.current.children[0].focus();
+    }
+
+    return () => {
+      setIsFocusing(false);
+    };
+  });
+
   return (
     <StyledHeader>
       <ul>
@@ -17,7 +34,7 @@ const Header = () => {
         <li>
           <NavLink to="/about">About</NavLink>
         </li>
-        <li>
+        <li ref={workNavRef}>
           <NavLink to="/work">Work</NavLink>
         </li>
         <li>
@@ -73,5 +90,7 @@ const StyledHeader = styled.div`
     }
   }
 `;
+
+Header.propTypes = propTypes;
 
 export default Header;

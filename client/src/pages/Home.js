@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { orange, surf } from "../util/colors";
-import { mediumUp, largeUp } from "../util/media";
+import React, { useState, useEffect } from 'react';
+import { func } from 'prop-types';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { orange, surf } from '../util/colors';
+import { mediumUp, largeUp } from '../util/media';
 
-function Home() {
+const propTypes = {
+  setIsFocusing: func.isRequired
+};
+
+function Home({ setIsFocusing }) {
   const [index, setIndex] = useState(0);
   const [opacity, setopacity] = useState(0);
   const titles = [
-    "Front End Developer",
-    "JavaScript Engineer",
-    "Problem Solver",
-    "Leader",
-    "Teacher",
-    "Learner"
+    'Front End Developer',
+    'JavaScript Engineer',
+    'Problem Solver',
+    'Leader',
+    'Teacher',
+    'Learner'
   ];
 
   useEffect(() => {
@@ -34,6 +39,12 @@ function Home() {
     };
   });
 
+  function onClick() {
+    window.scrollTo(0, 0);
+
+    setIsFocusing(true);
+  }
+
   return (
     <StyledHome opacity={opacity}>
       <div className="title-area">
@@ -45,23 +56,19 @@ function Home() {
           <h3 className="title-item title-last">{titles[index]}</h3>
         </div>
         <div className="see-my-work-wrap">
-          <Link
-            onClick={() => window.scrollTo(0, 0)}
-            className="see-my-work"
-            to="/work"
-          >
+          <Link onClick={onClick} className="see-my-work" to="/work">
             See my work
           </Link>
         </div>
       </div>
       <div className="icons">
-        <FontAwesomeIcon icon={["fab", "html5"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "css3-alt"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "sass"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "js"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "react"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "node-js"]} size="5x" />
-        <FontAwesomeIcon icon={["fab", "php"]} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'html5']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'css3-alt']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'sass']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'js']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'react']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'node-js']} size="5x" />
+        <FontAwesomeIcon icon={['fab', 'php']} size="5x" />
         <FontAwesomeIcon icon="database" size="5x" />
       </div>
     </StyledHome>
@@ -159,5 +166,7 @@ const StyledHome = styled.div`
     }
   }
 `;
+
+Home.propTypes = propTypes;
 
 export default Home;

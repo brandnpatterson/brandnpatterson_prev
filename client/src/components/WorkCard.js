@@ -1,8 +1,8 @@
-import React from "react";
-import { object } from "prop-types";
-import styled from "styled-components";
-import { boxShadow, cardColor, lightgray, orange, surf } from "../util/colors";
-import { largeUp, mediumUp, smallOnly } from "../util/media";
+import React from 'react';
+import { object } from 'prop-types';
+import styled from 'styled-components';
+import { boxShadow, cardColor, lightgray, orange, surf } from '../util/colors';
+import { largeUp, mediumUp, smallOnly } from '../util/media';
 
 const propTypes = {
   children: object.isRequired

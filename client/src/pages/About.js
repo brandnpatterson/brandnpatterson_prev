@@ -119,7 +119,8 @@ const StyledAbout = styled.div`
     line-height: 1.75rem;
 
     @media ${smallOnly} {
-      max-width: 25rem;
+      font-size: 0.85rem;
+      width: 18.4rem;
     }
   }
 `;

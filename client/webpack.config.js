@@ -9,9 +9,12 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     overlay: true,
-    proxy: {
-      '/api': 'http://localhost:5000'
-    }
+    // use for mobile testing
+    host: isDev && '0.0.0.0',
+    // use for full application testing
+    // proxy: {
+    //   '/api': 'http://localhost:5000'
+    // }
   },
   entry: './src/index.js',
   output: {

@@ -2,7 +2,6 @@ import { GET_CHAMPION_MASTERY, GET_SUMMONER_INFO } from '../actions/types';
 
 const initialState = {
   data: null,
-  error: null,
   champions: null
 };
 
