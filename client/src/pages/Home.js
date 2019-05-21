@@ -42,7 +42,7 @@ function Home({ setIsFocusing }) {
   function onClick() {
     window.scrollTo(0, 0);
 
-    setIsFocusing(true);
+    setIsFocusing('work');
   }
 
   return (

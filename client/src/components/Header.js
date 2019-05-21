@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { bool, func, object } from 'prop-types';
+import { func, object, string } from 'prop-types';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { boxShadow, navy, surf, textHoverColor } from '../util/colors';
@@ -7,19 +7,24 @@ import { openSans } from '../util/fonts';
 import { smallOnly } from '../util/media';
 
 const propTypes = {
-  isFocusing: bool.isRequired,
+  isFocusing: string.isRequired,
+  leagueNavRef: object.isRequired,
   setIsFocusing: func.isRequired,
   workNavRef: object.isRequired
 };
 
-const Header = ({ isFocusing, setIsFocusing, workNavRef }) => {
+const Header = ({ isFocusing, leagueNavRef, setIsFocusing, workNavRef }) => {
   useEffect(() => {
-    if (isFocusing) {
+    if (isFocusing === 'league') {
+      leagueNavRef.current.children[0].focus();
+    }
+
+    if (isFocusing === 'work') {
       workNavRef.current.children[0].focus();
     }
 
     return () => {
-      setIsFocusing(false);
+      setIsFocusing('');
     };
   });
 
@@ -37,7 +42,7 @@ const Header = ({ isFocusing, setIsFocusing, workNavRef }) => {
         <li ref={workNavRef}>
           <NavLink to="/work">Work</NavLink>
         </li>
-        <li>
+        <li ref={leagueNavRef}>
           <NavLink to="/league">League</NavLink>
         </li>
         <li>

@@ -27,7 +27,8 @@ const propTypes = {
 
 function App(props) {
   const summonerName = 'brandybot';
-  const [isFocusing, setIsFocusing] = useState(false);
+  const [isFocusing, setIsFocusing] = useState('');
+  const leagueNavRef = useRef(null);
   const workNavRef = useRef(null);
 
   useEffect(() => {
@@ -39,12 +40,16 @@ function App(props) {
     <StyledApp>
       <Header
         isFocusing={isFocusing}
+        leagueNavRef={leagueNavRef}
         setIsFocusing={setIsFocusing}
         workNavRef={workNavRef}
       />
       <div className="content">
         <Switch>
-          <Route path="/about" component={About} />
+          <Route
+            path="/about"
+            component={() => <About setIsFocusing={setIsFocusing} />}
+          />
           <Route path="/contact" component={Contact} />
           <Route
             exact

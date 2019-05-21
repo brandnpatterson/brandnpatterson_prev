@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { func } from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -7,25 +8,35 @@ import Github from '../components/Github';
 import { orange, surf } from '../util/colors';
 import { mediumUp, smallOnly } from '../util/media';
 
-const About = () => {
+const propTypes = {
+  setIsFocusing: func.isRequired
+};
+
+const About = ({ setIsFocusing }) => {
+  function onClick(string) {
+    window.scrollTo(0, 0);
+
+    setIsFocusing(string);
+  }
+
   return (
     <Fragment>
       <StyledAbout>
-        <div className='about-me'>
-          <div className='about-me-image-wrap'>
+        <div className="about-me">
+          <div className="about-me-image-wrap">
             <img
-              className='about-me-image'
-              src='images/about-me.jpg'
-              alt='Brandon Patterson'
+              className="about-me-image"
+              src="images/about-me.jpg"
+              alt="Brandon Patterson"
             />
           </div>
-          <div className='about-me-text'>
-            <h1 className='title'>A little bit about me</h1>
-            <p className='about-me-paragraph'>
+          <div className="about-me-text">
+            <h1 className="title">A little bit about me</h1>
+            <p className="about-me-paragraph">
               I'm a{' '}
               <Link
-                to='/work'
-                onClick={() => window.scrollTo(0, 0)}
+                to="/work"
+                onClick={() => onClick('work')}
                 style={{ color: orange }}
               >
                 Developer
@@ -35,11 +46,11 @@ const About = () => {
               websites and single page applications that are responsive,
               accessibility compliant, and aesthetically pleasing. I enjoy using
               the latest JavaScript features and libraries such as ES6, Webpack,
-              Babel, React, and React Native. When I’m not coding, I like to travel, spend
-              time with my family, and play video games like{' '}
+              Babel, React, and React Native. When I’m not coding, I like to
+              travel, spend time with my family, and play video games like{' '}
               <Link
-                to='/league'
-                onClick={() => window.scrollTo(0, 0)}
+                to="/league"
+                onClick={() => onClick('league')}
                 style={{ color: surf, textDecoration: 'underline' }}
               >
                 League of Legends
@@ -124,5 +135,7 @@ const StyledAbout = styled.div`
     }
   }
 `;
+
+About.propTypes = propTypes;
 
 export default About;
