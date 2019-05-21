@@ -33,6 +33,8 @@ function Home({ setIsFocusing }) {
     }, 2000);
 
     if (opacity === 0) {
+      console.log(opacity);
+
       setopacity(1);
     }
 
