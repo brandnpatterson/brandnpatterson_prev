@@ -12,7 +12,7 @@ const propTypes = {
 
 function Home({ setIsFocusing }) {
   const [index, setIndex] = useState(0);
-  const [opacity, setopacity] = useState(0);
+  const [opacity, setOpacity] = useState(0);
   const titles = [
     'Front End Developer',
     'JavaScript Engineer',
@@ -32,13 +32,11 @@ function Home({ setIsFocusing }) {
       }
     }, 2000);
 
-    if (opacity === 0) {
-      console.log(opacity);
-
-      setopacity(1);
-    }
+    setOpacity(1);
 
     return () => {
+      setOpacity(1);
+
       clearTimeout(timeout);
     };
   }, []);
