@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { func, object } from 'prop-types';
+import { func } from 'prop-types';
 import styled from 'styled-components';
 
 import { getChampMastery, getSummonerInfo } from './actions';
@@ -22,8 +22,7 @@ import { mediumUp } from './util/media';
 
 const propTypes = {
   getChampMastery: func.isRequired,
-  getSummonerInfo: func.isRequired,
-  summoner: object.isRequired
+  getSummonerInfo: func.isRequired
 };
 
 function App(props) {
@@ -95,9 +94,7 @@ const StyledApp = styled.div`
   }
 `;
 
-const mapStateToProps = state => ({
-  summoner: state.summoner
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
   getChampMastery,

@@ -35,8 +35,6 @@ function Home({ setIsFocusing }) {
     setOpacity(1);
 
     return () => {
-      setOpacity(1);
-
       clearTimeout(timeout);
     };
   }, []);

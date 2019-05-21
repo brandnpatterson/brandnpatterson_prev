@@ -10,11 +10,11 @@ module.exports = {
     historyApiFallback: true,
     overlay: true,
     // use for mobile testing
-    host: isDev && '0.0.0.0'
+    // host: isDev && '0.0.0.0'
     // use for full application testing
-    // proxy: {
-    //   '/api': 'http://localhost:5000'
-    // }
+    proxy: {
+      '/api': 'http://localhost:5000'
+    }
   },
   entry: './src/index.js',
   output: {
