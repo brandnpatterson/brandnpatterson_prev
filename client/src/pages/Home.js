@@ -32,7 +32,9 @@ function Home({ setIsFocusing }) {
       }
     }, 2000);
 
-    setopacity(1);
+    if (opacity === 0) {
+      setopacity(1);
+    }
 
     return () => {
       clearTimeout(timeout);
