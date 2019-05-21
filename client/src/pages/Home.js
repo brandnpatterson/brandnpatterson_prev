@@ -41,7 +41,7 @@ function Home({ setIsFocusing }) {
     return () => {
       clearTimeout(timeout);
     };
-  });
+  }, []);
 
   function onClick() {
     window.scrollTo(0, 0);
