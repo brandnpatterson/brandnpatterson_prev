@@ -22,20 +22,20 @@ const About = ({ setIsFocusing }) => {
   return (
     <Fragment>
       <StyledAbout>
-        <div className="about-me">
-          <div className="about-me-image-wrap">
+        <div className='about-me'>
+          <div className='about-me-image-wrap'>
             <img
-              className="about-me-image"
-              src="images/about-me.jpg"
-              alt="Brandon Patterson"
+              className='about-me-image'
+              src='images/about-me.jpg'
+              alt='Brandon Patterson'
             />
           </div>
-          <div className="about-me-text">
-            <h1 className="title">A little bit about me</h1>
-            <p className="about-me-paragraph">
-              I'm the{' '}
+          <div className='about-me-text'>
+            <h1 className='title'>A little bit about me</h1>
+            <p className='about-me-paragraph'>
+              I'm{' '}
               <Link
-                to="/work"
+                to='/work'
                 onClick={() => onClick('work')}
                 style={{ color: orange }}
               >
@@ -49,7 +49,7 @@ const About = ({ setIsFocusing }) => {
               Babel, React, and React Native. When I’m not coding, I like to
               travel, spend time with my family, and play video games like{' '}
               <Link
-                to="/league"
+                to='/league'
                 onClick={() => onClick('league')}
                 style={{ color: surf, textDecoration: 'underline' }}
               >
