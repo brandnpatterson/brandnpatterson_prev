@@ -33,13 +33,13 @@ const About = ({ setIsFocusing }) => {
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
-              I'm a{' '}
+              I'm the{' '}
               <Link
                 to="/work"
                 onClick={() => onClick('work')}
                 style={{ color: orange }}
               >
-                Developer
+                Lead App Developer
               </Link>{' '}
               at Square 205. I work remotely in Houston, Texas and I have
               experience building User Interfaces for global companies. I create
