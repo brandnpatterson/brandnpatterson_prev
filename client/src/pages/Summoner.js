@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import { func, object } from 'prop-types';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { getChampMastery, getSummonerInfo } from '../actions';
+import React, { Fragment } from "react";
+import { func, object } from "prop-types";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { getChampMastery, getSummonerInfo } from "../actions";
 
-import Ranked from '../components/Ranked';
+import Ranked from "../components/Ranked";
 
-import { boxShadow, cardColor, orange, surf } from '../util/colors';
-import { openSans } from '../util/fonts';
-import { largeUp, mediumUp, smallOnly } from '../util/media';
-import { trimAndLower } from '../util';
+import { boxShadow, cardColor, orange, surf } from "../util/colors";
+import { openSans } from "../util/fonts";
+import { largeUp, mediumUp, smallOnly } from "../util/media";
+import { trimAndLower } from "../util";
 
 const propTypes = {
   getChampMastery: func.isRequired,
@@ -22,7 +22,7 @@ class Summoner extends React.Component {
     super(props);
     this.state = {
       championsHeight: null,
-      search: ''
+      search: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -50,41 +50,41 @@ class Summoner extends React.Component {
     if (champions.length <= 3) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '8.313rem'
+          championsHeight: "8.313rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '14.31rem'
+          championsHeight: "14.31rem"
         });
       }
     } else if (champions.length < 6) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '16.63rem'
+          championsHeight: "16.63rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '28.75rem'
+          championsHeight: "28.75rem"
         });
       }
     } else if (champions.length < 9) {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '33.25rem'
+          championsHeight: "33.25rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '42.94rem'
+          championsHeight: "42.94rem"
         });
       }
     } else {
       if (window.innerWidth <= 640) {
         this.setState({
-          championsHeight: '25rem'
+          championsHeight: "25rem"
         });
       } else if (window.innerWidth >= 1024) {
         this.setState({
-          championsHeight: '25rem'
+          championsHeight: "25rem"
         });
       }
     }
@@ -99,15 +99,15 @@ class Summoner extends React.Component {
   onReset() {
     const { search } = this.state;
 
-    const summonerName = 'brandybot';
+    const summonerName = "brandybot";
 
-    if (search !== '' && trimAndLower(search) !== summonerName) {
+    if (search !== "" && trimAndLower(search) !== summonerName) {
       this.props.getChampMastery(summonerName);
       this.props.getSummonerInfo(summonerName);
     }
 
     this.setState({
-      search: ''
+      search: ""
     });
   }
 
@@ -119,7 +119,7 @@ class Summoner extends React.Component {
     const currentSummoner = trimAndLower(this.props.summoner.data.name);
     const searching = trimAndLower(search);
 
-    if (search !== '' && currentSummoner !== searching) {
+    if (search !== "" && currentSummoner !== searching) {
       this.props.getChampMastery(search);
       this.props.getSummonerInfo(search);
     }
@@ -202,10 +202,12 @@ class Summoner extends React.Component {
             {data ? (
               <Fragment>
                 <h3 className="summoner-name">
-                  {data.name ? data.name : 'Not Found'}
+                  {data.name ? data.name : "Not Found"}
                 </h3>
                 <p className="summoner-level">
-                  {data.level ? `Level: ${data.level}` : 'Please try again'}
+                  {data.summonerLevel
+                    ? `Level: ${data.summonerLevel}`
+                    : "Please try again"}
                 </p>
               </Fragment>
             ) : (
@@ -233,9 +235,9 @@ class Summoner extends React.Component {
         </div>
         <p
           style={{
-            color: 'silver',
-            fontSize: '0.85rem',
-            maxWidth: '25rem'
+            color: "silver",
+            fontSize: "0.85rem",
+            maxWidth: "25rem"
           }}
         >
           This website isn’t endorsed by Riot Games and doesn’t reflect the
