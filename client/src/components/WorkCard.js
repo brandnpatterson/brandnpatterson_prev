@@ -61,7 +61,7 @@ const StyledWorkCard = styled.div`
     }
   }
 
-  .main-content.main-content-sabre {
+  .main-content.main-content-group {
     margin-bottom: 0;
 
     @media ${mediumUp} {
@@ -108,8 +108,9 @@ const StyledWorkCard = styled.div`
     height: 15.75rem;
   }
 
-  .sabre-wrap {
-    background: #e50000;
+  .image-wrap {
+    display: flex;
+    align-items: center;
     height: 8rem;
     margin: 0 auto;
     min-width: 100%;
@@ -125,12 +126,12 @@ const StyledWorkCard = styled.div`
     }
   }
 
-  .sabre-wrap img {
+  .image-wrap img {
     height: 8rem;
     width: 10rem;
   }
 
-  .hotel-name {
+  .item-name {
     font-weight: bold;
 
     @media ${smallOnly} {
@@ -163,7 +164,7 @@ const StyledWorkCard = styled.div`
     }
   }
 
-  .card-content.card-content-sabre {
+  .card-content.card-content-group {
     background: none;
     box-shadow: none;
     padding-left: 0;
@@ -199,7 +200,7 @@ const StyledWorkCard = styled.div`
     }
   }
 
-  .card-header.card-header-sabre {
+  .card-header.card-header-group {
     padding-left: 0;
   }
 

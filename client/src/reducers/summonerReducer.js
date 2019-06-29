@@ -1,4 +1,4 @@
-import { GET_CHAMPION_MASTERY, GET_SUMMONER_INFO } from '../actions/types';
+import { GET_CHAMPION_MASTERY, GET_SUMMONER_INFO } from '../actions';
 
 const initialState = {
   data: null,

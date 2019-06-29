@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
-
 import WorkCard from '../components/WorkCard';
-
 import { surf } from '../util/colors';
 
 function Work() {
@@ -9,21 +7,46 @@ function Work() {
     <div>
       <WorkCard>
         <Fragment>
-          <div className="main-content main-content-sabre">
-            <div className="sabre-wrap">
+          <div className="main-content main-content-group">
+            <div style={{ background: '#EF4A3F' }} className="image-wrap">
+              <img
+                style={{ width: '175px', height: '50px ' }}
+                src="images/works/square205/square205.png"
+                alt="Square 205"
+              />
+            </div>
+            <div className="card-content card-content-group">
+              <h2>Digital marketing and creative agency</h2>
+            </div>
+          </div>
+          <div className="secondary-content">
+            <a
+              href="https://www.upventur.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="item-name">Upventur</p>
+              <img src="images/works/square205/upventur.jpeg" alt="Upventur" />
+            </a>
+            <a
+              href="http://goeditgraphics.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="item-name">Go Edit</p>
+              <img src="images/works/square205/goedit.jpeg" alt="Go Edit" />
+            </a>
+          </div>
+        </Fragment>
+      </WorkCard>
+      <WorkCard>
+        <Fragment>
+          <div className="main-content main-content-group">
+            <div style={{ background: '#e50000' }} className="image-wrap">
               <img src="images/works/sabre/sabre.svg" alt="Sabre" />
             </div>
-            <div className="card-content card-content-sabre">
-              <h1
-                style={{ color: surf }}
-                className="card-header card-header-sabre"
-              >
-                Sabre Hospitality Solutions
-              </h1>
-              <p>
-                These are some of the websites that I've worked on with my team
-                at Sabre.
-              </p>
+            <div className="card-content card-content-group">
+              <h2>Leading technology provider for the hospitality industry</h2>
             </div>
           </div>
           <div className="secondary-content">
@@ -32,7 +55,7 @@ function Work() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="hotel-name">Fontaine Bleau</p>
+              <p className="item-name">Fontaine Bleau</p>
               <img
                 src="images/works/sabre/fontainebleau.jpg"
                 alt="Fontaine Bleau"
@@ -43,7 +66,7 @@ function Work() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="hotel-name"> Mandarin Oriental</p>
+              <p className="item-name">Mandarin Oriental</p>
               <img
                 src="images/works/sabre/mo.jpg"
                 alt="Mandarin Oriental - the Hotel Group"
@@ -54,7 +77,7 @@ function Work() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="hotel-name">Trump Hotels</p>
+              <p className="item-name">Trump Hotels</p>
               <img src="images/works/sabre/trump.jpg" alt="Trump Hotels" />
             </a>
             <a
@@ -62,7 +85,7 @@ function Work() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="hotel-name">Ojai Valley Inn</p>
+              <p className="item-name">Ojai Valley Inn</p>
               <img
                 src="images/works/sabre/ojai.jpg"
                 alt="Ojai Valley Inn Resorts Hotels"

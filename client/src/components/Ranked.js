@@ -1,7 +1,6 @@
 import React from 'react';
 import { object, string } from 'prop-types';
 import styled from 'styled-components';
-
 import { mediumUp } from '../util/media';
 
 const propTypes = {

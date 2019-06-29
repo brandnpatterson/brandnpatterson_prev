@@ -2,7 +2,6 @@ import React from 'react';
 import { object } from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-
 import { orange } from '../util/colors';
 import { mediumUp } from '../util/media';
 

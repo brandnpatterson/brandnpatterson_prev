@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-
 import { black, orange, surf } from '../util/colors';
 import { mediumUp } from '../util/media';
 

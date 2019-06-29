@@ -1,7 +1,11 @@
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 
-import { GET_CHAMPION_MASTERY, GET_ERRORS, GET_SUMMONER_INFO } from './types';
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const GET_CHAMPION_MASTERY = 'GET_CHAMPION_MASTERY';
+export const GET_SUMMONER_INFO = 'GET_SUMMONER_INFO';
+export const IS_FOCUSING = 'IS_FOCUSING';
 
 // Riot
 export const getChampMastery = summonerName => dispatch => {
