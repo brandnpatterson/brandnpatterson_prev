@@ -109,8 +109,8 @@ const StyledWorkCard = styled.div`
   }
 
   .image-wrap {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 8rem;
     margin: 0 auto;
     min-width: 100%;

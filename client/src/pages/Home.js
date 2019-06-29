@@ -68,8 +68,8 @@ function Home({ setIsFocusing }) {
         <FontAwesomeIcon icon={['fab', 'js']} size="5x" />
         <FontAwesomeIcon icon={['fab', 'react']} size="5x" />
         <FontAwesomeIcon icon={['fab', 'node-js']} size="5x" />
-        <FontAwesomeIcon icon={['fab', 'php']} size="5x" />
         <FontAwesomeIcon icon="database" size="5x" />
+        <FontAwesomeIcon icon="server" size="5x" />
       </div>
     </StyledHome>
   );
