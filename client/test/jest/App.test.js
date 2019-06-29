@@ -11,11 +11,20 @@ import {
   faAngleRight,
   faDatabase,
   faEnvelope,
-  faPhone
+  faPhone,
+  faServer
 } from '@fortawesome/free-solid-svg-icons';
 import 'core-js/modules/es6.promise';
 
-library.add(fab, faAngleLeft, faAngleRight, faDatabase, faEnvelope, faPhone);
+library.add(
+  fab,
+  faAngleLeft,
+  faAngleRight,
+  faDatabase,
+  faEnvelope,
+  faPhone,
+  faServer
+);
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
