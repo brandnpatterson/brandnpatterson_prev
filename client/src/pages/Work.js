@@ -136,7 +136,7 @@ function Work() {
                 <p className="built-with">Built with:</p>
                 <p>
                   React, React Router, Styled Components, WordPress REST API,
-                  Cypress, and Jest
+                  and Jest
                 </p>
               </div>
             </div>
