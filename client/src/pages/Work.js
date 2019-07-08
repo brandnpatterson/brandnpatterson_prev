@@ -98,6 +98,27 @@ function Work() {
       <WorkCard>
         <div className="main-content">
           <a
+            href="http://users-dir.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/works/users-dir.png" alt="Users Directory" />
+          </a>
+          <div className="card-content">
+            <h1 className="card-header">Users Directory</h1>
+            <div className="card-paragraphs">
+              <p>Create, read, update, delete, and filter users</p>
+              <div className="built-with-wrap">
+                <p className="built-with">Built with:</p>
+                <p>Node, Express, MySQL, React, Context, Jest, and Enzyme</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </WorkCard>
+      <WorkCard>
+        <div className="main-content">
+          <a
             href="http://runebear.com"
             target="_blank"
             rel="noopener noreferrer"
