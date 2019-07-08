@@ -54,11 +54,6 @@ const StyledWorkCard = styled.div`
     @media ${largeUp} {
       flex-direction: row-reverse;
     }
-
-    img {
-      border-top-left-radius: 0.3125rem;
-      border-top-right-radius: 0.3125rem;
-    }
   }
 
   .main-content.main-content-group {
@@ -85,7 +80,6 @@ const StyledWorkCard = styled.div`
   }
 
   .secondary-content a {
-    border-radius: 0.3125rem;
     height: 18.75rem;
     margin: 1.5rem auto;
     max-width: 31.25rem;
@@ -101,6 +95,8 @@ const StyledWorkCard = styled.div`
   }
 
   .secondary-content img {
+    border-radius: 0;
+
     @media ${smallOnly} {
       height: 12.5rem;
     }
