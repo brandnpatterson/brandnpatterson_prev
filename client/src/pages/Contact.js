@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { black, orange, surf } from '../util/colors';
 import { mediumUp } from '../util/media';
 
-import googleMaps from '../googleMaps';
+// import googleMaps from '../googleMaps';
 
 const Contact = () => {
-  useEffect(() => {
-    googleMaps.init({
-      API_KEY: 'AIzaSyDq9D2VxihS-3kpTKOagpBB4IbJ8q1NI4w'
-    });
-  }, []);
+  // useEffect(() => {
+  //   googleMaps.init({
+  //     API_KEY: 'AIzaSyDq9D2VxihS-3kpTKOagpBB4IbJ8q1NI4w'
+  //   });
+  // }, []);
 
   return (
     <StyledContact>
