@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "client": "npm start --prefix client",
+    "db:migrate": "sequelize-cli db:migrate",
     "dev": "NODE_ENV=development nodemon",
     "start": "NODE_ENV=production node index",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --dev --prefix client && npm run build --prefix client",
@@ -18,7 +18,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.10.0",
+    "sequelize": "^5.19.1",
     "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
