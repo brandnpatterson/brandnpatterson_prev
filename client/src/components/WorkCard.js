@@ -16,6 +16,7 @@ const StyledWorkCard = styled.div`
   background: ${cardColor};
   border-radius: 0.3125rem;
   box-shadow: ${boxShadow};
+  margin-bottom: 3rem;
 
   img {
     display: block;
@@ -69,7 +70,6 @@ const StyledWorkCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3rem;
     padding-bottom: 3rem;
 
     @media ${mediumUp} {
@@ -139,7 +139,6 @@ const StyledWorkCard = styled.div`
     background: ${cardColor};
     border-bottom-left-radius: 0.3125rem;
     border-bottom-right-radius: 0.3125rem;
-    box-shadow: ${boxShadow};
     flex: 2;
     margin: 0 auto 2.45rem;
     max-width: 40rem;
@@ -153,7 +152,6 @@ const StyledWorkCard = styled.div`
       background: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      box-shadow: none;
       margin: 0;
       max-width: 100%;
       padding: 0 2rem;

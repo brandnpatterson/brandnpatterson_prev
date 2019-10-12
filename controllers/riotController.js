@@ -8,9 +8,7 @@ const Champion = require('../models/champion');
 const patch = '9.5.1';
 const ddragon = url => `http://ddragon.leagueoflegends.com/cdn/${patch}${url}`;
 const riotGames = (url, reigon = 'na1') =>
-  `https://${reigon}.api.riotgames.com/lol${url}?api_key=${
-    process.env.RIOT_API_KEY
-  }`;
+  `https://${reigon}.api.riotgames.com/lol${url}?api_key=${process.env.RIOT_API_KEY}`;
 
 /**
  *  DB

@@ -4,7 +4,31 @@ import { surf } from '../util/colors';
 
 function Work() {
   return (
-    <div>
+    <div style={{ margin: '0 auto', maxWidth: '70rem' }}>
+      <WorkCard>
+        <Fragment>
+          <div className="main-content main-content-group">
+            <div style={{ background: '#FFF' }} className="image-wrap">
+              <img src="images/works/muckrack/muckrack.svg" alt="Square 205" />
+            </div>
+            <div className="card-content card-content-group">
+              <h2>The new standard in public relations software</h2>
+            </div>
+          </div>
+          <div
+            className="secondary-content"
+            style={{ paddingBottom: '0', marginTop: '4rem' }}
+          >
+            <a
+              href="https://www.muckrack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="images/works/muckrack/mr_com.jpg" alt="Muck Rack" />
+            </a>
+          </div>
+        </Fragment>
+      </WorkCard>
       <WorkCard>
         <Fragment>
           <div className="main-content main-content-group">

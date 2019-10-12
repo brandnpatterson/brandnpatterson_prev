@@ -37,15 +37,16 @@ const About = ({ setIsFocusing }) => {
                 onClick={() => onClick('work')}
                 style={{ color: orange }}
               >
-                Lead App Developer
+                Front-End Engineer
               </Link>{' '}
-              at Square 205. I work remotely in Houston, Texas and I have
-              experience building User Interfaces for global companies. I create
-              websites and single page applications that are responsive,
-              accessibility compliant, and aesthetically pleasing. I enjoy using
-              the latest JavaScript features and libraries such as ES6, Webpack,
-              Babel, React, and React Native. When I’m not coding, I like to
-              travel, spend time with my family, and play video games like{' '}
+              at Muck Rack. I work remotely in Houston, Texas and I have
+              experience building User Interfaces for the browser and native
+              devices. I create websites and single page applications that are
+              responsive, accessibility compliant, and aesthetically pleasing. I
+              enjoy using the latest JavaScript features and libraries such as
+              GraphQL, ES6+, Webpack, Babel, React, and React Native. When I’m
+              not coding, I like to travel, spend time with my family, and play
+              video games like{' '}
               <Link
                 to="/league"
                 onClick={() => onClick('league')}
