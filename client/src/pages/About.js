@@ -43,7 +43,7 @@ const About = ({ setIsFocusing }) => {
               experience building User Interfaces for the browser and native
               devices. I create websites and single page applications that are
               responsive, accessibility compliant, and aesthetically pleasing. I
-              enjoy using the latest JavaScript features and libraries such as
+              enjoy using modern frontend features and libraries such as
               GraphQL, ES6+, Webpack, Babel, React, and React Native. When I’m
               not coding, I like to travel, spend time with my family, and play
               video games like{' '}
