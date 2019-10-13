@@ -159,8 +159,8 @@ function Work() {
               <div className="built-with-wrap">
                 <p className="built-with">Built with:</p>
                 <p>
-                  React, React Router, Styled Components, WordPress REST API,
-                  and Jest
+                  React, React Router, Styled Components, and the WordPress REST
+                  API
                 </p>
               </div>
             </div>
