@@ -134,7 +134,7 @@ function Work() {
               <p>Create, read, update, delete, and filter users</p>
               <div className="built-with-wrap">
                 <p className="built-with">Built with:</p>
-                <p>Node, Express, MySQL, React, Context, Jest, and Enzyme</p>
+                <p>Node, Express, MySQL, React, Jest, and Enzyme</p>
               </div>
             </div>
           </div>
