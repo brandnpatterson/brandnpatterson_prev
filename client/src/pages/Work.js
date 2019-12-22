@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
-import WorkCard from '../components/WorkCard';
-import { surf } from '../util/colors';
+import React, { Fragment } from "react";
+import WorkCard from "../components/WorkCard";
+import { surf } from "../util/colors";
 
 function Work() {
   return (
-    <div style={{ margin: '0 auto', maxWidth: '70rem' }}>
+    <div style={{ margin: "0 auto", maxWidth: "70rem" }}>
       <WorkCard>
         <Fragment>
           <div className="main-content main-content-group">
-            <div style={{ background: '#FFF' }} className="image-wrap">
+            <div style={{ background: "#FFF" }} className="image-wrap">
               <img src="images/works/muckrack/muckrack.svg" alt="Square 205" />
             </div>
             <div className="card-content card-content-group">
@@ -17,7 +17,7 @@ function Work() {
           </div>
           <div
             className="secondary-content"
-            style={{ paddingBottom: '0', marginTop: '4rem' }}
+            style={{ paddingBottom: "0", marginTop: "4rem" }}
           >
             <a
               href="https://www.muckrack.com/"
@@ -32,9 +32,9 @@ function Work() {
       <WorkCard>
         <Fragment>
           <div className="main-content main-content-group">
-            <div style={{ background: '#EF4A3F' }} className="image-wrap">
+            <div style={{ background: "#EF4A3F" }} className="image-wrap">
               <img
-                style={{ width: '175px', height: '50px ' }}
+                style={{ width: "175px", height: "50px " }}
                 src="images/works/square205/square205.png"
                 alt="Square 205"
               />
@@ -66,7 +66,7 @@ function Work() {
       <WorkCard>
         <Fragment>
           <div className="main-content main-content-group">
-            <div style={{ background: '#e50000' }} className="image-wrap">
+            <div style={{ background: "#e50000" }} className="image-wrap">
               <img src="images/works/sabre/sabre.svg" alt="Sabre" />
             </div>
             <div className="card-content card-content-group">
@@ -122,6 +122,33 @@ function Work() {
       <WorkCard>
         <div className="main-content">
           <a
+            href="http://runebear.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/works/runebear.png" alt="Rune Bear" />
+          </a>
+          <div className="card-content">
+            <h1 className="card-header">Rune Bear</h1>
+            <div className="card-paragraphs">
+              <p>
+                Digital literary magazine dedicated to the Strange, Surreal,
+                Supernatural, and Speculative
+              </p>
+              <div className="built-with-wrap">
+                <p className="built-with">Built with:</p>
+                <p>
+                  WordPress, JavaScript ESNext, Gulp, BrowserSync, Sass, Babel,
+                  Webpack, and ESLint
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </WorkCard>
+      <WorkCard>
+        <div className="main-content">
+          <a
             href="http://users-dir.herokuapp.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -143,33 +170,6 @@ function Work() {
       <WorkCard>
         <div className="main-content">
           <a
-            href="http://runebear.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/works/runebear.png" alt="Rune Bear" />
-          </a>
-          <div className="card-content">
-            <h1 className="card-header">Rune Bear</h1>
-            <div className="card-paragraphs">
-              <p>
-                Digital literary magazine dedicated to the Strange, Surreal,
-                Supernatural, and Speculative
-              </p>
-              <div className="built-with-wrap">
-                <p className="built-with">Built with:</p>
-                <p>
-                  React, React Router, Styled Components, and the WordPress REST
-                  API
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </WorkCard>
-      <WorkCard>
-        <div className="main-content">
-          <a
             href="https://coriander.surge.sh"
             target="_blank"
             rel="noopener noreferrer"
@@ -183,9 +183,9 @@ function Work() {
               <div className="built-with-wrap">
                 <p className="built-with">Built with:</p>
                 <p>
-                  JavaScript, Gulp, and Jasmine. Published to{' '}
+                  JavaScript, Gulp, and Jasmine. Published to{" "}
                   <a
-                    style={{ color: surf, textDecoration: 'underline' }}
+                    style={{ color: surf, textDecoration: "underline" }}
                     href="https://www.npmjs.com/package/coriander"
                     target="_blank"
                     rel="noopener noreferrer"
