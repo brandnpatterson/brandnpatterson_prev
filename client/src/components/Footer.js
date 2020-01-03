@@ -27,7 +27,7 @@ const Footer = () => {
         <a
           aria-label="Mail Icon"
           className="footer-copyright-wrap"
-          href="mailto:brandnpatterson@gmail.com"
+          href="mailto:brandnpatterson@outlook.com"
         >
           <FontAwesomeIcon icon="envelope" size="2x" />
         </a>

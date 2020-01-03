@@ -13,8 +13,8 @@ const Contact = () => {
         </p>
         <p className="contact-info">
           E-mail:{' '}
-          <a href="mailto:brandnpatterson@gmail.com">
-            brandnpatterson@gmail.com
+          <a href="mailto:brandnpatterson@outlook.com">
+            brandnpatterson@outlook.com
           </a>
         </p>
 
