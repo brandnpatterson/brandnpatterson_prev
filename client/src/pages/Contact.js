@@ -3,15 +3,7 @@ import styled from 'styled-components';
 import { black, orange, surf } from '../util/colors';
 import { mediumUp } from '../util/media';
 
-// import googleMaps from '../googleMaps';
-
 const Contact = () => {
-  // useEffect(() => {
-  //   googleMaps.init({
-  //     API_KEY: 'AIzaSyDq9D2VxihS-3kpTKOagpBB4IbJ8q1NI4w'
-  //   });
-  // }, []);
-
   return (
     <StyledContact>
       <h1 className="heading-title">Contact Me</h1>
