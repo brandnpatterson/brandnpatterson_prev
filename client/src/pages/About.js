@@ -17,6 +17,8 @@ const About = ({ setIsFocusing }) => {
     setIsFocusing(string);
   }
 
+  const linkStyles = { color: surf, textDecoration: 'underline' };
+
   return (
     <Fragment>
       <StyledAbout>
@@ -31,16 +33,18 @@ const About = ({ setIsFocusing }) => {
           <div className="about-me-text">
             <h1 className="title">A little bit about me</h1>
             <p className="about-me-paragraph">
-              I'm{' '}
+              I'm a{' '}
               <Link
                 to="/work"
                 onClick={() => onClick('work')}
                 style={{ color: orange }}
               >
-                Front-End Engineer
+                Front End Engineer
               </Link>{' '}
-              at Muck Rack. I work remotely in Houston, Texas and I have
-              experience building User Interfaces for the browser and native
+              at{' '}
+              <a style={linkStyles} href="https://muckrack.com/" target="_blank" rel="noopener noreferrer">Muck Rack</a>
+              . I work remotely in Houston, Texas and I have
+              experience building User Interfaces for browsers and native
               devices. I create websites and single page applications that are
               responsive, accessibility compliant, and aesthetically pleasing. I
               enjoy using modern frontend features and libraries such as
@@ -50,7 +54,7 @@ const About = ({ setIsFocusing }) => {
               <Link
                 to="/league"
                 onClick={() => onClick('league')}
-                style={{ color: surf, textDecoration: 'underline' }}
+                style={linkStyles}
               >
                 League of Legends
               </Link>
