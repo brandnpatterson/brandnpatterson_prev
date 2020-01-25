@@ -14,8 +14,7 @@ function Home({ setIsFocusing }) {
   const [index, setIndex] = useState(0);
   const [opacity, setOpacity] = useState(0);
   const titles = [
-    'Full Stack Developer',
-    'JavaScript Engineer',
+    'Programmer',
     'Problem Solver',
     'Leader',
     'Teacher',
