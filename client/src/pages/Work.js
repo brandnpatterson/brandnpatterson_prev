@@ -118,7 +118,6 @@ function Work() {
           </div>
         </Fragment>
       </WorkCard>
-      <h1>Other Projects</h1>
       <WorkCard>
         <div className="main-content">
           <a
