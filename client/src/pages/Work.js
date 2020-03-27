@@ -170,7 +170,7 @@ function Work() {
       <WorkCard>
         <div className="main-content">
           <a
-            href="https://coriander.surge.sh"
+            href="https://brandnpatterson.github.io/coriander/"
             target="_blank"
             rel="noopener noreferrer"
           >
